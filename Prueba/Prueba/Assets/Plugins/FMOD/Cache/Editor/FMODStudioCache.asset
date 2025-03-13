@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6933865962745095403
+--- !u!114 &-1933421176836164638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,33 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../../Documents/FMOD Studio/FmodHorrorGame/Build/Desktop/Master.strings.bank
+  Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638774137528359597
+  lastModified: 638774468987863686
   FileSizes:
   - Name: Desktop
     Value: 712
-  Exists: 1
---- !u!114 &-3920941632127565376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../../../Documents/FMOD Studio/FmodHorrorGame/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638774137528348108
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -53,13 +33,33 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -6933865962745095403}
-  - {fileID: -3920941632127565376}
+  - {fileID: -1933421176836164638}
+  - {fileID: 8876955751881493886}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3920941632127565376}
+  - {fileID: 8876955751881493886}
   StringsBanks:
-  - {fileID: -6933865962745095403}
-  cacheTime: 638774137528359597
+  - {fileID: -1933421176836164638}
+  cacheTime: 638774468987863686
   cacheVersion: 131623
+--- !u!114 &8876955751881493886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638774468987828629
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
