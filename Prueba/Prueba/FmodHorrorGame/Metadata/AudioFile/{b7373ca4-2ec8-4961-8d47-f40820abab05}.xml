@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b7373ca4-2ec8-4961-8d47-f40820abab05}">
+		<property name="assetPath">
+			<value>soundsFX/demonicdrums.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>16.079999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3be3d62d-dcde-47d2-8fa6-7ee072d7e1e3}</destination>
+		</relationship>
+	</object>
+</objects>
