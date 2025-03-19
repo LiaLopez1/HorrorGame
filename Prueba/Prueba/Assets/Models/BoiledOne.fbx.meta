@@ -3,7 +3,37 @@ guid: bbe261ffbbee8fd418fc4b3f6257929c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoiledOneBody
+    second: {fileID: 2100000, guid: 22cb86799c134684ba83483ac2ddf2dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoiledOneDetails
+    second: {fileID: 2100000, guid: dcaf3bfb543dcb045a277798630bc7b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoiledOneEyes
+    second: {fileID: 2100000, guid: 2d7f3de31c0dc6d43867268d23462520, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoiledOneGums
+    second: {fileID: 2100000, guid: 105acde2d8ead8b40838f20e2302b747, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoiledOneHeadDetail
+    second: {fileID: 2100000, guid: 4a44f9cf3aaaa124d8a8c889fe3fd713, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoiledOneTeeth
+    second: {fileID: 2100000, guid: 88916a90c28f2a242959088842903d25, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
