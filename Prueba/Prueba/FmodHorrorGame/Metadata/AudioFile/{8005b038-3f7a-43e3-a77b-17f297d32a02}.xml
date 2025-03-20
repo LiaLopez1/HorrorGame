@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8005b038-3f7a-43e3-a77b-17f297d32a02}">
+		<property name="assetPath">
+			<value>sci-fi-sound-fxs-riser-woosh-sweep-logo-appears-intro-move-288764.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.7039999999999997</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3be3d62d-dcde-47d2-8fa6-7ee072d7e1e3}</destination>
+		</relationship>
+	</object>
+</objects>

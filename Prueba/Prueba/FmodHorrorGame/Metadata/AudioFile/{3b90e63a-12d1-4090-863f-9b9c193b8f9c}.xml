@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3b90e63a-12d1-4090-863f-9b9c193b8f9c}">
+		<property name="assetPath">
+			<value>soundsFX/voices2.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>69.959999999999994</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3be3d62d-dcde-47d2-8fa6-7ee072d7e1e3}</destination>
+		</relationship>
+	</object>
+</objects>

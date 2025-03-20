@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{da288786-d24b-4642-8fa3-98c4dcb03890}">
+		<property name="name">
+			<value>glassp</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7cc592cc-440e-46f7-8f2a-a07f70bec115}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c312fd65-aafb-4d7f-8820-445da0cd01f4}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c312fd65-aafb-4d7f-8820-445da0cd01f4}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

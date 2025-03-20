@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b096e386-5bff-430b-8ae3-2c783988fd02}">
+		<property name="name">
+			<value>uieff</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7cc592cc-440e-46f7-8f2a-a07f70bec115}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e5c6ba27-0030-48f0-936b-1a71f214e494}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e5c6ba27-0030-48f0-936b-1a71f214e494}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>8</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

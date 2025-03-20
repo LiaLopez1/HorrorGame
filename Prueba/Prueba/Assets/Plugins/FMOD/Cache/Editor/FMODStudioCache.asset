@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638779768399449090
+  lastModified: 638774468987863686
   FileSizes:
   - Name: Desktop
-    Value: 758
+    Value: 712
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -41,7 +41,7 @@ MonoBehaviour:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 638779768399449090
+  cacheTime: 638774468987863686
   cacheVersion: 131623
 --- !u!114 &8876955751881493886
 MonoBehaviour:
@@ -58,7 +58,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638779768399410584
+  lastModified: 638774468987828629
   FileSizes:
   - Name: Desktop
     Value: 1036
