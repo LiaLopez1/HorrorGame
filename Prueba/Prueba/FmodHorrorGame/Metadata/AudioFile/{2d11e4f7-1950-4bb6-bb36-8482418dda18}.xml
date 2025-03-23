@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{7426f96a-4ab8-4d2e-9c25-5d02117ab80a}">
+	<object class="AudioFile" id="{2d11e4f7-1950-4bb6-bb36-8482418dda18}">
 		<property name="assetPath">
-			<value>Ambiente/heartbeathospital.mp3</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>SFX/Player/Footsteps/TileCris.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<property name="length">
-			<value>61.02204081632653</value>
+			<value>1.0710204081632653</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3be3d62d-dcde-47d2-8fa6-7ee072d7e1e3}</destination>

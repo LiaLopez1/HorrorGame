@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{8b24f2d2-acd8-4fb6-a464-7ed611223c78}">
 		<property name="name">
-			<value>WalkRun</value>
+			<value>WalkCrouchRun</value>
 		</property>
 		<relationship name="folder">
 			<destination>{7cc592cc-440e-46f7-8f2a-a07f70bec115}</destination>
@@ -16,7 +16,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>3</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
