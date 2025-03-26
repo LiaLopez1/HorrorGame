@@ -4088,7 +4088,7 @@ GameObject:
   - component: {fileID: 87126275}
   m_Layer: 0
   m_Name: VidriosRotos (1)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8145,7 +8145,7 @@ GameObject:
   - component: {fileID: 173550305}
   m_Layer: 0
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9151,6 +9151,38 @@ Transform:
   - {fileID: 625194502}
   m_Father: {fileID: 177950661}
   m_LocalEulerAnglesHint: {x: -7.103, y: -1.815, z: -4.364}
+--- !u!1 &194270938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194270939}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &194270939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194270938}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.13627, y: -1.5792354, z: 15.334888}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 613528813}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &196578341
 GameObject:
   m_ObjectHideFlags: 0
@@ -12163,6 +12195,57 @@ Transform:
   - {fileID: 497322199}
   m_Father: {fileID: 2115633572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &259875694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 259875695}
+  - component: {fileID: 259875696}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &259875695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259875694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 613528813}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &259875696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259875694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce908543b8f8e9749b2765924c445a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Footsteps>k__BackingField:
+    Guid:
+      Data1: -1302209520
+      Data2: 1300270039
+      Data3: 774872730
+      Data4: -1201369006
+    Path: event:/SFX/Player/Footsteps
 --- !u!1 &260564115
 GameObject:
   m_ObjectHideFlags: 0
@@ -28873,6 +28956,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9894788, y: 0.119367436, z: 1.1811936}
   m_Center: {x: 0.0000014156103, y: -0.00000011920929, z: -0.000002115965}
+--- !u!1 &613528812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 613528813}
+  - component: {fileID: 613528814}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &613528813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613528812}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 259875695}
+  m_Father: {fileID: 194270939}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &613528814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613528812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b562423e1170b7145a3ada70231a45c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &614291722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35550,6 +35678,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sangre (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_TagString
+      value: Blood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37433,7 +37569,7 @@ GameObject:
   - component: {fileID: 808063646}
   m_Layer: 0
   m_Name: Plane (3)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39058,9 +39194,9 @@ GameObject:
   - component: {fileID: 834832826}
   - component: {fileID: 834832825}
   - component: {fileID: 834832824}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (14)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45221,7 +45357,7 @@ GameObject:
   - component: {fileID: 957347393}
   m_Layer: 0
   m_Name: VidriosRotos (2)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57029,6 +57165,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_Name
       value: sangre (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_TagString
+      value: Blood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74302,8 +74442,8 @@ GameObject:
   - component: {fileID: 1582060866}
   - component: {fileID: 1582060865}
   m_Layer: 0
-  m_Name: Capsule
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74410,9 +74550,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  runSpeed: 7
+  runSpeed: 10
+  crouchSpeed: 1
   crouchHeight: 0.2
-  mouseSensitivity: 1000
+  mouseSensitivity: 500
   cameraTransform: {fileID: 963194228}
   raycastDistance: 5
   tiempoAgachado: 0.1
@@ -79280,9 +79421,9 @@ GameObject:
   - component: {fileID: 1662465507}
   - component: {fileID: 1662465506}
   - component: {fileID: 1662465505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (2)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95953,7 +96094,7 @@ GameObject:
   - component: {fileID: 2043837563}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99974,3 +100115,4 @@ SceneRoots:
   - {fileID: 1477576312}
   - {fileID: 226363615}
   - {fileID: 82377076}
+  - {fileID: 194270939}

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{b261dc10-8bd7-4d80-9a9e-2f2e529064b8}">
+		<property name="note" />
 		<property name="name">
 			<value>Footsteps</value>
 		</property>
@@ -36,6 +37,9 @@
 		<relationship name="parameters">
 			<destination>{f818a999-a520-42ef-b708-c225a848819b}</destination>
 			<destination>{7fb2c137-ccb1-4205-826f-c8e10b765e3e}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{d3678b07-1608-40b9-98ed-d1cd8bd3b9f3}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{5de52038-40ff-4970-9d49-8426ebbd0142}">
