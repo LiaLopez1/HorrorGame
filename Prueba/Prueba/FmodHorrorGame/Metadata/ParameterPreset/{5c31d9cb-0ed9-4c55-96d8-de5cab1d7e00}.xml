@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{5c31d9cb-0ed9-4c55-96d8-de5cab1d7e00}">
+		<property name="name">
+			<value>Ui</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7cc592cc-440e-46f7-8f2a-a07f70bec115}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f5aa39c6-e15f-4bff-9071-d46f4c78bb76}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f5aa39c6-e15f-4bff-9071-d46f4c78bb76}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Cick</value>
+			<value>hover</value>
+			<value>exit</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
