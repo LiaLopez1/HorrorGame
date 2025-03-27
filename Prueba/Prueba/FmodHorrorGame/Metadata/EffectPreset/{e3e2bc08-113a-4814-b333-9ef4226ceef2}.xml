@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{e3e2bc08-113a-4814-b333-9ef4226ceef2}">
+		<property name="name">
+			<value>Effect Chain</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1c2cf8ec-e013-4435-b108-706e4bb99a5d}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{4b1249b8-442e-4aad-9a61-2c8b06ba589b}</destination>
+		</relationship>
+	</object>
+	<object class="EffectChain" id="{4b1249b8-442e-4aad-9a61-2c8b06ba589b}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
+	</object>
+</objects>

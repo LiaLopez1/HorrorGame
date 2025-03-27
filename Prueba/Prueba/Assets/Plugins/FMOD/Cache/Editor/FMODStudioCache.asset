@@ -1,6 +1,120 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2576955660906103703
+--- !u!114 &-8831402783346150447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Gritos
+  m_EditorClassIdentifier: 
+  Path: event:/Gritos
+  Guid:
+    Data1: -111538787
+    Data2: 1311108538
+    Data3: -218710866
+    Data4: 1761581357
+  Banks:
+  - {fileID: -5944876710564791044}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 5000
+--- !u!114 &-5944876710564791044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638786131322720444
+  FileSizes:
+  - Name: Desktop
+    Value: 516800
+  Exists: 1
+--- !u!114 &-5410365292798322878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638786053345107959
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &-3576168655421101796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/New Snapshot
+  m_EditorClassIdentifier: 
+  Path: snapshot:/New Snapshot
+  Guid:
+    Data1: 1099223262
+    Data2: 1080799988
+    Data3: -684367455
+    Data4: -222869043
+  Banks:
+  - {fileID: 8876955751881493886}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1933421176836164638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638786122890213598
+  FileSizes:
+  - Name: Desktop
+    Value: 1234
+  Exists: 1
+--- !u!114 &-154830229107085014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19,36 +133,16 @@ MonoBehaviour:
     Data3: 774872730
     Data4: -1201369006
   Banks:
-  - {fileID: 8272295931956470752}
+  - {fileID: -5944876710564791044}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 6302323021495707245}
-  - {fileID: 6868630802420316528}
+  - {fileID: 8504163515138134937}
+  - {fileID: 7906714463186805830}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1933421176836164638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638785272401140232
-  FileSizes:
-  - Name: Desktop
-    Value: 1038
-  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,18 +158,22 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: -1933421176836164638}
   - {fileID: 8876955751881493886}
-  - {fileID: 5410067080625812267}
-  - {fileID: 8272295931956470752}
+  - {fileID: -5410365292798322878}
+  - {fileID: -5944876710564791044}
   EditorEvents:
-  - {fileID: -2576955660906103703}
+  - {fileID: -154830229107085014}
+  - {fileID: 8827159570409786977}
+  - {fileID: -3576168655421101796}
+  - {fileID: 7234395647365714255}
+  - {fileID: -8831402783346150447}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 638785404922598908
+  cacheTime: 638786131322720444
   cacheVersion: 131623
---- !u!114 &5410067080625812267
+--- !u!114 &7234395647365714255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,42 +182,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Gru\xF1idos"
   m_EditorClassIdentifier: 
-  Path: FmodHorrorGame/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638785272402809234
-  FileSizes:
-  - Name: Desktop
-    Value: 494
-  Exists: 1
---- !u!114 &6302323021495707245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Footsteps/WalkCrouchRun
-  m_EditorClassIdentifier: 
-  Name: WalkCrouchRun
-  StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 1148017297
-    data2: 2388185466
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &6868630802420316528
+  Path: "event:/Gru\xF1idos"
+  Guid:
+    Data1: 980794397
+    Data2: 1111892209
+    Data3: -1652722284
+    Data4: -1915263368
+  Banks:
+  - {fileID: -5944876710564791044}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 5000
+--- !u!114 &7906714463186805830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +228,7 @@ MonoBehaviour:
   - Wood
   - CristalTile
   Exists: 1
---- !u!114 &8272295931956470752
+--- !u!114 &8504163515138134937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,17 +237,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/WalkCrouchRun
   m_EditorClassIdentifier: 
-  Path: FmodHorrorGame/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638785404922598908
-  FileSizes:
-  - Name: Desktop
-    Value: 121984
+  Name: WalkCrouchRun
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 1148017297
+    data2: 2388185466
+  Type: 1
+  IsGlobal: 0
+  Labels: []
   Exists: 1
+--- !u!114 &8827159570409786977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/New Snapshot 2
+  m_EditorClassIdentifier: 
+  Path: snapshot:/New Snapshot 2
+  Guid:
+    Data1: 787218748
+    Data2: 1142580783
+    Data3: -190409568
+    Data4: 1903526315
+  Banks:
+  - {fileID: 8876955751881493886}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &8876955751881493886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,8 +294,8 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638785272401120203
+  lastModified: 638786122890203601
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1952
   Exists: 1
