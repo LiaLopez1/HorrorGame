@@ -1,6 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8831402783346150447
+--- !u!114 &-8764462548382569067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/musicingame/Musicgame
+  m_EditorClassIdentifier: 
+  Name: Musicgame
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 1025976950
+    data2: 249948330
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-8278097782256860585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,64 +34,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Gritos
+  m_Name: event:/ui/SFXUI
   m_EditorClassIdentifier: 
-  Path: event:/Gritos
+  Path: event:/ui/SFXUI
   Guid:
-    Data1: -111538787
-    Data2: 1311108538
-    Data3: -218710866
-    Data4: 1761581357
+    Data1: -1456007920
+    Data2: 1290561115
+    Data3: -1241985391
+    Data4: -912315134
   Banks:
-  - {fileID: -5944876710564791044}
-  IsStream: 1
-  Is3D: 1
+  - {fileID: 8088564819861251677}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 1513084089679591966}
   MinDistance: 1
-  MaxDistance: 100
-  Length: 5000
---- !u!114 &-5944876710564791044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: FmodHorrorGame/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638786131322720444
-  FileSizes:
-  - Name: Desktop
-    Value: 516800
-  Exists: 1
---- !u!114 &-5410365292798322878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: FmodHorrorGame/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638786053345107959
-  FileSizes:
-  - Name: Desktop
-    Value: 494
-  Exists: 1
---- !u!114 &-3576168655421101796
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5436109389955808392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,14 +62,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/New Snapshot
+  m_Name: snapshot:/New Snapshot 2
   m_EditorClassIdentifier: 
-  Path: snapshot:/New Snapshot
+  Path: snapshot:/New Snapshot 2
   Guid:
-    Data1: 1099223262
-    Data2: 1080799988
-    Data3: -684367455
-    Data4: -222869043
+    Data1: 787218748
+    Data2: 1142580783
+    Data3: -190409568
+    Data4: 1903526315
   Banks:
   - {fileID: 8876955751881493886}
   IsStream: 0
@@ -94,113 +79,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &-1933421176836164638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638786122890213598
-  FileSizes:
-  - Name: Desktop
-    Value: 1234
-  Exists: 1
---- !u!114 &-154830229107085014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Footsteps
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Footsteps
-  Guid:
-    Data1: -1302209520
-    Data2: 1300270039
-    Data3: 774872730
-    Data4: -1201369006
-  Banks:
-  - {fileID: -5944876710564791044}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 8504163515138134937}
-  - {fileID: 7906714463186805830}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -1933421176836164638}
-  - {fileID: 8876955751881493886}
-  - {fileID: -5410365292798322878}
-  - {fileID: -5944876710564791044}
-  EditorEvents:
-  - {fileID: -154830229107085014}
-  - {fileID: 8827159570409786977}
-  - {fileID: -3576168655421101796}
-  - {fileID: 7234395647365714255}
-  - {fileID: -8831402783346150447}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 8876955751881493886}
-  StringsBanks:
-  - {fileID: -1933421176836164638}
-  cacheTime: 638786131322720444
-  cacheVersion: 131623
---- !u!114 &7234395647365714255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Gru\xF1idos"
-  m_EditorClassIdentifier: 
-  Path: "event:/Gru\xF1idos"
-  Guid:
-    Data1: 980794397
-    Data2: 1111892209
-    Data3: -1652722284
-    Data4: -1915263368
-  Banks:
-  - {fileID: -5944876710564791044}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 100
-  Length: 5000
---- !u!114 &7906714463186805830
+--- !u!114 &-4858346413149897500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,7 +107,281 @@ MonoBehaviour:
   - Wood
   - CristalTile
   Exists: 1
---- !u!114 &8504163515138134937
+--- !u!114 &-1933421176836164638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638786172439580305
+  FileSizes:
+  - Name: 
+    Value: 1480
+  Exists: 1
+--- !u!114 &-1790170362635813229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Gru\xF1idos"
+  m_EditorClassIdentifier: 
+  Path: "event:/Gru\xF1idos"
+  Guid:
+    Data1: 980794397
+    Data2: 1111892209
+    Data3: -1652722284
+    Data4: -1915263368
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 5000
+--- !u!114 &-1770093805052333945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638786281733736545
+  FileSizes: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -1933421176836164638}
+  - {fileID: 8876955751881493886}
+  - {fileID: 3923293790799187879}
+  - {fileID: -1770093805052333945}
+  - {fileID: 8088564819861251677}
+  EditorEvents:
+  - {fileID: -5436109389955808392}
+  - {fileID: 8885897779503384648}
+  - {fileID: 741998149685732618}
+  - {fileID: 8043953211036087819}
+  - {fileID: 4929467871285832569}
+  - {fileID: -1790170362635813229}
+  - {fileID: 5642550068618898984}
+  - {fileID: -8278097782256860585}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 8876955751881493886}
+  StringsBanks:
+  - {fileID: -1933421176836164638}
+  cacheTime: 638786332689982927
+  cacheVersion: 131623
+--- !u!114 &741998149685732618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/musicingame
+  m_EditorClassIdentifier: 
+  Path: event:/Music/musicingame
+  Guid:
+    Data1: -2003796106
+    Data2: 1222149600
+    Data3: -1929570136
+    Data4: 618453377
+  Banks:
+  - {fileID: 3923293790799187879}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8764462548382569067}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 37300
+--- !u!114 &1513084089679591966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXUI/Ui
+  m_EditorClassIdentifier: 
+  Name: Ui
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3923033459
+    data2: 789281651
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Cick
+  - hover
+  - exit
+  Exists: 1
+--- !u!114 &3923293790799187879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638786332689982927
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4929467871285832569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Footsteps
+  Guid:
+    Data1: -1302209520
+    Data2: 1300270039
+    Data3: 774872730
+    Data4: -1201369006
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8750832582631547531}
+  - {fileID: -4858346413149897500}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5642550068618898984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Gritos
+  m_EditorClassIdentifier: 
+  Path: event:/Gritos
+  Guid:
+    Data1: -111538787
+    Data2: 1311108538
+    Data3: -218710866
+    Data4: 1761581357
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 5000
+--- !u!114 &8043953211036087819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/musicpan
+  m_EditorClassIdentifier: 
+  Path: event:/Music/musicpan
+  Guid:
+    Data1: -730312834
+    Data2: 1128738966
+    Data3: -68226165
+    Data4: 1272348922
+  Banks:
+  - {fileID: 3923293790799187879}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 9208247578743109155}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8088564819861251677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/UI.bank
+  Name: UI
+  StudioPath: bank:/UI
+  lastModified: 638786172466073246
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8750832582631547531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,33 +405,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &8827159570409786977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/New Snapshot 2
-  m_EditorClassIdentifier: 
-  Path: snapshot:/New Snapshot 2
-  Guid:
-    Data1: 787218748
-    Data2: 1142580783
-    Data3: -190409568
-    Data4: 1903526315
-  Banks:
-  - {fileID: 8876955751881493886}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &8876955751881493886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,8 +420,59 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638786122890203601
-  FileSizes:
-  - Name: Desktop
-    Value: 1952
+  lastModified: 638786172439560103
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8885897779503384648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/New Snapshot
+  m_EditorClassIdentifier: 
+  Path: snapshot:/New Snapshot
+  Guid:
+    Data1: 1099223262
+    Data2: 1080799988
+    Data3: -684367455
+    Data4: -222869043
+  Banks:
+  - {fileID: 8876955751881493886}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &9208247578743109155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/musicpan/music
+  m_EditorClassIdentifier: 
+  Name: music
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3327542597
+    data2: 739008895
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Main
+  - Game over
   Exists: 1

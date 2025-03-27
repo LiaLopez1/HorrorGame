@@ -9,6 +9,8 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference Footsteps { get; private set; }
 
+    [field: Header("Music")]
+    [field: SerializeField] public EventReference MusicEvent { get; private set; }
 
     public static FMODEvents instance { get; private set; }
 

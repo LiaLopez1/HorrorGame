@@ -2,256 +2,220 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
-public class ControlPersonaje : MonoBehaviour
+public class PruebaControlador : MonoBehaviour
 {
-    public float walkSpeed = 5f;          // Velocidad de caminar
-    public float runSpeed = 7f;           // Velocidad de correr
-    public float crouchSpeed = 1f;        // Velocidad de agacharse
-    public float crouchHeight = 0.2f;     // Altura al agacharse
-    public float mouseSensitivity = 1000f; // Sensibilidad del mouse
-    public Transform cameraTransform;     // Referencia a la cámara
-    public float raycastDistance = 5f;    // Distancia del raycast
+    public float walkSpeed = 10f;
+    public float runSpeed = 20f;
+    public float crouchHeight = 0.2f;
+    public float mouseSensitivity = 600f;
+    public Transform cameraTransform;
+    public float raycastDistance = 5f;  // Distancia del raycast
 
-    private float originalHeight;         // Altura original del personaje
-    private Rigidbody rb;                 // Componente Rigidbody
-    private CapsuleCollider capsuleCollider; // Componente Collider
-    private float rotationX = 0f;         // Rotación en el eje X (para la cámara)
+    private float originalHeight;
+    private Rigidbody rb;
+    private CapsuleCollider capsuleCollider;
+    private float rotationX = 0f;
 
     // Variables para agacharse de forma suave
-    private Vector3 escalaNormal;         // Escala normal del personaje
-    private Vector3 escalaAgachado;       // Escala al agacharse
-    public float tiempoAgachado = 0.1f;   // Tiempo de transición al agacharse
-    private bool agachado = false;        // Estado de agachado
+    private Vector3 escalaNormal;
+    private Vector3 escalaAgachado;
+    public float tiempoAgachado = 0.1f;
+    private bool agachado = false;
 
-    // Referencias para el audio de FMOD
+    // Variables para FMOD
     private FMODEvents fmodEvents;
     private AudioManager audioManager;
-    private EventInstance footstepsInstance; // Instancia del evento de pasos
-    private float walkCrouchRunValue = 0f;  // Valor del parámetro WalkCrouchRun (0 = caminar, 1 = agacharse, 2 = correr)
-
-    private PARAMETER_ID floorParamID;     // ID del parámetro "floor"
-    private int floorValue;                // Valor numérico del parámetro "floor" según el material debajo del jugador
-    private RaycastHit rh;                 // Raycast hit para obtener información del objeto impactado
-    private float distance = 1f;           // Distancia para el raycast (ajustada a 1f para mejor detección)
-    private LayerMask lm;                  // LayerMask para los objetos sobre los que se puede hacer raycast
+    private EventInstance footstepsInstance;
+    private float walkCrouchRunValue = 0f; // 0 = walk, 1 = crouch, 2 = run
+    private PARAMETER_ID floorParamID;
+    private int floorValue = 0; // Valor del material (0 = tile, 1 = blood, 3 = glass)
+    private LayerMask floorLayerMask;
 
     void Start()
     {
-        // Inicialización de componentes
         rb = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        fmodEvents = FMODEvents.instance; // Accede al FMODEvents
-        audioManager = AudioManager.instance; // Accede al AudioManager
+        Cursor.lockState = CursorLockMode.Locked;
+        originalHeight = transform.localScale.y;
 
-        // Inicialización de la rotación de la cámara
         rotationX = 0f;
         cameraTransform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
 
-        // Guardar la altura original del personaje
-        originalHeight = transform.localScale.y;
-
-        // Configurar escalas para agacharse
         escalaNormal = transform.localScale;
         escalaAgachado = new Vector3(transform.localScale.x, crouchHeight, transform.localScale.z);
 
-        // Obtener el parámetro "floor" desde FMOD
+        // Inicialización de FMOD
+        fmodEvents = FMODEvents.instance;
+        audioManager = AudioManager.instance;
+
+        // Configurar el parámetro de floor en FMOD
         EventDescription eventDesc = RuntimeManager.GetEventDescription(fmodEvents.Footsteps);
         PARAMETER_DESCRIPTION paramDesc;
         eventDesc.getParameterDescriptionByName("floor", out paramDesc);
         floorParamID = paramDesc.id;
 
-        lm = LayerMask.GetMask("Floor"); // Ahora la layer es "Floor" para filtrar superficies del suelo
+        floorLayerMask = LayerMask.GetMask("Floor");
     }
 
     void Update()
     {
-        // Movimiento del personaje
+        // Movimiento
         Move();
 
-        // Rotación de la cámara y el personaje
+        // Rotación de la cámara y el jugador
         Look();
 
         // Agacharse
         Crouch();
 
-        // Aplicar gravedad adicional para evitar flotar
         rb.AddForce(Vector3.down * 10f, ForceMode.Acceleration);
 
-        // Modificar el parámetro WalkCrouchRun basado en las teclas presionadas
-        HandleWalkCrouchRun();
+        // Raycast para detectar el material debajo
+        Raycast();
 
-        // Si el personaje está en movimiento, reproducir el sonido de los pasos
-        if (rb.velocity.magnitude > 0.1f) // Si hay movimiento
+        // Manejo de sonidos de pasos
+        HandleFootsteps();
+    }
+
+    void HandleFootsteps()
+    {
+        // Actualizar parámetros de FMOD según el movimiento
+        UpdateFMODParameters();
+
+        // Controlar reproducción de sonido de pasos
+        if (rb.velocity.magnitude > 0.1f && IsGrounded())
         {
-            if (!footstepsInstance.isValid()) // Si no se está reproduciendo el sonido, iniciar el evento
+            if (!footstepsInstance.isValid())
             {
                 PlayFootsteps();
             }
         }
-        else // Si no hay movimiento
+        else
         {
-            if (footstepsInstance.isValid()) // Si se está reproduciendo el sonido, detenerlo
+            if (footstepsInstance.isValid())
             {
                 StopFootsteps();
             }
         }
     }
 
-    void HandleWalkCrouchRun()
+    void UpdateFMODParameters()
     {
-        // Cambiar el parámetro según la acción del jugador
-        if (Input.GetKey(KeyCode.C)) // Si el jugador está agachado
+        // Determinar el estado de movimiento (walk/crouch/run)
+        if (agachado)
         {
-            walkCrouchRunValue = 1f; // Agacharse
+            walkCrouchRunValue = 1f; // Crouch
         }
-        else if (Input.GetKey(KeyCode.LeftShift)) // Si el jugador está corriendo
+        else if (Input.GetKey(KeyCode.LeftShift))
         {
-            walkCrouchRunValue = 2f; // Correr
+            walkCrouchRunValue = 2f; // Run
         }
-        else // Si el jugador está caminando
+        else
         {
-            walkCrouchRunValue = 0f; // Caminar
+            walkCrouchRunValue = 0f; // Walk
         }
 
-        // Asegurarse de que la instancia del evento está activa
-        if (footstepsInstance.isValid()) // Si la instancia del evento es válida
+        // Aplicar parámetros a FMOD
+        if (footstepsInstance.isValid())
         {
-            // Actualizamos el parámetro WalkCrouchRun en FMOD
             footstepsInstance.setParameterByName("WalkCrouchRun", walkCrouchRunValue);
-            Debug.Log("Updated WalkCrouchRun parameter: " + walkCrouchRunValue); // Verificar en consola
-        }
-
-        // Cambiar el parámetro "floor" según la superficie detectada
-        MaterialCheck();
-        if (footstepsInstance.isValid()) // Si la instancia del evento es válida
-        {
-            footstepsInstance.setParameterByID(floorParamID, floorValue, false);
-            Debug.Log("Updated floor parameter: " + floorValue); // Verificar en consola
-        }
-    }
-
-    void OnCollisionStay(Collision collision)
-    {
-        // Verificamos si estamos en contacto con una superficie de la Layer "Floor"
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
-        {
-            switch (collision.gameObject.tag)
-            {
-                case "Tile":
-                    floorValue = 0; // Asignar valor 0 para Tile
-                    break;
-                case "Blood":
-                    floorValue = 1; // Asignar valor 1 para WaterTile
-                    break;
-                case "Glass":
-                    floorValue = 3; // Asignar valor 3 para CristalTile
-                    break;
-                default:
-                    floorValue = 0; // Por defecto a Tile (valor 0)
-                    break;
-            }
-
-            // Asegurarse de que la instancia del evento está activa
-            if (footstepsInstance.isValid())
-            {
-                // Actualizamos el parámetro "floor" en FMOD
-                footstepsInstance.setParameterByID(floorParamID, floorValue, false);
-                Debug.Log("Updated floor parameter: " + floorValue); // Verificar en consola
-            }
-        }
-    }
-
-    void MaterialCheck()
-    {
-        // Realizar un raycast desde el centro de la cápsula (ligeramente más abajo)
-        Vector3 rayStartPosition = transform.position + Vector3.down * (capsuleCollider.height / 2); // Desde la base de la cápsula
-
-        // Visualizamos el raycast en la escena (rojo para que sea fácil de ver)
-        Debug.DrawRay(rayStartPosition, Vector3.down * distance, Color.red);
-
-        if (Physics.Raycast(rayStartPosition, Vector3.down, out rh, distance, lm))
-        {
-            // Verifica los tags para asignar el valor correspondiente al parámetro "floor"
-            switch (rh.collider.tag)
-            {
-                case "Tile":
-                    floorValue = 0; // Asignar valor 0 para Tile
-                    break;
-                case "Blood":
-                    floorValue = 1; // Asignar valor 1 para WaterTile
-                    break;
-                case "Glass":
-                    floorValue = 3; // Asignar valor 3 para CristalTile
-                    break;
-                default:
-                    floorValue = 0; // Por defecto a Tile (valor 0)
-                    break;
-            }
+            footstepsInstance.setParameterByID(floorParamID, floorValue);
         }
     }
 
     void PlayFootsteps()
     {
-        // Crea la instancia del evento Footsteps
         footstepsInstance = audioManager.CreateEventInstance(fmodEvents.Footsteps);
-        RuntimeManager.AttachInstanceToGameObject(footstepsInstance, transform, GetComponent<Rigidbody>());
-
-        // Inicia el evento
+        RuntimeManager.AttachInstanceToGameObject(footstepsInstance, transform, rb);
         footstepsInstance.start();
     }
 
     void StopFootsteps()
     {
-        // Detiene el evento de los pasos
         footstepsInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        footstepsInstance.release(); // Libera la instancia del evento
+        footstepsInstance.release();
     }
 
     void Move()
     {
-        // Obtener la entrada del teclado
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        // Calcular la dirección del movimiento
         Vector3 moveDirection = transform.right * moveHorizontal + transform.forward * moveVertical;
 
-        // Determinar la velocidad (caminar o correr)
-        float speed = walkSpeed; // Predeterminado es caminar
-
-        if (Input.GetKey(KeyCode.LeftShift)) // Si el jugador está corriendo
-        {
-            speed = runSpeed; // Aumenta la velocidad si está corriendo
-        }
-        else if (Input.GetKey(KeyCode.C)) // Si el jugador está agachado
-        {
-            speed = crouchSpeed; // Reducimos la velocidad al agacharse
-        }
-
-        // Aplicar la velocidad al Rigidbody
+        float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
         Vector3 velocity = moveDirection * speed;
-        velocity.y = rb.velocity.y; // Mantener la velocidad en el eje Y (gravedad)
+        velocity.y = rb.velocity.y;
         rb.velocity = velocity;
     }
 
     void Look()
     {
-        // Obtener la entrada del mouse
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        // Rotar el personaje en el eje Y
-        transform.Rotate(Vector3.up * mouseX);
+            transform.Rotate(Vector3.up * mouseX);
 
-        // Rotar la cámara en el eje X (arriba y abajo)
-        rotationX -= mouseY;
-        rotationX = Mathf.Clamp(rotationX, -80f, 80f); // Limitar la rotación
-        cameraTransform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+            rotationX -= mouseY;
+            rotationX = Mathf.Clamp(rotationX, -80f, 80f);
+            cameraTransform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+        }
+    }
+
+    bool IsGrounded()
+    {
+        float distanceToGround = capsuleCollider.bounds.extents.y;
+        return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
+    }
+
+    void Raycast()
+    {
+        // Raycast para detectar objetos al frente
+        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, raycastDistance))
+        {
+            Debug.DrawRay(cameraTransform.position, cameraTransform.forward * raycastDistance, Color.red);
+
+            if (hit.collider != null)
+            {
+                //Debug.Log("Apuntando a: " + hit.collider.gameObject.name);
+            }
+        }
+
+        // Raycast para detectar el material debajo (para FMOD)
+        RaycastHit surfaceHit;
+        Vector3 rayStartPosition = transform.position + Vector3.down * (capsuleCollider.height / 2);
+
+        if (Physics.Raycast(rayStartPosition, Vector3.down, out surfaceHit, 1f, floorLayerMask))
+        {
+            switch (surfaceHit.collider.tag)
+            {
+                case "Tile":
+                    floorValue = 0;
+                    Debug.Log("Está sobre un Tile");
+                    break;
+                case "Blood":
+                    floorValue = 1;
+                    Debug.Log("Está sobre agua (Blood)");
+                    break;
+                case "Glass":
+                    floorValue = 3;
+                    Debug.Log("Está sobre vidrio (Glass)");
+                    break;
+                default:
+                    floorValue = 0;
+                    Debug.Log("Está sobre una superficie desconocida");
+                    break;
+            }
+        }
     }
 
     void Crouch()
     {
-        // Verificar si se presiona la tecla para agacharse
         if (Input.GetKey(KeyCode.C))
         {
             agachado = true;
@@ -261,21 +225,16 @@ public class ControlPersonaje : MonoBehaviour
             agachado = false;
         }
 
-        // Interpolación suave para agacharse
         transform.localScale = Vector3.Lerp(transform.localScale, agachado ? escalaAgachado : escalaNormal, Time.deltaTime / tiempoAgachado);
     }
 
-    void Raycast()
+    void OnDestroy()
     {
-        // Crear un rayo desde la cámara
-        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
-        RaycastHit hit;
-
-        // Lanzar el rayo y verificar si golpea algo
-        if (Physics.Raycast(ray, out hit, raycastDistance))
+        // Limpieza de FMOD al destruir el objeto
+        if (footstepsInstance.isValid())
         {
-            // Dibujar el rayo en la escena para visualización
-            Debug.DrawRay(cameraTransform.position, cameraTransform.forward * raycastDistance, Color.red);
+            footstepsInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            footstepsInstance.release();
         }
     }
 }
