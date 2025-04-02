@@ -19,7 +19,7 @@
 			<value>3</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>Cick</value>
+			<value>click</value>
 			<value>hover</value>
 			<value>exit</value>
 		</property>
