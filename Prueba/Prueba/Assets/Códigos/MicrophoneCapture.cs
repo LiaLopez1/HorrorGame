@@ -23,7 +23,6 @@ public class MicrophoneCapture : MonoBehaviour
 
     private FMOD.System fmodSystem;
     private Sound sound;
-
     private CREATESOUNDEXINFO exinfo;
     private bool isInitialized = false;
     private float currentSmoothedValue = 0f;
