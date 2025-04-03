@@ -8,19 +8,21 @@ public class Cambioescena : MonoBehaviour
     public bool Pasaresc;
     public int indiceesc;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Pasaresc)
         {
             Cambiaresc(indiceesc);
         }
+    }
+
+    public void SalirDelJuego()
+    {
+        #if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false; // Solo en el Editor
+        #else
+                Application.Quit(); // En la versión compilada (Windows, Android, etc.)
+        #endif
     }
 
     public void Cambiaresc(int indice)
