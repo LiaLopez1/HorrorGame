@@ -3,114 +3,144 @@ using UnityEngine;
 public class MonsterMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float normalSpeed = 3f;
+    [SerializeField] private float chaseSpeed = 7f;
+    [SerializeField] private float acceleration = 0.5f;
     [SerializeField] private float rotationSpeed = 250f;
-    //[SerializeField] private float avoidanceAngle = 45f;
-    //[SerializeField] private float groundMargin = 2f;
-    [SerializeField] private Transform player; // Referencia al jugador
-    [SerializeField] private float detectionRadius = 10f; // Radio de detecci?n
-    [SerializeField] private float followSpeed = 5f; // Velocidad al seguir al jugador
-    [SerializeField] private float deathRadius = 2f; // Radio de muerte (m?s peque?o)
+    [SerializeField] private float deathRadius = 2f;
+
+    [Header("Detection Settings")]
+    [SerializeField] private float normalDetectionRadius = 10f;
+    [SerializeField] private float boostedDetectionRadius = 20f;
+    [SerializeField] private float noiseThreshold = -30f;
+    [SerializeField] private float searchDuration = 10f;
+
+    [Header("References")]
+    [SerializeField] private Transform player;
 
     private Rigidbody rb;
-    private bool isFollowing = false;
     private Vector3 currentDirection;
-    private float changeDirectionTime = 2f; // Tiempo en el que cambia la direcci?n
+    private float changeDirectionTime = 2f;
     private float timer;
+    private float currentSpeed;
+    private float noiseDetectionTimer = 0f;
+    private bool isNoiseAlertActive = false;
 
     void Start()
     {
-        // Configuraci?n del Rigidbody
         rb = GetComponent<Rigidbody>();
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody>();
-            rb.useGravity = false;  // Desactivamos la gravedad
-            rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY; // Fijamos la posici?n y rotaci?n en Y
+            rb.useGravity = false;
+            // Bloquea TODOS los movimientos y rotaciones no deseados
+            rb.constraints = RigidbodyConstraints.FreezePositionY |
+                            RigidbodyConstraints.FreezeRotationX |
+                            RigidbodyConstraints.FreezeRotationZ |
+                            RigidbodyConstraints.FreezeRotationY;
         }
 
-        // Inicializar la direcci?n aleatoria
+        currentSpeed = normalSpeed;
         SetRandomDirection();
     }
 
     void Update()
     {
-        // Verificar si el jugador est? dentro del rango de detecci?n
-        if (Vector3.Distance(transform.position, player.position) <= detectionRadius)
-        {
-            // Comienza a seguir al jugador
-            isFollowing = true;
-        }
-        else
-        {
-            // Deja de seguir al jugador y comienza el movimiento aleatorio
-            isFollowing = false;
-        }
+        HandleNoiseDetection();
+        bool shouldFollow = ShouldFollowPlayer();
 
-        if (isFollowing)
+        if (shouldFollow)
         {
             FollowPlayer();
         }
         else
         {
-            // Comportamiento por defecto (movimiento aleatorio)
             RandomMovement();
         }
 
-        // Verificar si el jugador est? dentro del rango de muerte
         if (Vector3.Distance(transform.position, player.position) <= deathRadius)
         {
-            // Al llegar al rango de muerte, mostrar el mensaje de depuraci?n
-            Debug.Log("?Est?s muerto!");
-            // Aqu? puedes agregar m?s acciones, como finalizar el juego, etc.
+            Debug.Log("¡Estás muerto!");
         }
+    }
+
+    void HandleNoiseDetection()
+    {
+        if (MicrophoneCapture.currentDB >= noiseThreshold && !isNoiseAlertActive)
+        {
+            isNoiseAlertActive = true;
+            noiseDetectionTimer = 0f;
+        }
+
+        if (isNoiseAlertActive)
+        {
+            noiseDetectionTimer += Time.deltaTime;
+            if (noiseDetectionTimer >= searchDuration)
+            {
+                isNoiseAlertActive = false;
+            }
+        }
+    }
+
+    bool ShouldFollowPlayer()
+    {
+        float currentRadius = isNoiseAlertActive ? boostedDetectionRadius : normalDetectionRadius;
+        return Vector3.Distance(transform.position, player.position) <= currentRadius;
     }
 
     void FollowPlayer()
     {
-        // Calcular la direcci?n hacia el jugador (en el plano horizontal)
         Vector3 direction = (player.position - transform.position).normalized;
-        direction.y = 0; // Asegurarse de que la direcci?n solo afecta al plano horizontal (x, z)
+        direction.y = 0;
 
-        // Mover al monstruo hacia el jugador sin afectar la altura (eje Y)
-        Vector3 newPosition = transform.position + direction * followSpeed * Time.deltaTime;
-        newPosition.y = transform.position.y; // Mantener la misma altura
+        currentSpeed = Mathf.Lerp(currentSpeed, chaseSpeed, acceleration * Time.deltaTime);
+        Vector3 newPosition = transform.position + direction * currentSpeed * Time.deltaTime;
 
-        // Actualizar la posici?n del monstruo
+        // Fuerza posición Y = 0 (evita elevación)
+        newPosition.y = 0;
         rb.position = newPosition;
 
-        // Rotaci?n suave para alinear el monstruo con la nueva direcci?n
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     void RandomMovement()
     {
-        // Control del temporizador para cambiar la direcci?n aleatoria
         timer += Time.deltaTime;
         if (timer > changeDirectionTime)
         {
             SetRandomDirection();
-            timer = 0f; // Resetear el temporizador
+            timer = 0f;
         }
 
-        // Mover al monstruo en la direcci?n actual
-        rb.velocity = currentDirection * moveSpeed;
+        currentSpeed = Mathf.Lerp(currentSpeed, normalSpeed, acceleration * Time.deltaTime);
 
-        // Rotaci?n suave para alinear el monstruo con la nueva direcci?n
+        // Fuerza movimiento en plano XZ (Y=0)
+        Vector3 movement = currentDirection * currentSpeed * Time.deltaTime;
+        movement.y = 0;
+        rb.MovePosition(transform.position + movement);
+
         Quaternion targetRotation = Quaternion.LookRotation(currentDirection);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     void SetRandomDirection()
     {
-        // Generar una nueva direcci?n aleatoria en el plano horizontal
-        currentDirection = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
+        currentDirection = new Vector3(
+            Random.Range(-1f, 1f),
+            0,
+            Random.Range(-1f, 1f)
+        ).normalized;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // Al colisionar con un objeto, cambiar la direcci?n aleatoria
+        // Fuerza posición Y=0 tras colisión
+        Vector3 fixedPosition = transform.position;
+        fixedPosition.y = 0;
+        transform.position = fixedPosition;
+
+        // Rebote aleatorio
         SetRandomDirection();
     }
 
@@ -118,11 +148,11 @@ public class MonsterMovement : MonoBehaviour
     {
         if (!Application.isPlaying) return;
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRadius); // Muestra el radio de detecci?n
+        float currentRadius = isNoiseAlertActive ? boostedDetectionRadius : normalDetectionRadius;
+        Gizmos.color = isNoiseAlertActive ? Color.red : Color.green;
+        Gizmos.DrawWireSphere(transform.position, currentRadius);
 
-        // Mostrar el rango de muerte
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, deathRadius); // Muestra el radio de muerte
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, deathRadius);
     }
 }
