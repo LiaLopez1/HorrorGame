@@ -5,7 +5,7 @@ public class MonsterRandomSounds : MonoBehaviour
 {
     [Header("FMOD Events")]
     [SerializeField] private EventReference screamEvent; // Evento de gritos
-    [SerializeField] private EventReference growlEvent;  // Evento de gruñidos
+    [SerializeField] private EventReference growlEvent;  // Evento de gruï¿½idos
 
     [Header("Timing Settings")]
     [SerializeField][Range(60, 120)] private float minDelay = 60f; // 2 minutos
@@ -19,12 +19,13 @@ public class MonsterRandomSounds : MonoBehaviour
 
     void Start()
     {
+        
         nextSoundTime = Random.Range(minDelay, maxDelay);
     }
 
     void Update()
     {
-        // Reproducción automática cada 2-4 minutos
+        // Reproducciï¿½n automï¿½tica cada 2-4 minutos
         timer += Time.deltaTime;
         if (timer >= nextSoundTime)
         {
@@ -32,7 +33,7 @@ public class MonsterRandomSounds : MonoBehaviour
             ResetTimer();
         }
 
-        // Reproducción manual con la tecla G (para pruebas)
+        // Reproducciï¿½n manual con la tecla G (para pruebas)
         if (Input.GetKeyDown(testKey))
         {
             Debug.Log("Reproduciendo sonido manualmente...");
@@ -42,7 +43,7 @@ public class MonsterRandomSounds : MonoBehaviour
 
     void PlayRandomSound()
     {
-        // Elige aleatoriamente entre gritar o gruñir (50% de probabilidad)
+        // Elige aleatoriamente entre gritar o gruï¿½ir (50% de probabilidad)
         bool shouldScream = Random.Range(0, 2) == 0;
         EventReference selectedEvent = shouldScream ? screamEvent : growlEvent;
 
@@ -51,13 +52,13 @@ public class MonsterRandomSounds : MonoBehaviour
         soundInstance.start();
         soundInstance.release();
 
-        Debug.Log(shouldScream ? "¡Grito emitido!" : "¡Gruñido emitido!");
+        Debug.Log(shouldScream ? "ï¿½Grito emitido!" : "ï¿½Gruï¿½ido emitido!");
     }
 
     void ResetTimer()
     {
         timer = 0f;
         nextSoundTime = Random.Range(minDelay, maxDelay);
-        Debug.Log($"Próximo sonido automático en {nextSoundTime} segundos");
+        Debug.Log($"Prï¿½ximo sonido automï¿½tico en {nextSoundTime} segundos");
     }
 }

@@ -1,4 +1,6 @@
 using UnityEngine;
+using FMOD.Studio;
+using FMODUnity; 
 
 public class MonsterMovement : MonoBehaviour
 {
@@ -60,7 +62,7 @@ public class MonsterMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, player.position) <= deathRadius)
         {
-            Debug.Log("¡Estás muerto!");
+            Debug.Log("ï¿½Estï¿½s muerto!");
         }
     }
 
@@ -96,7 +98,7 @@ public class MonsterMovement : MonoBehaviour
         currentSpeed = Mathf.Lerp(currentSpeed, chaseSpeed, acceleration * Time.deltaTime);
         Vector3 newPosition = transform.position + direction * currentSpeed * Time.deltaTime;
 
-        // Fuerza posición Y = 0 (evita elevación)
+        // Fuerza posiciï¿½n Y = 0 (evita elevaciï¿½n)
         newPosition.y = 0;
         rb.position = newPosition;
 
@@ -135,7 +137,7 @@ public class MonsterMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // Fuerza posición Y=0 tras colisión
+        // Fuerza posiciï¿½n Y=0 tras colisiï¿½n
         Vector3 fixedPosition = transform.position;
         fixedPosition.y = 0;
         transform.position = fixedPosition;

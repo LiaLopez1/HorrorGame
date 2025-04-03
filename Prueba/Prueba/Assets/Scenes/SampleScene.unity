@@ -3919,8 +3919,8 @@ MonoBehaviour:
   chaseSpeed: 10
   acceleration: 1
   rotationSpeed: 120
-  deathRadius: 2
-  normalDetectionRadius: 10
+  deathRadius: 5
+  normalDetectionRadius: 15
   boostedDetectionRadius: 30
   noiseThreshold: -40
   searchDuration: 10
@@ -12565,13 +12565,13 @@ MonoBehaviour:
       Data3: 774872730
       Data4: -1201369006
     Path: event:/SFX/Player/Footsteps
-  <MusicEvent>k__BackingField:
+  <Music>k__BackingField:
     Guid:
-      Data1: -2003796106
-      Data2: 1222149600
-      Data3: -1929570136
-      Data4: 618453377
-    Path: event:/Music/musicingame
+      Data1: 219765724
+      Data2: 1236020133
+      Data3: -747854938
+      Data4: -1343608634
+    Path: event:/Music/Music
 --- !u!1 &260564115
 GameObject:
   m_ObjectHideFlags: 0
@@ -76083,7 +76083,7 @@ Transform:
   m_GameObject: {fileID: 1582060860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.53, y: 1.4827, z: 6.34}
+  m_LocalPosition: {x: -2.53, y: 1.4827, z: -1.1}
   m_LocalScale: {x: 1, y: 1.501178, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76154,9 +76154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSourceTransform: {fileID: 1582060864}
-  _enemyTag: Enemigo
-  _mediumDistance: 12
-  _dangerDistance: 6
+  stateParameter: opciones
+  audioSourceTransform: {fileID: 0}
+  enemyTag: Enemigo
+  mediumDistance: 10
+  dangerDistance: 2
 --- !u!114 &1582060868
 MonoBehaviour:
   m_ObjectHideFlags: 0

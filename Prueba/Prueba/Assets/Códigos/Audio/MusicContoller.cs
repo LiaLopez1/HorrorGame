@@ -6,66 +6,79 @@ public class MusicController : MonoBehaviour
 {
     [Header("Configuración")]
     [SerializeField] private Transform _audioSourceTransform; // Referencia 3D (jugador/cámara)
-    [SerializeField] private string _enemyTag = "Enemigo";
-    [SerializeField] private float _mediumDistance = 5f; // Estado 1
-    [SerializeField] private float _dangerDistance = 3f; // Estado 2
+    [SerializeField] private string stateParameter = "opciones"; // Parámetro labeled
 
-    private EventInstance _musicInstance;
-    private int _currentState = 0;
+    [Header("Distancias")]
+    [SerializeField] private Transform audioSourceTransform;
+    [SerializeField] private string enemyTag = "Enemigo";
+    [SerializeField] private float mediumDistance = 10f;
+    [SerializeField] private float dangerDistance = 2f;
+
+    private EventInstance musicInstance;
+    private int currentState = 0;
 
     void Start()
     {
-        // Usa AudioManager para crear la instancia del evento de música
-        _musicInstance = AudioManager.instance.CreateEventInstance(FMODEvents.instance.MusicEvent); // Necesitarás agregar "MusicEvent" en FMODEvents
+        musicInstance = RuntimeManager.CreateInstance("event:/Music/Music");
         Update3DAttributes();
-        _musicInstance.start();
+        SetMusicState(1); // Estado inicial (menú)
+         musicInstance.start();
     }
 
     void Update()
     {
-        float distance = GetDistanceToClosestEnemy();
-        int newState = CalculateState(distance);
-        
-        if (newState != _currentState)
+        if (currentState == 1) // Solo actualiza distancia si está en música de juego
         {
-            _currentState = newState;
-            _musicInstance.setParameterByName("musicgame", _currentState);
+            float distance = GetDistanceToClosestEnemy();
+            int newSubState = CalculateSubState(distance);
+            musicInstance.setParameterByName("distancia", newSubState); // Parámetro de distancia
         }
+    }
 
-        Update3DAttributes(); // Actualiza posición 3D (opcional: puedes hacerlo en intervalos)
+    public void SetMusicState(int newState)
+    {
+        currentState = Mathf.Clamp(newState, 0, 2);
+        musicInstance.setParameterByName(stateParameter, currentState);
+
+        // Valores posibles del parámetro labeled:
+        // 0 = Menú
+        // 1 = Main (juego)
+        // 2 = Game Over
+    }
+
+    private int CalculateSubState(float distance)
+    {
+        if (distance <= dangerDistance) return 2;
+        if (distance <= mediumDistance) return 1;
+        return 0;
     }
 
     private float GetDistanceToClosestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(_enemyTag);
-        float closestDistance = Mathf.Infinity;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        if (enemies.Length == 0) return Mathf.Infinity;
 
+        float closestDistance = Mathf.Infinity;
         foreach (GameObject enemy in enemies)
         {
             float distance = Vector3.Distance(_audioSourceTransform.position, enemy.transform.position);
-            if (distance < closestDistance) closestDistance = distance;
+            closestDistance = Mathf.Min(distance, closestDistance);
         }
         return closestDistance;
-    }
-
-    private int CalculateState(float distance)
-    {
-        if (distance <= _dangerDistance) return 2;
-        if (distance <= _mediumDistance) return 1;
-        return 0;
     }
 
     private void Update3DAttributes()
     {
         if (_audioSourceTransform != null)
         {
-            _musicInstance.set3DAttributes(RuntimeUtils.To3DAttributes(_audioSourceTransform));
+            musicInstance.set3DAttributes(RuntimeUtils.To3DAttributes(_audioSourceTransform));
         }
     }
 
     void OnDestroy()
     {
-        _musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        _musicInstance.release();
+        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicInstance.release();
     }
 }
+

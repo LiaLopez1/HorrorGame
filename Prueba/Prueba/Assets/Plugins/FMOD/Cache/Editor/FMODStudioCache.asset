@@ -1,29 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8764462548382569067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/musicingame/Musicgame
-  m_EditorClassIdentifier: 
-  Name: Musicgame
-  StudioPath: 
-  Min: 0
-  Max: 4
-  Default: 0
-  ID:
-    data1: 1025976950
-    data2: 249948330
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-8278097782256860585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,6 +28,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8192657218452828711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/distancia
+  m_EditorClassIdentifier: 
+  Name: distancia
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3342478558
+    data2: 1529890628
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-5436109389955808392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +107,60 @@ MonoBehaviour:
   - Wood
   - CristalTile
   Exists: 1
+--- !u!114 &-3084046710393107530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/opciones
+  m_EditorClassIdentifier: 
+  Name: opciones
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 4235306556
+    data2: 470218246
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Menu
+  - Game
+  - GameOver
+  Exists: 1
+--- !u!114 &-3052243495202783368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GritoMuert
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GritoMuert
+  Guid:
+    Data1: 402099692
+    Data2: 1092523003
+    Data3: 478382741
+    Data4: -1933676945
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
 --- !u!114 &-1933421176836164638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,10 +176,10 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638786172439580305
+  lastModified: 638792695502746099
   FileSizes:
   - Name: 
-    Value: 1480
+    Value: 1560
   Exists: 1
 --- !u!114 &-1790170362635813229
 MonoBehaviour:
@@ -169,7 +223,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638786281733736545
+  lastModified: 638792695503589956
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -193,47 +247,19 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -5436109389955808392}
   - {fileID: 8885897779503384648}
-  - {fileID: 741998149685732618}
-  - {fileID: 8043953211036087819}
   - {fileID: 4929467871285832569}
   - {fileID: -1790170362635813229}
   - {fileID: 5642550068618898984}
   - {fileID: -8278097782256860585}
+  - {fileID: 6708084214338960799}
+  - {fileID: -3052243495202783368}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 638786332689982927
+  cacheTime: 638792695503589956
   cacheVersion: 131623
---- !u!114 &741998149685732618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/musicingame
-  m_EditorClassIdentifier: 
-  Path: event:/Music/musicingame
-  Guid:
-    Data1: -2003796106
-    Data2: 1222149600
-    Data3: -1929570136
-    Data4: 618453377
-  Banks:
-  - {fileID: 3923293790799187879}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -8764462548382569067}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 37300
 --- !u!114 &1513084089679591966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +283,7 @@ MonoBehaviour:
   Type: 2
   IsGlobal: 0
   Labels:
-  - Cick
+  - click
   - hover
   - exit
   Exists: 1
@@ -276,7 +302,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638786332689982927
+  lastModified: 638792645587650202
   FileSizes: []
   Exists: 1
 --- !u!114 &4929467871285832569
@@ -335,7 +361,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 100
   Length: 5000
---- !u!114 &8043953211036087819
+--- !u!114 &6708084214338960799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,21 +371,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/musicpan
+  m_Name: event:/Music/Music
   m_EditorClassIdentifier: 
-  Path: event:/Music/musicpan
+  Path: event:/Music/Music
   Guid:
-    Data1: -730312834
-    Data2: 1128738966
-    Data3: -68226165
-    Data4: 1272348922
+    Data1: 219765724
+    Data2: 1236020133
+    Data3: -747854938
+    Data4: -1343608634
   Banks:
   - {fileID: 3923293790799187879}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 9208247578743109155}
+  - {fileID: -8192657218452828711}
+  - {fileID: -3084046710393107530}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -378,7 +405,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638786172466073246
+  lastModified: 638792625036233577
   FileSizes: []
   Exists: 1
 --- !u!114 &8750832582631547531
@@ -420,7 +447,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638786172439560103
+  lastModified: 638792695502700905
   FileSizes: []
   Exists: 1
 --- !u!114 &8885897779503384648
@@ -450,29 +477,3 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &9208247578743109155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/musicpan/music
-  m_EditorClassIdentifier: 
-  Name: music
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3327542597
-    data2: 739008895
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Main
-  - Game over
-  Exists: 1

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{3c7581bc-f89c-4135-b524-39ba2c355fb0}">
 		<property name="name">
-			<value>Parameter 1</value>
+			<value>opciones</value>
 		</property>
 		<relationship name="folder">
 			<destination>{7cc592cc-440e-46f7-8f2a-a07f70bec115}</destination>
@@ -16,11 +16,12 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>3</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>Menu</value>
 			<value>Game</value>
+			<value>GameOver</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
