@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{17f78dec-93fb-411e-958a-831c6f6ebe8c}">
 		<property name="name">
-			<value>GritoMuert</value>
+			<value>GritoMuerte</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{367a5206-2f5a-4eda-a174-f7392003e158}" />
 	<object class="GroupTrack" id="{20cd6115-6ef6-4064-aaf0-2a07f56f7779}">
 		<relationship name="modules">
-			<destination>{6175c01d-0b84-46ca-926a-3cfb7f44600b}</destination>
+			<destination>{63a9cb4e-145a-4cd6-af16-980de2ee65d0}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{a7971b69-187a-466d-ae0e-f778de8c70f2}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{9a784789-c272-47c6-adb4-178ad957937a}">
 		<relationship name="modules">
-			<destination>{6175c01d-0b84-46ca-926a-3cfb7f44600b}</destination>
+			<destination>{63a9cb4e-145a-4cd6-af16-980de2ee65d0}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{8ee782fd-a6b7-4fab-a33c-b398eaf73e14}">
@@ -88,12 +88,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e36f8a6b-5067-48e0-bef4-199e11206ef4}" />
-	<object class="SingleSound" id="{6175c01d-0b84-46ca-926a-3cfb7f44600b}">
+	<object class="SingleSound" id="{63a9cb4e-145a-4cd6-af16-980de2ee65d0}">
 		<property name="length">
-			<value>3.5</value>
+			<value>2.5</value>
 		</property>
 		<property name="timelockedOffset">
-			<value>24</value>
+			<value>24.484999999999999</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{6025bf9f-43c1-48f0-afa1-fae265aef374}</destination>

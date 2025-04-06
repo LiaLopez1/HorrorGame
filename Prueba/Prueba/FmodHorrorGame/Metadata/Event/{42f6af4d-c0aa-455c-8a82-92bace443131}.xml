@@ -5,7 +5,7 @@
 			<value>agua pasillos</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{fdd369d4-653f-40e4-87e8-bbba7be8b60c}</destination>
@@ -30,6 +30,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{14fa13f0-be2d-445d-831a-ab7e9ce8b274}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{f4edcb72-77e0-4e49-a00d-6101b10a8195}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{e1cb00d6-b072-470e-8aa4-89066728c56b}">
@@ -131,6 +134,7 @@
 		<relationship name="effects">
 			<destination>{d26af15f-6b38-455c-90ae-a1bae51104a6}</destination>
 			<destination>{548fb86a-11d5-444c-b4ba-f64391ff290c}</destination>
+			<destination>{cad0a80c-8cd0-44dd-bbd2-c56a1710707f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a63e68e7-6fe9-452c-a66a-8d32af5d8cf6}" />
@@ -187,13 +191,16 @@
 	<object class="MixerBusPanner" id="{7400f844-ffc2-4c2a-94d4-4348adf9f0be}" />
 	<object class="SFXReverbEffect" id="{d26af15f-6b38-455c-90ae-a1bae51104a6}">
 		<property name="decayTime">
-			<value>1600</value>
+			<value>6500</value>
 		</property>
 		<property name="earlyDelay">
 			<value>23.5</value>
 		</property>
 		<property name="lateDelay">
 			<value>17</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>48.5</value>
 		</property>
 		<property name="density">
 			<value>65</value>
@@ -209,6 +216,7 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{548fb86a-11d5-444c-b4ba-f64391ff290c}" />
+	<object class="SpatialiserEffect" id="{cad0a80c-8cd0-44dd-bbd2-c56a1710707f}" />
 	<object class="FloatPluginParameter" id="{4716e7f5-078f-4350-acb5-d9035b57dd9c}">
 		<property name="name">
 			<value>GlobalGain</value>
@@ -346,7 +354,7 @@
 			<value>RumbleCoupl</value>
 		</property>
 		<property name="value">
-			<value>7</value>
+			<value>45.5</value>
 		</property>
 		<property name="curve">
 			<value>{(0.000000,0.000000)(1.000000,100.000000)}</value>
@@ -368,7 +376,7 @@
 			<value>ShowerColor</value>
 		</property>
 		<property name="value">
-			<value>595</value>
+			<value>1000</value>
 		</property>
 		<property name="curve">
 			<value>{(1.666667,300.000000)(2.000000,400.000000)(3.000000,750.000000)(4.000000,1250.000000)(4.333333,1500.000000)}</value>

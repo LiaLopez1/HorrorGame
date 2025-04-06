@@ -17,8 +17,19 @@ public class MonsterMovement : MonoBehaviour
     [SerializeField] private float noiseThreshold = -30f;
     [SerializeField] private float searchDuration = 10f;
 
+
     [Header("References")]
     [SerializeField] private Transform player;
+
+    [HideInInspector] public bool playerInExtendedArea = false;
+    [HideInInspector] public bool playerInNormalArea = false;
+
+    [Header("Game State")]
+    public bool isPlayerDead = false;
+
+    [Header("FMOD Events")]
+    [SerializeField] private EventReference deathScreamEvent;
+
 
     private Rigidbody rb;
     private Vector3 currentDirection;
@@ -27,6 +38,9 @@ public class MonsterMovement : MonoBehaviour
     private float currentSpeed;
     private float noiseDetectionTimer = 0f;
     private bool isNoiseAlertActive = false;
+    private MusicController musicController;
+
+
 
     void Start()
     {
@@ -44,6 +58,7 @@ public class MonsterMovement : MonoBehaviour
 
         currentSpeed = normalSpeed;
         SetRandomDirection();
+        musicController = FindObjectOfType<MusicController>();
     }
 
     void Update()
@@ -54,16 +69,41 @@ public class MonsterMovement : MonoBehaviour
         if (shouldFollow)
         {
             FollowPlayer();
+
+            if (isNoiseAlertActive)
+            {
+                playerInExtendedArea = true;
+                playerInNormalArea = false;
+            }
+            else
+            {
+                playerInExtendedArea = false;
+                playerInNormalArea = true;
+            }
         }
         else
         {
             RandomMovement();
+            playerInExtendedArea = false;
+            playerInNormalArea = false;
         }
 
-        if (Vector3.Distance(transform.position, player.position) <= deathRadius)
+        if (!isPlayerDead && Vector3.Distance(transform.position, player.position) <= deathRadius)
         {
-            Debug.Log("�Est�s muerto!");
+            isPlayerDead = true;
+
+            // Reproduce el grito de muerte con FMOD
+            RuntimeManager.PlayOneShot(deathScreamEvent, player.position);
+
+            DeathHandler deathHandler = FindObjectOfType<DeathHandler>();
+            if (deathHandler != null)
+            {
+                deathHandler.TriggerDeath(player.position);
+            }
+
+            Debug.Log("¡Estás muerto!");
         }
+
     }
 
     void HandleNoiseDetection()

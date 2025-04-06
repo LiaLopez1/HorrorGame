@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine;
+using FMODUnity;
 
 public class Linterna : MonoBehaviour
 {
 
     public Light LuzLinterna;
+    [Header("FMOD")]
+    [SerializeField] private EventReference toggleSound;
 
-   
+
     void Start()
     {
         
@@ -21,10 +25,12 @@ public class Linterna : MonoBehaviour
             if (LuzLinterna.enabled == true)
             {
                 LuzLinterna.enabled = false;
+                RuntimeManager.PlayOneShot(toggleSound, transform.position);
             }
             else if (LuzLinterna.enabled == false)
             {
                 LuzLinterna.enabled = true;
+                RuntimeManager.PlayOneShot(toggleSound, transform.position);
             }
         }
     }

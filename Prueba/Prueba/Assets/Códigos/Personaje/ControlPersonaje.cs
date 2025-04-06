@@ -19,6 +19,9 @@ public class PruebaControlador : MonoBehaviour
     [SerializeField] private float bloodDBBoost = 4f;
     [SerializeField] private float glassDBBoost = 5f;
 
+    [Header("UI")]
+    [SerializeField] private GameObject deathCanvas;
+
     [Header("Crouch Settings")]
     public float tiempoAgachado = 0.1f;
 
@@ -31,6 +34,7 @@ public class PruebaControlador : MonoBehaviour
     private bool agachado = false;
     private int currentFloorValue = 0;
     private LayerMask floorLayerMask; // Para el raycast de superficies
+    private MonsterMovement monster;
 
     // FMOD
     private FMODEvents fmodEvents;
@@ -56,11 +60,24 @@ public class PruebaControlador : MonoBehaviour
 
         // Capa para el raycast de superficies
         floorLayerMask = LayerMask.GetMask("Floor");
+
+        monster = FindObjectOfType<MonsterMovement>();
+
     }
 
 
     void Update()
     {
+        if (monster != null && monster.isPlayerDead)
+        {
+            // Mostrar el canvas de muerte y no permitir movimiento
+            if (deathCanvas != null && !deathCanvas.activeSelf)
+            {
+                deathCanvas.SetActive(true);
+            }
+            return;
+        }
+
         Move();
         Look();
         Crouch();
@@ -117,7 +134,7 @@ public class PruebaControlador : MonoBehaviour
 
             if (hit.collider != null)
             {
-                Debug.Log("Apuntando a: " + hit.collider.gameObject.name);
+                //Debug.Log("Apuntando a: " + hit.collider.gameObject.name);
             }
         }
 

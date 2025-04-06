@@ -52,6 +52,114 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7574777233879304291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/agua pasillos
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/agua pasillos
+  Guid:
+    Data1: 1123462989
+    Data2: 1163706538
+    Data3: -1164803446
+    Data4: 825312462
+  Banks:
+  - {fileID: 904085558940435850}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
+--- !u!114 &-7081164704881334711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/Explosi\xF3n"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/Explosi\xF3n"
+  Guid:
+    Data1: 1638601935
+    Data2: 1168638078
+    Data3: 633292207
+    Data4: 1830129950
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6096
+--- !u!114 &-6637874957836689521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SFX/Gru\xF1idos"
+  m_EditorClassIdentifier: 
+  Path: "event:/SFX/Gru\xF1idos"
+  Guid:
+    Data1: 980794397
+    Data2: 1111892209
+    Data3: -1652722284
+    Data4: -1915263368
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 5000
+--- !u!114 &-6193159039799760727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/zonacamillas
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/zonacamillas
+  Guid:
+    Data1: -984141693
+    Data2: 1319556225
+    Data3: 1863631488
+    Data4: 738313475
+  Banks:
+  - {fileID: 904085558940435850}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8512
 --- !u!114 &-5436109389955808392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +215,33 @@ MonoBehaviour:
   - Wood
   - CristalTile
   Exists: 1
+--- !u!114 &-4318818568777944190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/susuros
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/susuros
+  Guid:
+    Data1: -1465294017
+    Data2: 1097326011
+    Data3: 2012227975
+    Data4: 57055774
+  Banks:
+  - {fileID: 904085558940435850}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2760
 --- !u!114 &-3084046710393107530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,33 +269,6 @@ MonoBehaviour:
   - Game
   - GameOver
   Exists: 1
---- !u!114 &-3052243495202783368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/GritoMuert
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/GritoMuert
-  Guid:
-    Data1: 402099692
-    Data2: 1092523003
-    Data3: 478382741
-    Data4: -1933676945
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3500
 --- !u!114 &-1933421176836164638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,38 +284,11 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638792695502746099
+  lastModified: 638795032475521722
   FileSizes:
   - Name: 
-    Value: 1560
+    Value: 1830
   Exists: 1
---- !u!114 &-1790170362635813229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Gru\xF1idos"
-  m_EditorClassIdentifier: 
-  Path: "event:/Gru\xF1idos"
-  Guid:
-    Data1: 980794397
-    Data2: 1111892209
-    Data3: -1652722284
-    Data4: -1915263368
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 100
-  Length: 5000
 --- !u!114 &-1770093805052333945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +304,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638792695503589956
+  lastModified: 638795032477022801
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -244,22 +325,100 @@ MonoBehaviour:
   - {fileID: 3923293790799187879}
   - {fileID: -1770093805052333945}
   - {fileID: 8088564819861251677}
+  - {fileID: 904085558940435850}
   EditorEvents:
   - {fileID: -5436109389955808392}
   - {fileID: 8885897779503384648}
   - {fileID: 4929467871285832569}
-  - {fileID: -1790170362635813229}
-  - {fileID: 5642550068618898984}
   - {fileID: -8278097782256860585}
   - {fileID: 6708084214338960799}
-  - {fileID: -3052243495202783368}
+  - {fileID: -6637874957836689521}
+  - {fileID: 627399549230561756}
+  - {fileID: 6316694450697172424}
+  - {fileID: -7081164704881334711}
+  - {fileID: -4318818568777944190}
+  - {fileID: -7574777233879304291}
+  - {fileID: -6193159039799760727}
+  - {fileID: 1511663206446921096}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 638792695503589956
+  cacheTime: 638795032477022801
   cacheVersion: 131623
+--- !u!114 &627399549230561756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GritoMuerte
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GritoMuerte
+  Guid:
+    Data1: 402099692
+    Data2: 1092523003
+    Data3: 478382741
+    Data4: -1933676945
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &904085558940435850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638795017862522001
+  FileSizes: []
+  Exists: 1
+--- !u!114 &1511663206446921096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AbrirPuerta
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AbrirPuerta
+  Guid:
+    Data1: 1499970229
+    Data2: 1241202534
+    Data3: -1967282297
+    Data4: 445869390
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3550
 --- !u!114 &1513084089679591966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +461,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638792645587650202
+  lastModified: 638795017852750785
   FileSizes: []
   Exists: 1
 --- !u!114 &4929467871285832569
@@ -334,7 +493,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5642550068618898984
+--- !u!114 &6316694450697172424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,23 +503,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Gritos
+  m_Name: event:/SFX/Linterna
   m_EditorClassIdentifier: 
-  Path: event:/Gritos
+  Path: event:/SFX/Linterna
   Guid:
-    Data1: -111538787
-    Data2: 1311108538
-    Data3: -218710866
-    Data4: 1761581357
+    Data1: 1815852618
+    Data2: 1224191069
+    Data3: -389946970
+    Data4: 368923522
   Banks:
   - {fileID: -1770093805052333945}
-  IsStream: 1
-  Is3D: 1
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 100
-  Length: 5000
+  MaxDistance: 20
+  Length: 750
 --- !u!114 &6708084214338960799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +564,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638792625036233577
+  lastModified: 638794944340924935
   FileSizes: []
   Exists: 1
 --- !u!114 &8750832582631547531
@@ -447,7 +606,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638792695502700905
+  lastModified: 638795032475506730
   FileSizes: []
   Exists: 1
 --- !u!114 &8885897779503384648

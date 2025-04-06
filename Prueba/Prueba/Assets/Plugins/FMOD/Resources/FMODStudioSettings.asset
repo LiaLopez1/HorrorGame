@@ -202,8 +202,12 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Plugins:
-      Value: []
-      HasValue: 0
+      Value:
+      - audiogaming_audiomotors
+      - audiogaming_audiorain
+      - audiogaming_audioweather
+      - audiogaming_audiowind
+      HasValue: 1
     StaticPlugins:
       Value: []
       HasValue: 0
@@ -624,6 +628,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Ambience
   - Music
   - SFX
   - UI
@@ -696,8 +701,8 @@ MonoBehaviour:
       Value: 
       HasValue: 0
     SpeakerMode:
-      Value: 0
-      HasValue: 0
+      Value: 3
+      HasValue: 1
     VirtualChannelCount:
       Value: 0
       HasValue: 0
@@ -711,7 +716,11 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Plugins:
-      Value: []
+      Value:
+      - audiogaming_audiomotors
+      - audiogaming_audiorain
+      - audiogaming_audioweather
+      - audiogaming_audiowind
       HasValue: 1
     StaticPlugins:
       Value: []

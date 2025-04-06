@@ -3886,20 +3886,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d4fdd7d5e590848802822724095f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamEvent:
-    Guid:
-      Data1: -111538787
-      Data2: 1311108538
-      Data3: -218710866
-      Data4: 1761581357
-    Path: event:/Gritos
-  growlEvent:
+  randomSoundEvent:
     Guid:
       Data1: 980794397
       Data2: 1111892209
       Data3: -1652722284
       Data4: -1915263368
-    Path: "event:/Gru\xF1idos"
+    Path: "event:/SFX/Gru\xF1idos"
   minDelay: 60
   maxDelay: 120
   testKey: 103
@@ -3919,12 +3912,22 @@ MonoBehaviour:
   chaseSpeed: 10
   acceleration: 1
   rotationSpeed: 120
-  deathRadius: 5
+  deathRadius: 2
   normalDetectionRadius: 15
   boostedDetectionRadius: 30
   noiseThreshold: -40
   searchDuration: 10
   player: {fileID: 1582060864}
+  playerInExtendedArea: 0
+  playerInNormalArea: 0
+  isPlayerDead: 0
+  deathScreamEvent:
+    Guid:
+      Data1: 402099692
+      Data2: 1092523003
+      Data3: 478382741
+      Data4: -1933676945
+    Path: event:/SFX/GritoMuerte
 --- !u!65 &82377079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5892,6 +5895,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116851547}
   m_Mesh: {fileID: 4300000, guid: ca4ab8c150aaba443a8b59259dc91b7e, type: 3}
+--- !u!1 &117174545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 117174546}
+  - component: {fileID: 117174548}
+  - component: {fileID: 117174547}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &117174546
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117174545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 366800740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &117174547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117174545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.06716613, b: 0.0047169924, a: 0.6745098}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &117174548
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117174545}
+  m_CullTransparentMesh: 1
 --- !u!1 &117408398
 GameObject:
   m_ObjectHideFlags: 0
@@ -17384,6 +17462,121 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365133737}
   m_Mesh: {fileID: 4300000, guid: ec89eaad22bce364eabcdae8f401ca41, type: 3}
+--- !u!1 &366800736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 366800740}
+  - component: {fileID: 366800739}
+  - component: {fileID: 366800738}
+  - component: {fileID: 366800737}
+  - component: {fileID: 366800741}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &366800737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366800736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &366800738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366800736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &366800739
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366800736}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &366800740
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366800736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 117174546}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!225 &366800741
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366800736}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &368701860
 GameObject:
   m_ObjectHideFlags: 0
@@ -20653,6 +20846,16 @@ MonoBehaviour:
   noiseThreshold: -30
   searchDuration: 10
   player: {fileID: 1582060864}
+  playerInExtendedArea: 0
+  playerInNormalArea: 0
+  isPlayerDead: 0
+  deathScreamEvent:
+    Guid:
+      Data1: 402099692
+      Data2: 1092523003
+      Data3: 478382741
+      Data4: -1933676945
+    Path: event:/SFX/GritoMuerte
 --- !u!65 &441549349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20686,20 +20889,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d4fdd7d5e590848802822724095f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamEvent:
-    Guid:
-      Data1: -111538787
-      Data2: 1311108538
-      Data3: -218710866
-      Data4: 1761581357
-    Path: event:/Gritos
-  growlEvent:
+  randomSoundEvent:
     Guid:
       Data1: 980794397
       Data2: 1111892209
       Data3: -1652722284
       Data4: -1915263368
-    Path: "event:/Gru\xF1idos"
+    Path: "event:/SFX/Gru\xF1idos"
   minDelay: 60
   maxDelay: 120
   testKey: 103
@@ -31946,6 +32142,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3f2a518c478b27448a25ae158b440f0f, type: 3}
   m_PrefabInstance: {fileID: 661081506}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &661159994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661159996}
+  - component: {fileID: 661159995}
+  m_Layer: 0
+  m_Name: Ambiente
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &661159995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661159994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1979071552b40489dfdf9629918031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambientSounds:
+  - Guid:
+      Data1: 1123462989
+      Data2: 1163706538
+      Data3: -1164803446
+      Data4: 825312462
+    Path: event:/Ambience/agua pasillos
+  - Guid:
+      Data1: -1465294017
+      Data2: 1097326011
+      Data3: 2012227975
+      Data4: 57055774
+    Path: event:/Ambience/susuros
+  - Guid:
+      Data1: -984141693
+      Data2: 1319556225
+      Data3: 1863631488
+      Data4: 738313475
+    Path: event:/Ambience/zonacamillas
+  minDelay: 120
+  maxDelay: 180
+  minRadius: 10
+  maxRadius: 30
+  playerTransform: {fileID: 1582060864}
+--- !u!4 &661159996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661159994}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.291396, y: 1.9478084, z: 34.90275}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664268203
 GameObject:
   m_ObjectHideFlags: 0
@@ -43999,6 +44263,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LuzLinterna: {fileID: 908098617}
+  toggleSound:
+    Guid:
+      Data1: 1815852618
+      Data2: 1224191069
+      Data3: -389946970
+      Data4: 368923522
+    Path: event:/SFX/Linterna
 --- !u!1001 &910835976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56995,6 +57266,61 @@ Transform:
   - {fileID: 1405227913}
   m_Father: {fileID: 659209000}
   m_LocalEulerAnglesHint: {x: -3.573, y: 0.377, z: 0.988}
+--- !u!1 &1160814379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160814381}
+  - component: {fileID: 1160814380}
+  m_Layer: 0
+  m_Name: DeathHanlder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1160814380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160814379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197e63feb666b314f835433ced5e5f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redCanvasGroup: {fileID: 366800741}
+  delayBeforeSceneChange: 2
+  gameOverSceneName: Gameover
+  fadeDuration: 1.5
+  deathScreamEvent:
+    Guid:
+      Data1: 402099692
+      Data2: 1092523003
+      Data3: 478382741
+      Data4: -1933676945
+    Path: event:/SFX/GritoMuerte
+--- !u!4 &1160814381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160814379}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 970.4916, y: 543.2508, z: 0.91867745}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169031292
 GameObject:
   m_ObjectHideFlags: 0
@@ -76113,6 +76439,7 @@ MonoBehaviour:
   crouchDBBoost: 0
   bloodDBBoost: 5
   glassDBBoost: 8
+  deathCanvas: {fileID: 366800736}
   tiempoAgachado: 0.1
 --- !u!54 &1582060866
 Rigidbody:
@@ -76155,10 +76482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSourceTransform: {fileID: 1582060864}
   stateParameter: opciones
-  audioSourceTransform: {fileID: 0}
-  enemyTag: Enemigo
-  mediumDistance: 10
-  dangerDistance: 2
 --- !u!114 &1582060868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102020,3 +102343,6 @@ SceneRoots:
   - {fileID: 82377076}
   - {fileID: 441549351}
   - {fileID: 194270939}
+  - {fileID: 366800740}
+  - {fileID: 1160814381}
+  - {fileID: 661159996}
