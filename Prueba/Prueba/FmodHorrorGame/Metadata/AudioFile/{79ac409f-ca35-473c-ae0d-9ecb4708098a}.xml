@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{82f33280-ee24-4e47-b9a4-809263eb39d5}">
+	<object class="AudioFile" id="{79ac409f-ca35-473c-ae0d-9ecb4708098a}">
 		<property name="assetPath">
-			<value>SFX/Player/Footsteps/TileWat3.mp3</value>
+			<value>SFX/Player/Footsteps/TileBlood2.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
