@@ -2,19 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Cambioescena : MonoBehaviour
 {
-    public bool Pasaresc;
-    public int indiceesc;
+    public GameObject loadingScreen;
+    public GameObject buttons;
+    public Slider slider;
 
-    void Update()
-    {
-        if (Pasaresc)
-        {
-            Cambiaresc(indiceesc);
-        }
-    }
 
     public void SalirDelJuego()
     {
@@ -25,8 +20,20 @@ public class Cambioescena : MonoBehaviour
         #endif
     }
 
-    public void Cambiaresc(int indice)
-    {
-        SceneManager.LoadScene(indice);
+    public void LoadLevel (int sceneIndex){
+        StartCoroutine(LoadAsynchronously(sceneIndex));
+    }
+
+    IEnumerator LoadAsynchronously (int sceneIndex){
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        
+        buttons.SetActive(false);
+        loadingScreen.SetActive(true);
+
+        while(!operation.isDone){
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            slider.value = progress;
+            yield return null;
+        }
     }
 }

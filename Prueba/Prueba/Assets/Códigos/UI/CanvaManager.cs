@@ -3,6 +3,7 @@ using UnityEngine;
 public class CanvasManager : MonoBehaviour
 {
     public GameObject canvasSecundario; // Asigna el CanvasSecundario en el Inspector
+    
 
     // Método para activar el CanvasSecundario
     public void MostrarCanvasSecundario()
