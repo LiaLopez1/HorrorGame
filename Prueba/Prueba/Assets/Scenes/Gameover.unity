@@ -278,11 +278,11 @@ MonoBehaviour:
     Path: event:/ui/SFXUI
   <musicui>k__BackingField:
     Guid:
-      Data1: -730312834
-      Data2: 1128738966
-      Data3: -68226165
-      Data4: 1272348922
-    Path: event:/Music/musicpan
+      Data1: 219765724
+      Data2: 1236020133
+      Data3: -747854938
+      Data4: -1343608634
+    Path: event:/Music/Music
 --- !u!1 &594758808
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1119925059}
         m_TargetAssemblyTypeName: Cambioescena, Assembly-CSharp
-        m_MethodName: Cambiaresc
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -668,8 +668,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1267f3129f4a584aa2742182d3d4b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pasaresc: 0
-  indiceesc: 0
+  loadingScreen: {fileID: 0}
+  buttons: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!1 &1177506956
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbaf3321256e7824d8d72a28eb86615b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paramusic: Game over
+  paramusic: GameOver
 --- !u!114 &1375470843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,7 +876,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1119925059}
         m_TargetAssemblyTypeName: Cambioescena, Assembly-CSharp
-        m_MethodName: Cambiaresc
+        m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
