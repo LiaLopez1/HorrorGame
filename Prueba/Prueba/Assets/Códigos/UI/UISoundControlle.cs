@@ -71,7 +71,7 @@ public class UISoundController : MonoBehaviour
     {
         _uiSoundInstance.setParameterByNameWithLabel("Ui", action);
         _uiSoundInstance.start();
-        Debug.Log($"Sonido reproducido: {action}"); // Para debug
+        //Debug.Log($"Sonido reproducido: {action}"); // Para debug
     }
 
     void OnDestroy()
