@@ -49,17 +49,23 @@ public class MonsterMovement : MonoBehaviour
         {
             rb = gameObject.AddComponent<Rigidbody>();
             rb.useGravity = false;
-            // Bloquea TODOS los movimientos y rotaciones no deseados
             rb.constraints = RigidbodyConstraints.FreezePositionY |
                             RigidbodyConstraints.FreezeRotationX |
                             RigidbodyConstraints.FreezeRotationZ |
                             RigidbodyConstraints.FreezeRotationY;
         }
 
+        // FORZAR ESTADO INICIAL (radio pequeño)
+        isNoiseAlertActive = false;
+        noiseDetectionTimer = searchDuration; // Timer completo = desactivado
+        playerInExtendedArea = false; // Resetear área extendida
+        playerInNormalArea = false;   // Resetear área normal
+
         currentSpeed = normalSpeed;
         SetRandomDirection();
         musicController = FindObjectOfType<MusicController>();
     }
+
 
     void Update()
     {
@@ -126,7 +132,15 @@ public class MonsterMovement : MonoBehaviour
 
     bool ShouldFollowPlayer()
     {
-        float currentRadius = isNoiseAlertActive ? boostedDetectionRadius : normalDetectionRadius;
+        // SIEMPRE usar radio normal al inicio (ignorar isNoiseAlertActive hasta que haya ruido real)
+        float currentRadius = normalDetectionRadius;
+
+        // Solo usar radio extendido si isNoiseAlertActive ES VERDADERO Y hay ruido actual
+        if (isNoiseAlertActive && MicrophoneCapture.currentDB >= noiseThreshold)
+        {
+            currentRadius = boostedDetectionRadius;
+        }
+
         return Vector3.Distance(transform.position, player.position) <= currentRadius;
     }
 

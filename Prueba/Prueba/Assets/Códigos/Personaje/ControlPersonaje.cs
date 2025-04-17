@@ -185,7 +185,18 @@ public class PruebaControlador : MonoBehaviour
 
     void UpdateFMODParameters()
     {
-        float walkCrouchRunValue = agachado ? 1f : Input.GetKey(KeyCode.LeftShift) ? 2f : 0f;
+        // Lógica simplificada para caminar(0), agacharse(1) o correr(2)
+        float walkCrouchRunValue = 0f; // Por defecto caminando
+
+        if (Input.GetKey(KeyCode.C)) // Prioridad al agacharse si ambas teclas están presionadas
+        {
+            walkCrouchRunValue = 1f; // Agachado
+        }
+        else if (Input.GetKey(KeyCode.LeftShift))
+        {
+            walkCrouchRunValue = 2f; // Corriendo
+        }
+
         footstepsInstance.setParameterByName("WalkCrouchRun", walkCrouchRunValue);
         footstepsInstance.setParameterByID(floorParamID, currentFloorValue);
     }
@@ -213,6 +224,24 @@ public class PruebaControlador : MonoBehaviour
         float distanceToGround = capsuleCollider.bounds.extents.y;
         return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
     }
+
+    /*void OnDrawGizmos()
+    {
+        // Color del gizmo (verde si está en suelo, rojo si no)
+        bool isGrounded = IsGrounded();
+        Gizmos.color = isGrounded ? Color.green : Color.red;
+
+        // Calcula la posición de origen del raycast (igual que en el código)
+        float currentHeight = agachado ? crouchHeight : capsuleCollider.height;
+        Vector3 rayStartPosition = transform.position + Vector3.down * (currentHeight / 2);
+
+        // Dibuja el rayo hacia abajo
+        float rayDistance = agachado ? 1.5f : 1f;
+        Gizmos.DrawRay(rayStartPosition, Vector3.down * rayDistance);
+
+        // Opcional: Dibuja una esfera pequeña en el origen del rayo
+        Gizmos.DrawSphere(rayStartPosition, 0.05f);
+    }*/
 
     void OnDestroy()
     {

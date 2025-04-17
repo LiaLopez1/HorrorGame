@@ -95,15 +95,32 @@ public class MicrophoneCapture : MonoBehaviour
 
     void UpdateUI(float currentDB)
     {
-        float normalizedValue = Mathf.InverseLerp(minDB, maxDB, currentDB);
+        // Parámetros de entrada (dB FS)
+        float minDB_FS = -80f;   // Valor mínimo que da tu micrófono (silencio)
+        float maxDB_FS = -15f;   // Valor máximo que da tu micrófono (grito)
+
+        // Parámetros de salida (dB SPL)
+        float minDB_SPL = 25f;   // 25 dB SPL = silencio para tu juego
+        float maxDB_SPL = 90f;   // 90 dB SPL = máximo para tu juego
+
+        // 1. Conversión directa a dB SPL (mapeo lineal)
+        float dbSPL = Mathf.Lerp(
+            minDB_SPL,
+            maxDB_SPL,
+            Mathf.InverseLerp(minDB_FS, maxDB_FS, currentDB)
+        );
+
+        // 2. Suavizado para el slider (opcional)
+        float normalizedValue = Mathf.InverseLerp(minDB_FS, maxDB_FS, currentDB);
         currentSmoothedValue = Mathf.Lerp(
             currentSmoothedValue,
             normalizedValue,
             Time.deltaTime * smoothingSpeed
         );
 
+        // 3. Actualizar la UI
         if (volumeSlider != null) volumeSlider.value = currentSmoothedValue;
-        if (dbText != null) dbText.text = $"{currentDB:F1} dB";
+        if (dbText != null) dbText.text = $"{dbSPL:F1} dB";
     }
 
     void OnDestroy()

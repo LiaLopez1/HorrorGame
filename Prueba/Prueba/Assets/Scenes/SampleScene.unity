@@ -1888,8 +1888,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
-      value: Glass
+      value: Blood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2344,6 +2348,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_Name
       value: sangre (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
@@ -2917,9 +2925,9 @@ GameObject:
   - component: {fileID: 63914893}
   - component: {fileID: 63914892}
   - component: {fileID: 63914891}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (18)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3895,7 +3903,7 @@ MonoBehaviour:
     Path: "event:/SFX/Gru\xF1idos"
   minDelay: 60
   maxDelay: 120
-  testKey: 103
+  testKey: 256
 --- !u!114 &82377078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3916,7 +3924,7 @@ MonoBehaviour:
   normalDetectionRadius: 15
   boostedDetectionRadius: 30
   noiseThreshold: -40
-  searchDuration: 10
+  searchDuration: 5
   player: {fileID: 1582060864}
   playerInExtendedArea: 0
   playerInNormalArea: 0
@@ -4309,7 +4317,7 @@ GameObject:
   - component: {fileID: 87126277}
   - component: {fileID: 87126276}
   - component: {fileID: 87126275}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (1)
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -5115,7 +5123,7 @@ GameObject:
   - component: {fileID: 104040760}
   - component: {fileID: 104040759}
   - component: {fileID: 104040758}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5434,6 +5442,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_Name
       value: sangre (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
@@ -6356,6 +6368,10 @@ PrefabInstance:
       value: sangre (12)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
       value: Blood
       objectReference: {fileID: 0}
@@ -7044,7 +7060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &142108964
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8013,6 +8029,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162391097}
   m_Mesh: {fileID: 4300000, guid: c286eada1dc92de45b05d137b88dba31, type: 3}
+--- !u!1 &162395283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 162395284}
+  - component: {fileID: 162395286}
+  - component: {fileID: 162395285}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &162395284
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162395283}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.13022724, y: 0.13022724, z: 0.13022724}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331954161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &162395285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162395283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.44705883}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0d8bd74779018e44ea563da05e7dbb11, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &162395286
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162395283}
+  m_CullTransparentMesh: 1
 --- !u!1 &166157857
 GameObject:
   m_ObjectHideFlags: 0
@@ -8430,7 +8521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 172022460}
   - component: {fileID: 172022462}
-  - component: {fileID: 172022461}
+  - component: {fileID: 172022463}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -8447,7 +8538,7 @@ RectTransform:
   m_GameObject: {fileID: 172022459}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.38, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 249713408}
@@ -8457,7 +8548,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &172022461
+--- !u!222 &172022462
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172022459}
+  m_CullTransparentMesh: 1
+--- !u!114 &172022463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8466,7 +8565,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 172022459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -8477,24 +8576,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &172022462
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172022459}
-  m_CullTransparentMesh: 1
+  m_Texture: {fileID: 2800000, guid: ad979206543e91a4db79643483b6cd47, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &173550303
 GameObject:
   m_ObjectHideFlags: 0
@@ -8507,7 +8595,7 @@ GameObject:
   - component: {fileID: 173550307}
   - component: {fileID: 173550306}
   - component: {fileID: 173550305}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -10878,6 +10966,10 @@ PrefabInstance:
       value: sangre (16)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
       value: Blood
       objectReference: {fileID: 0}
@@ -11727,7 +11819,7 @@ RectTransform:
   m_GameObject: {fileID: 249713407}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5127, y: 1.5127, z: 1.5127}
+  m_LocalScale: {x: 0.95061827, y: 0.95061827, z: 0.95061827}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 172022460}
@@ -11737,7 +11829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -539, y: -108}
+  m_AnchoredPosition: {x: -348, y: -1}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &249713409
@@ -13152,7 +13244,7 @@ GameObject:
   - component: {fileID: 267089703}
   - component: {fileID: 267089702}
   - component: {fileID: 267089701}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14138,7 +14230,7 @@ GameObject:
   - component: {fileID: 288568295}
   - component: {fileID: 288568294}
   - component: {fileID: 288568293}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14349,6 +14441,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &295208364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 295208365}
+  - component: {fileID: 295208367}
+  - component: {fileID: 295208366}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &295208365
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295208364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8.168709, y: 4.774016, z: 0.41062787}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331954161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &295208366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295208364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.54509807}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 60b7b88aa611a974f868cb85529a6898, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &295208367
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295208364}
+  m_CullTransparentMesh: 1
 --- !u!1001 &296666243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15444,6 +15611,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_Name
       value: sangre (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
@@ -16794,9 +16965,9 @@ GameObject:
   - component: {fileID: 355195194}
   - component: {fileID: 355195193}
   - component: {fileID: 355195192}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (21)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19165,7 +19336,7 @@ GameObject:
   - component: {fileID: 403829928}
   - component: {fileID: 403829927}
   - component: {fileID: 403829926}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20979,7 +21150,7 @@ MonoBehaviour:
   normalDetectionRadius: 10
   boostedDetectionRadius: 20
   noiseThreshold: -30
-  searchDuration: 10
+  searchDuration: 5
   player: {fileID: 1582060864}
   playerInExtendedArea: 0
   playerInNormalArea: 0
@@ -23075,9 +23246,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 482693205}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25970,7 +26141,7 @@ GameObject:
   - component: {fileID: 544091972}
   - component: {fileID: 544091971}
   - component: {fileID: 544091970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26272,9 +26443,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 552287179}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (2)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26982,9 +27153,9 @@ GameObject:
   - component: {fileID: 559050167}
   - component: {fileID: 559050166}
   - component: {fileID: 559050165}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (23)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27510,7 +27681,7 @@ GameObject:
   - component: {fileID: 566082013}
   - component: {fileID: 566082012}
   - component: {fileID: 566082011}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31492,9 +31663,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 641062115}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33683,9 +33854,9 @@ GameObject:
   - component: {fileID: 691798445}
   - component: {fileID: 691798444}
   - component: {fileID: 691798443}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (22)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36809,9 +36980,9 @@ GameObject:
   - component: {fileID: 761442380}
   - component: {fileID: 761442379}
   - component: {fileID: 761442378}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (20)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37670,6 +37841,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_Name
       value: sangre (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
@@ -38707,9 +38882,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804061025}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39027,7 +39202,7 @@ GameObject:
   - component: {fileID: 808063648}
   - component: {fileID: 808063647}
   - component: {fileID: 808063646}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (3)
   m_TagString: Tile
   m_Icon: {fileID: 0}
@@ -39290,9 +39465,9 @@ GameObject:
   - component: {fileID: 813787565}
   - component: {fileID: 813787564}
   - component: {fileID: 813787563}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (13)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40398,9 +40573,9 @@ GameObject:
   - component: {fileID: 832070463}
   - component: {fileID: 832070462}
   - component: {fileID: 832070461}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (12)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40760,7 +40935,7 @@ GameObject:
   - component: {fileID: 839053259}
   - component: {fileID: 839053258}
   - component: {fileID: 839053257}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44386,7 +44561,7 @@ Transform:
   m_GameObject: {fileID: 908098615}
   serializedVersion: 2
   m_LocalRotation: {x: 0.010344922, y: -0.009983092, z: 0.9998967, w: 0.00010328497}
-  m_LocalPosition: {x: 0.75, y: -0.84, z: -0.11}
+  m_LocalPosition: {x: 0.001, y: -0.344, z: 0.486}
   m_LocalScale: {x: 1, y: 0.90504557, z: 0.999958}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44406,7 +44581,7 @@ Light:
   m_Color: {r: 1, g: 0.994742, b: 0.9198113, a: 1}
   m_Intensity: 2.55
   m_Range: 18
-  m_SpotAngle: 45.824715
+  m_SpotAngle: 53.6
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -46499,7 +46674,7 @@ GameObject:
   - component: {fileID: 953852056}
   - component: {fileID: 953852055}
   - component: {fileID: 953852054}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46936,7 +47111,7 @@ GameObject:
   - component: {fileID: 957347395}
   - component: {fileID: 957347394}
   - component: {fileID: 957347393}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (2)
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -50044,7 +50219,7 @@ GameObject:
   - component: {fileID: 1012068936}
   - component: {fileID: 1012068935}
   - component: {fileID: 1012068934}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50335,140 +50510,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0083474815, y: 0.007615526, z: 0.004400125}
   m_Center: {x: -0.00006950438, y: 0.000037722803, z: 0.002207093}
---- !u!1 &1016568354
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1016568355}
-  - component: {fileID: 1016568357}
-  - component: {fileID: 1016568356}
-  m_Layer: 5
-  m_Name: Text (TMP) (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1016568355
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016568354}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1960881007}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.443165, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1016568356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016568354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: dB
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 152.19861, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1016568357
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016568354}
-  m_CullTransparentMesh: 1
 --- !u!1001 &1018615471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54849,9 +54890,9 @@ GameObject:
   - component: {fileID: 1103495830}
   - component: {fileID: 1103495829}
   - component: {fileID: 1103495828}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (27)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55844,7 +55885,7 @@ GameObject:
   - component: {fileID: 1118229401}
   - component: {fileID: 1118229400}
   - component: {fileID: 1118229399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56586,9 +56627,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133757832}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56916,7 +56957,7 @@ GameObject:
   - component: {fileID: 1137987685}
   - component: {fileID: 1137987684}
   - component: {fileID: 1137987683}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58482,9 +58523,9 @@ GameObject:
   - component: {fileID: 1187849376}
   - component: {fileID: 1187849375}
   - component: {fileID: 1187849374}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59147,6 +59188,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_Name
       value: sangre (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
@@ -60118,7 +60163,7 @@ GameObject:
   - component: {fileID: 1215720234}
   - component: {fileID: 1215720233}
   - component: {fileID: 1215720232}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60360,9 +60405,9 @@ GameObject:
   - component: {fileID: 1227601938}
   - component: {fileID: 1227601937}
   - component: {fileID: 1227601936}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (9)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60902,7 +60947,7 @@ GameObject:
   - component: {fileID: 1240635864}
   - component: {fileID: 1240635863}
   - component: {fileID: 1240635862}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61492,6 +61537,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_Name
       value: sangre (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
@@ -62610,6 +62659,10 @@ PrefabInstance:
       value: sangre (13)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
       value: Blood
       objectReference: {fileID: 0}
@@ -63242,6 +63295,10 @@ PrefabInstance:
       value: sangre (9)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
       value: Blood
       objectReference: {fileID: 0}
@@ -63401,7 +63458,7 @@ GameObject:
   - component: {fileID: 1304806764}
   - component: {fileID: 1304806763}
   - component: {fileID: 1304806762}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64886,6 +64943,10 @@ PrefabInstance:
       value: sangre (8)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
       value: Blood
       objectReference: {fileID: 0}
@@ -64976,7 +65037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -65024,6 +65085,9 @@ RectTransform:
   m_Children:
   - {fileID: 249713408}
   - {fileID: 1960881007}
+  - {fileID: 295208365}
+  - {fileID: 1451037590}
+  - {fileID: 162395284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -67246,6 +67310,10 @@ PrefabInstance:
       value: sangre (14)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_TagString
       value: Blood
       objectReference: {fileID: 0}
@@ -67300,7 +67368,7 @@ GameObject:
   - component: {fileID: 1366650917}
   - component: {fileID: 1366650916}
   - component: {fileID: 1366650915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67550,8 +67618,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -69220,7 +69288,7 @@ GameObject:
   - component: {fileID: 1415308130}
   - component: {fileID: 1415308129}
   - component: {fileID: 1415308128}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69898,9 +69966,9 @@ GameObject:
   - component: {fileID: 1429810167}
   - component: {fileID: 1429810166}
   - component: {fileID: 1429810165}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (26)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70874,6 +70942,115 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3, y: 0.58, z: 0.4}
   m_Center: {x: 0, y: 0.27, z: -0.03}
+--- !u!1 &1451037589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451037590}
+  - component: {fileID: 1451037593}
+  - component: {fileID: 1451037592}
+  - component: {fileID: 1451037591}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1451037590
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451037589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7.904586, y: 4.3990564, z: 0.41062787}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331954161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!328 &1451037591
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451037589}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 75b8b5f66f5c03e44b124c856b6653d7, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: ff4e06a9bbb2dc54684cbbf46289bed6, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 1
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 0
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 0
+  m_Looping: 1
+  m_WaitForFirstFrame: 0
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!114 &1451037592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451037589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.23921569, g: 0.23921569, b: 0.23921569, a: 0.08627451}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: ff4e06a9bbb2dc54684cbbf46289bed6, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1451037593
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451037589}
+  m_CullTransparentMesh: 1
 --- !u!1 &1455065456
 GameObject:
   m_ObjectHideFlags: 0
@@ -71712,7 +71889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.4, y: 0}
+  m_AnchoredPosition: {x: 23, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1474489349
@@ -71798,7 +71975,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -112.1087, y: 0, z: 205.00188, w: 0}
+  m_margin: {x: -112.1087, y: 0, z: 96.841156, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -74517,9 +74694,9 @@ GameObject:
   - component: {fileID: 1531919890}
   - component: {fileID: 1531919889}
   - component: {fileID: 1531919888}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (6)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76671,7 +76848,7 @@ GameObject:
   - component: {fileID: 1577272505}
   - component: {fileID: 1577272504}
   - component: {fileID: 1577272503}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77222,9 +77399,9 @@ GameObject:
   - component: {fileID: 1588481461}
   - component: {fileID: 1588481460}
   - component: {fileID: 1588481459}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (15)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80998,9 +81175,9 @@ GameObject:
   - component: {fileID: 1649585581}
   - component: {fileID: 1649585580}
   - component: {fileID: 1649585579}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81240,7 +81417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.7
+      value: -2.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -81248,7 +81425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3
+      value: -7.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -82657,6 +82834,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AGUAsangre (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28ed04decb152284b9585abed7cc44f4, type: 3}
+      propertyPath: m_TagString
+      value: Blood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83316,7 +83501,7 @@ GameObject:
   - component: {fileID: 1695630476}
   - component: {fileID: 1695630475}
   - component: {fileID: 1695630474}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83769,9 +83954,9 @@ GameObject:
   - component: {fileID: 1707389638}
   - component: {fileID: 1707389637}
   - component: {fileID: 1707389636}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (10)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85723,9 +85908,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1741635624}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86623,9 +86808,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1760554268}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86639,7 +86824,7 @@ Transform:
   m_GameObject: {fileID: 1760554267}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.14448571, z: -0, w: 0.9895069}
-  m_LocalPosition: {x: -2.0300007, y: -1.0445061, z: 31.553467}
+  m_LocalPosition: {x: -2.94, y: -1.0445061, z: 28.32}
   m_LocalScale: {x: 0.8674201, y: 0.86742, z: 0.8674201}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -94643,16 +94828,15 @@ RectTransform:
   m_GameObject: {fileID: 1960881006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3179018, y: 1.3179018, z: 1.3179018}
+  m_LocalScale: {x: 0.54116726, y: 0.54116726, z: 0.54116726}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1474489348}
-  - {fileID: 1016568355}
   m_Father: {fileID: 1331954161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -407.9, y: -287.6}
+  m_AnchoredPosition: {x: -219, y: -5.1}
   m_SizeDelta: {x: 228.88628, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1961860915
@@ -96193,7 +96377,7 @@ GameObject:
   - component: {fileID: 1977656042}
   - component: {fileID: 1977656041}
   - component: {fileID: 1977656040}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97255,7 +97439,7 @@ GameObject:
   - component: {fileID: 1993537198}
   - component: {fileID: 1993537197}
   - component: {fileID: 1993537196}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99456,7 +99640,7 @@ GameObject:
   - component: {fileID: 2043837565}
   - component: {fileID: 2043837564}
   - component: {fileID: 2043837563}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Tile
   m_Icon: {fileID: 0}
@@ -99883,9 +100067,9 @@ GameObject:
   - component: {fileID: 2050090790}
   - component: {fileID: 2050090789}
   - component: {fileID: 2050090788}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (25)
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100331,7 +100515,7 @@ GameObject:
   - component: {fileID: 2058419685}
   - component: {fileID: 2058419684}
   - component: {fileID: 2058419683}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102155,7 +102339,7 @@ GameObject:
   - component: {fileID: 2102144928}
   - component: {fileID: 2102144927}
   - component: {fileID: 2102144926}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102674,9 +102858,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2117730796}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VidriosRotos (7)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
