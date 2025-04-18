@@ -3,50 +3,64 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     public enum GameState
     {
         Inicio,
-        LeyoNota1
+        NotaRecepcionLeida,
+        NotaConsultorioLeida
     }
 
+    [Header("Estado Actual")]
     public GameState currentState = GameState.Inicio;
+    public int dialogueSequence = 0;
 
-    public TextMeshProUGUI textoCentro;
-    public TextMeshProUGUI textoMision;
+    [Header("UI")]
+    public TMP_Text missionText;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void ChangeState(GameState newState)
     {
         currentState = newState;
-        Debug.Log("Estado cambiado a: " + newState.ToString());
+        Debug.Log($"Estado cambiado a: {currentState}");
 
-        if (newState == GameState.LeyoNota1)
+        // Opcional: Registrar el cambio sin afectar misiones
+        switch (newState)
         {
-            ActualizarMision("Buscar el consultorio mencionado en la nota.");
+            case GameState.NotaRecepcionLeida:
+                Debug.Log("El jugador leyó la nota de recepción");
+                break;
+
+            case GameState.NotaConsultorioLeida:
+                Debug.Log("El jugador leyó la nota de consultorio");
+                break;
         }
     }
-
-    public void MostrarTexto(string texto)
+    public void AdvanceDialogueSequence()
     {
-        if (textoCentro != null)
-        {
-            textoCentro.text = texto;
-            textoCentro.gameObject.SetActive(true);
-        }
+        dialogueSequence++;
+        Debug.Log("Secuencia de diálogo: " + dialogueSequence);
     }
 
-    public void OcultarTexto()
+    public void UpdateMission(string text)
     {
-        if (textoCentro != null)
+        if (missionText != null)
         {
-            textoCentro.gameObject.SetActive(false);
-        }
-    }
-
-    public void ActualizarMision(string nuevoTexto)
-    {
-        if (textoMision != null)
-        {
-            textoMision.text = "Misión: " + nuevoTexto;
+            missionText.text = text;
+            missionText.gameObject.SetActive(true);
         }
     }
 }

@@ -52,6 +52,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7665684362511092006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/RecogerLlave
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RecogerLlave
+  Guid:
+    Data1: 88055327
+    Data2: 1175158974
+    Data3: 1091128998
+    Data4: 663105472
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &-7574777233879304291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,33 +187,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8512
---- !u!114 &-5741906693209618657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/RecogerLlave
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/RecogerLlave
-  Guid:
-    Data1: 88055327
-    Data2: 1175158974
-    Data3: 1091128998
-    Data4: 663105472
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1000
 --- !u!114 &-5436109389955808392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +269,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2760
+--- !u!114 &-4012664448612546522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CortarCandado
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CortarCandado
+  Guid:
+    Data1: 1247437311
+    Data2: 1199292120
+    Data3: -2087972196
+    Data4: 988933633
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1260
 --- !u!114 &-3084046710393107530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +338,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638804270935971880
+  lastModified: 638804973663618751
   FileSizes:
   - Name: 
     Value: 2022
@@ -331,7 +358,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638804317323991982
+  lastModified: 638804973669733552
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -367,16 +394,16 @@ MonoBehaviour:
   - {fileID: -7574777233879304291}
   - {fileID: -6193159039799760727}
   - {fileID: 1511663206446921096}
-  - {fileID: -5741906693209618657}
-  - {fileID: 813248828691070175}
-  - {fileID: 5569906860081182081}
-  - {fileID: 3065204748607828915}
+  - {fileID: -7665684362511092006}
+  - {fileID: 5421970605070860508}
+  - {fileID: 8368339184369918481}
+  - {fileID: -4012664448612546522}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 638804317323991982
+  cacheTime: 638804973670265107
   cacheVersion: 131623
 --- !u!114 &627399549230561756
 MonoBehaviour:
@@ -405,33 +432,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2100
---- !u!114 &813248828691070175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/RecogerObjeto
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/RecogerObjeto
-  Guid:
-    Data1: -885634911
-    Data2: 1104289790
-    Data3: -227814756
-    Data4: -192828175
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1260
 --- !u!114 &904085558940435850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638804270935921865
+  lastModified: 638804973663543365
   FileSizes: []
   Exists: 1
 --- !u!114 &1511663206446921096
@@ -504,33 +504,6 @@ MonoBehaviour:
   - hover
   - exit
   Exists: 1
---- !u!114 &3065204748607828915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/CortarCandado
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/CortarCandado
-  Guid:
-    Data1: 1247437311
-    Data2: 1199292120
-    Data3: -2087972196
-    Data4: 988933633
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1260
 --- !u!114 &3923293790799187879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,7 +519,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638804270956007932
+  lastModified: 638804973665132466
   FileSizes: []
   Exists: 1
 --- !u!114 &4929467871285832569
@@ -578,7 +551,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5569906860081182081
+--- !u!114 &5421970605070860508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -588,14 +561,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/EmpujarPuerta
+  m_Name: event:/SFX/RecogerObjeto
   m_EditorClassIdentifier: 
-  Path: event:/SFX/EmpujarPuerta
+  Path: event:/SFX/RecogerObjeto
   Guid:
-    Data1: -667580201
-    Data2: 1147198899
-    Data3: 856081851
-    Data4: 13980650
+    Data1: -885634911
+    Data2: 1104289790
+    Data3: -227814756
+    Data4: -192828175
   Banks:
   - {fileID: -1770093805052333945}
   IsStream: 0
@@ -604,7 +577,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6850
+  Length: 1260
 --- !u!114 &6316694450697172424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,9 +649,36 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638804270960314640
+  lastModified: 638804973670265107
   FileSizes: []
   Exists: 1
+--- !u!114 &8368339184369918481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/EmpujarPuerta
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/EmpujarPuerta
+  Guid:
+    Data1: -667580201
+    Data2: 1147198899
+    Data3: 856081851
+    Data4: 13980650
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6850
 --- !u!114 &8750832582631547531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +718,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638804270935961882
+  lastModified: 638804973663598622
   FileSizes: []
   Exists: 1
 --- !u!114 &8885897779503384648
