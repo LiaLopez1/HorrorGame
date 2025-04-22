@@ -36,6 +36,8 @@ public class PruebaControlador : MonoBehaviour
     private LayerMask floorLayerMask; // Para el raycast de superficies
     private MonsterMovement monster;
 
+    private OutlineController currentOutline;
+
     // FMOD
     private FMODEvents fmodEvents;
     private EventInstance footstepsInstance;
@@ -130,15 +132,39 @@ public class PruebaControlador : MonoBehaviour
         if (Physics.Raycast(ray, out hit, raycastDistance))
         {
             Debug.DrawRay(cameraTransform.position, cameraTransform.forward * raycastDistance, Color.red);
-            // Aquí puedes añadir lógica para interactuar con objetos
 
-            if (hit.collider != null)
+            // Intentamos obtener el OutlineController del objeto que estamos mirando
+            OutlineController outline = hit.collider.GetComponentInParent<OutlineController>();
+
+            // Si es un objeto nuevo al que apuntamos
+            if (outline != null && outline != currentOutline)
             {
-                //Debug.Log("Apuntando a: " + hit.collider.gameObject.name);
+                // Ocultamos el anterior (si existe)
+                if (currentOutline != null)
+                    currentOutline.HideOutline();
+
+                // Activamos el nuevo
+                outline.ShowOutline();
+                currentOutline = outline;
+            }
+            else if (outline == null && currentOutline != null)
+            {
+                // Si dejamos de mirar un objeto interactuable
+                currentOutline.HideOutline();
+                currentOutline = null;
+            }
+        }
+        else
+        {
+            // Si no estamos mirando nada, ocultamos el contorno si hay uno activo
+            if (currentOutline != null)
+            {
+                currentOutline.HideOutline();
+                currentOutline = null;
             }
         }
 
-        // Raycast adicional para detectar superficies (opcional)
+        // Raycast adicional para detectar superficies
         RaycastHit surfaceHit;
         Vector3 rayStartPosition = transform.position + Vector3.down * (capsuleCollider.height / 2);
 
