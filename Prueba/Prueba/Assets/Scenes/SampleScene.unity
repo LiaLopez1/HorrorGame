@@ -32835,10 +32835,10 @@ MonoBehaviour:
       Data3: 1863631488
       Data4: 738313475
     Path: event:/Ambience/zonacamillas
-  minDelay: 120
-  maxDelay: 180
+  minDelay: 60
+  maxDelay: 120
   minRadius: 10
-  maxRadius: 30
+  maxRadius: 15
   playerTransform: {fileID: 1582060864}
 --- !u!4 &661159996
 Transform:
