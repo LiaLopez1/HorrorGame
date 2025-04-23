@@ -577,11 +577,11 @@ MonoBehaviour:
     Path: event:/ui/SFXUI
   <musicui>k__BackingField:
     Guid:
-      Data1: -730312834
-      Data2: 1128738966
-      Data3: -68226165
-      Data4: 1272348922
-    Path: event:/Music/musicpan
+      Data1: 219765724
+      Data2: 1236020133
+      Data3: -747854938
+      Data4: -1343608634
+    Path: event:/Music/Music
 --- !u!1 &594758808
 GameObject:
   m_ObjectHideFlags: 0

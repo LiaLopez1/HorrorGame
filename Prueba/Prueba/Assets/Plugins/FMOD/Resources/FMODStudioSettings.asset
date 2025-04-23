@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: 52eb9df5db46521439908db3a29a1bbb
   parentIdentifier: default
-  active: 0
+  active: 1
   Properties:
     LiveUpdate:
       Value: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
     CallbackHandler:
       Value: {fileID: 0}
       HasValue: 0
-  OutputTypeName: 
+  OutputTypeName: AUTODETECT
   threadAffinities:
     Value: []
     HasValue: 0
