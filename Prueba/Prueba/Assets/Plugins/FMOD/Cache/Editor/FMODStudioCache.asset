@@ -52,33 +52,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-7665684362511092006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/RecogerLlave
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/RecogerLlave
-  Guid:
-    Data1: 88055327
-    Data2: 1175158974
-    Data3: 1091128998
-    Data4: 663105472
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1000
 --- !u!114 &-7574777233879304291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +79,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
+--- !u!114 &-7463128668431083104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/RecogerLlave
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RecogerLlave
+  Guid:
+    Data1: 88055327
+    Data2: 1175158974
+    Data3: 1091128998
+    Data4: 663105472
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &-7081164704881334711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +133,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3884
+--- !u!114 &-7031313200730255131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/RecogerObjeto
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RecogerObjeto
+  Guid:
+    Data1: -885634911
+    Data2: 1104289790
+    Data3: -227814756
+    Data4: -192828175
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1260
 --- !u!114 &-6637874957836689521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,33 +296,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2760
---- !u!114 &-4012664448612546522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/CortarCandado
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/CortarCandado
-  Guid:
-    Data1: 1247437311
-    Data2: 1199292120
-    Data3: -2087972196
-    Data4: 988933633
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1260
 --- !u!114 &-3084046710393107530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638809245517635652
+  lastModified: 638810201544430721
   FileSizes:
   - Name: 
     Value: 2022
@@ -358,7 +358,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638809578011604039
+  lastModified: 638810228954441939
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -394,16 +394,16 @@ MonoBehaviour:
   - {fileID: -7574777233879304291}
   - {fileID: -6193159039799760727}
   - {fileID: 1511663206446921096}
-  - {fileID: -7665684362511092006}
-  - {fileID: 5421970605070860508}
-  - {fileID: 8368339184369918481}
-  - {fileID: -4012664448612546522}
+  - {fileID: -7463128668431083104}
+  - {fileID: -7031313200730255131}
+  - {fileID: 7864109250277005832}
+  - {fileID: 1985055635980391246}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 638809578011604039
+  cacheTime: 638810228954441939
   cacheVersion: 131623
 --- !u!114 &627399549230561756
 MonoBehaviour:
@@ -447,7 +447,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638809245517575632
+  lastModified: 638810201544276411
   FileSizes: []
   Exists: 1
 --- !u!114 &1511663206446921096
@@ -504,6 +504,33 @@ MonoBehaviour:
   - hover
   - exit
   Exists: 1
+--- !u!114 &1985055635980391246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CortarCandado
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CortarCandado
+  Guid:
+    Data1: 1247437311
+    Data2: 1199292120
+    Data3: -2087972196
+    Data4: 988933633
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1260
 --- !u!114 &3923293790799187879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +546,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638809245518391533
+  lastModified: 638810201544875965
   FileSizes: []
   Exists: 1
 --- !u!114 &4929467871285832569
@@ -551,33 +578,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5421970605070860508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/RecogerObjeto
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/RecogerObjeto
-  Guid:
-    Data1: -885634911
-    Data2: 1104289790
-    Data3: -227814756
-    Data4: -192828175
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1260
 --- !u!114 &6316694450697172424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,25 +634,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &8088564819861251677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/UI.bank
-  m_EditorClassIdentifier: 
-  Path: FmodHorrorGame/Build/Desktop/UI.bank
-  Name: UI
-  StudioPath: bank:/UI
-  lastModified: 638809245520437381
-  FileSizes: []
-  Exists: 1
---- !u!114 &8368339184369918481
+--- !u!114 &7864109250277005832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -679,6 +661,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6850
+--- !u!114 &8088564819861251677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/UI.bank
+  Name: UI
+  StudioPath: bank:/UI
+  lastModified: 638810201547443036
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8750832582631547531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +718,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638809245517625644
+  lastModified: 638810201544405701
   FileSizes: []
   Exists: 1
 --- !u!114 &8885897779503384648

@@ -15,15 +15,17 @@ public class PruebaControlador : MonoBehaviour
     [Header("Sound DB Boost")]
     [SerializeField] private float runDBBoost = 6f;
     [SerializeField] private float walkDBBoost = 2f;
-    [SerializeField] private float crouchDBBoost = 0f;
+    [SerializeField] private float crouchDBBoost = 2f; // Cambiado de 0f a 2f para que se escuchen los pasos al agacharse
     [SerializeField] private float bloodDBBoost = 4f;
     [SerializeField] private float glassDBBoost = 5f;
 
-    [Header("UI")]
-    [SerializeField] private GameObject deathCanvas;
-
     [Header("Crouch Settings")]
     public float tiempoAgachado = 0.1f;
+    public float crouchVelocityThreshold = 0.03f; // Umbral menor para detectar movimiento al agacharse
+    public float groundCheckOffset = 0.1f; // Offset adicional para detectar el suelo cuando estamos agachados
+
+    [Header("UI")]
+    [SerializeField] private GameObject deathCanvas;
 
     // Componentes privados
     private Rigidbody rb;
@@ -42,6 +44,7 @@ public class PruebaControlador : MonoBehaviour
     private FMODEvents fmodEvents;
     private EventInstance footstepsInstance;
     private PARAMETER_ID floorParamID;
+    private float walkCrouchRunValue = 0f;
 
     void Start()
     {
@@ -64,9 +67,7 @@ public class PruebaControlador : MonoBehaviour
         floorLayerMask = LayerMask.GetMask("Floor");
 
         monster = FindObjectOfType<MonsterMovement>();
-
     }
-
 
     void Update()
     {
@@ -85,10 +86,10 @@ public class PruebaControlador : MonoBehaviour
         Crouch();
         Raycast(); // Detección de objetos al frente
         HandleFootsteps();
-        UpdateDBBoost(); // Nuevo: Actualiza los dB adicionales
+        UpdateDBBoost(); // Actualiza los dB adicionales
     }
 
-    // --- Sistema de Movimiento (sin cambios) ---
+    // --- Sistema de Movimiento ---
     void Move()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -96,6 +97,12 @@ public class PruebaControlador : MonoBehaviour
 
         Vector3 moveDirection = transform.right * moveHorizontal + transform.forward * moveVertical;
         float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+        
+        // Reduce la velocidad cuando estamos agachados
+        if (agachado)
+        {
+            speed *= 0.5f;  // Mitad de velocidad cuando estamos agachados
+        }
 
         Vector3 velocity = moveDirection * speed;
         velocity.y = rb.velocity.y;
@@ -185,11 +192,25 @@ public class PruebaControlador : MonoBehaviour
         }
     }
 
-
     // --- Sistema de Sonido Ambiental (modificado) ---
     void HandleFootsteps()
     {
-        if (rb.velocity.magnitude > 0.1f && IsGrounded())
+        // Usa un umbral menor para detectar movimiento cuando estamos agachados
+        float currentThreshold = agachado ? crouchVelocityThreshold : 0.1f;
+        
+        // ARREGLO CRÍTICO: Verifica solo la velocidad horizontal (x, z) cuando estamos agachados
+        // Esto evita que la velocidad vertical afecte a la detección de movimiento
+        float horizontalVelocity = new Vector2(rb.velocity.x, rb.velocity.z).magnitude;
+        
+        // Usa la velocidad horizontal para verificaciones de movimiento cuando estamos agachados
+        float velocityToCheck = agachado ? horizontalVelocity : rb.velocity.magnitude;
+        
+        // Reproducimos pasos si nos estamos moviendo Y estamos en el suelo O estamos agachados y moviéndonos
+        // Esto permite que los sonidos de pasos se reproduzcan incluso cuando la detección de suelo falla al agacharse
+        bool shouldPlayFootsteps = (velocityToCheck > currentThreshold) && 
+                                  (IsGrounded() || agachado);
+        
+        if (shouldPlayFootsteps)
         {
             if (!footstepsInstance.isValid())
             {
@@ -211,27 +232,40 @@ public class PruebaControlador : MonoBehaviour
 
     void UpdateFMODParameters()
     {
-        // Lógica simplificada para caminar(0), agacharse(1) o correr(2)
-        float walkCrouchRunValue = 0f; // Por defecto caminando
-
-        if (Input.GetKey(KeyCode.C)) // Prioridad al agacharse si ambas teclas están presionadas
-        {
-            walkCrouchRunValue = 1f; // Agachado
-        }
-        else if (Input.GetKey(KeyCode.LeftShift))
-        {
-            walkCrouchRunValue = 2f; // Corriendo
-        }
-
+        // Siempre establece el valor correcto cuando estamos agachados
+        // Esto asegura que FMOD use el sonido correcto basado en el estado de movimiento
+        walkCrouchRunValue = agachado ? 1f : (Input.GetKey(KeyCode.LeftShift) ? 2f : 0f);
+        
         footstepsInstance.setParameterByName("WalkCrouchRun", walkCrouchRunValue);
         footstepsInstance.setParameterByID(floorParamID, currentFloorValue);
     }
 
-    // --- Nuevo: Sistema de dB Adicionales ---
+    // --- Sistema de dB Adicionales (modificado) ---
     void UpdateDBBoost()
     {
-        float movementBoost = agachado ? crouchDBBoost :
-                            Input.GetKey(KeyCode.LeftShift) ? runDBBoost : walkDBBoost;
+        float movementBoost = 0f;
+
+        // Usa velocidad horizontal para verificar el movimiento cuando estamos agachados
+        float horizontalVelocity = new Vector2(rb.velocity.x, rb.velocity.z).magnitude;
+        float velocityToCheck = agachado ? horizontalVelocity : rb.velocity.magnitude;
+        float currentThreshold = agachado ? crouchVelocityThreshold : 0.1f;
+        
+        // Solo aplica el aumento de dB si realmente nos estamos moviendo
+        if (velocityToCheck > currentThreshold)
+        {
+            if (agachado)
+            {
+                movementBoost = crouchDBBoost; // Ahora usa crouchDBBoost correctamente
+            }
+            else if (Input.GetKey(KeyCode.LeftShift))
+            {
+                movementBoost = runDBBoost;
+            }
+            else
+            {
+                movementBoost = walkDBBoost;
+            }
+        }
 
         float surfaceBoost = currentFloorValue switch
         {
@@ -240,34 +274,56 @@ public class PruebaControlador : MonoBehaviour
             _ => 0f
         };
 
-        MicrophoneCapture.externalDBBoost = (rb.velocity.magnitude > 0.1f) ?
-                                          movementBoost + surfaceBoost : 0f;
+        // Establece el valor total de DB boost para MicrophoneCapture
+        MicrophoneCapture.externalDBBoost = movementBoost + surfaceBoost;
     }
 
     // --- Funciones de apoyo ---
     bool IsGrounded()
     {
-        float distanceToGround = capsuleCollider.bounds.extents.y;
+        // ARREGLADO: Añade distancia extra para verificar el suelo cuando estamos agachados
+        // Esto resuelve problemas de detección de suelo debido a la menor altura del personaje
+        float extraDistance = agachado ? groundCheckOffset : 0f;
+        float distanceToGround = capsuleCollider.bounds.extents.y + extraDistance;
+        
+        // Usa una distancia de rayo más corta cuando estamos agachados para evitar fallar la detección del suelo
         return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
     }
 
-    /*void OnDrawGizmos()
+    /* Función de visualización de depuración - desactivada en la versión final
+    void OnDrawGizmos()
     {
         // Color del gizmo (verde si está en suelo, rojo si no)
         bool isGrounded = IsGrounded();
         Gizmos.color = isGrounded ? Color.green : Color.red;
 
-        // Calcula la posición de origen del raycast (igual que en el código)
-        float currentHeight = agachado ? crouchHeight : capsuleCollider.height;
-        Vector3 rayStartPosition = transform.position + Vector3.down * (currentHeight / 2);
+        // Calcula la posición de origen del raycast
+        Vector3 rayStartPosition = transform.position;
 
         // Dibuja el rayo hacia abajo
-        float rayDistance = agachado ? 1.5f : 1f;
-        Gizmos.DrawRay(rayStartPosition, Vector3.down * rayDistance);
+        float extraDistance = agachado ? groundCheckOffset : 0f;
+        float distanceToGround = (capsuleCollider != null) ? 
+            capsuleCollider.bounds.extents.y + extraDistance + 0.1f : 1f;
+            
+        Gizmos.DrawRay(rayStartPosition, Vector3.down * distanceToGround);
 
-        // Opcional: Dibuja una esfera pequeña en el origen del rayo
+        // Dibuja una esfera pequeña en el origen del rayo
         Gizmos.DrawSphere(rayStartPosition, 0.05f);
-    }*/
+        
+        // Draw velocity direction
+        if (rb != null)
+        {
+            // Draw horizontal velocity
+            Vector3 horizontalVelocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            if (horizontalVelocity.magnitude > 0.1f)
+            {
+                Gizmos.color = Color.blue;
+                Gizmos.DrawRay(transform.position, horizontalVelocity.normalized);
+                Gizmos.DrawSphere(transform.position + horizontalVelocity.normalized, 0.05f);
+            }
+        }
+    }
+    */
 
     void OnDestroy()
     {
