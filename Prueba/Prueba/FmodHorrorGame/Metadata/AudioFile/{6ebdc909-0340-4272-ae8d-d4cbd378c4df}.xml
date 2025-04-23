@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{6025bf9f-43c1-48f0-afa1-fae265aef374}">
+	<object class="AudioFile" id="{6ebdc909-0340-4272-ae8d-d4cbd378c4df}">
 		<property name="assetPath">
-			<value>man-screaming-6373.mp3</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>circuit-breaker-3-dp-107144.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -14,7 +11,7 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>29.857959183673469</value>
+			<value>0.44408163265306122</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3be3d62d-dcde-47d2-8fa6-7ee072d7e1e3}</destination>

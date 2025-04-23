@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{a88102b2-254c-4e85-9ebe-36cb83ef8ecf}">
+	<object class="AudioFile" id="{f92c1878-9038-43c4-8019-6672f976a33b}">
 		<property name="assetPath">
-			<value>Grito2.wav</value>
+			<value>041109_jacob39s-ladder-electricity-68154.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>24</value>
 		</property>
 		<property name="channelCount">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<property name="length">
-			<value>2.6824489795918369</value>
+			<value>21.071999999999999</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3be3d62d-dcde-47d2-8fa6-7ee072d7e1e3}</destination>

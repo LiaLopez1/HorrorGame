@@ -132,7 +132,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6096
+  Length: 3884
 --- !u!114 &-6637874957836689521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638809245519922174
+  lastModified: 638809578011604039
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -403,7 +403,7 @@ MonoBehaviour:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 638809245520437381
+  cacheTime: 638809578011604039
   cacheVersion: 131623
 --- !u!114 &627399549230561756
 MonoBehaviour:

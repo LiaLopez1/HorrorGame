@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{8005b038-3f7a-43e3-a77b-17f297d32a02}">
+	<object class="AudioFile" id="{86ff70fe-4c3e-47a4-962e-77cba699db37}">
 		<property name="assetPath">
-			<value>sci-fi-sound-fxs-riser-woosh-sweep-logo-appears-intro-move-288764.mp3</value>
+			<value>card-mixing-48088.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>4.7039999999999997</value>
+			<value>4.6079999999999997</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3be3d62d-dcde-47d2-8fa6-7ee072d7e1e3}</destination>
