@@ -5130,7 +5130,7 @@ GameObject:
   - component: {fileID: 104040758}
   m_Layer: 3
   m_Name: VidriosRotos (1)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10512,7 +10512,7 @@ RectTransform:
   m_GameObject: {fileID: 216150381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.24775885, y: 0.24775885, z: 0.24775885}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1031663745}
@@ -10521,7 +10521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -896.26794, y: 432.1}
+  m_AnchoredPosition: {x: -242, y: 136}
   m_SizeDelta: {x: -1891.4354, y: -979.1575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216150383
@@ -14456,7 +14456,7 @@ GameObject:
   - component: {fileID: 288568293}
   m_Layer: 3
   m_Name: VidriosRotos (1)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19562,7 +19562,7 @@ GameObject:
   - component: {fileID: 403829926}
   m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21024,14 +21024,14 @@ RectTransform:
   m_GameObject: {fileID: 436439521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5765227, y: 7.730006, z: 1.5765227}
+  m_LocalScale: {x: 0.6987464, y: 3.4260933, z: 0.6987464}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1599107693}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -19}
+  m_AnchoredPosition: {x: 0, y: 7}
   m_SizeDelta: {x: 261.38, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &436439523
@@ -27894,14 +27894,14 @@ RectTransform:
   m_GameObject: {fileID: 562233457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1052572, y: 1.1052572, z: 1.1052572}
+  m_LocalScale: {x: 2.474976, y: 2.474976, z: 2.474976}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 216150382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 263.6, y: -111}
+  m_AnchoredPosition: {x: -3, y: -108}
   m_SizeDelta: {x: 406.58, y: 87.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &562939123
@@ -31495,7 +31495,7 @@ RectTransform:
   m_GameObject: {fileID: 627045888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.66413, y: 0.66413, z: 0.66413}
+  m_LocalScale: {x: 0.2650078, y: 0.2650078, z: 0.2650078}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1760903186}
@@ -31503,7 +31503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: 41}
+  m_AnchoredPosition: {x: -33.9, y: 22.000004}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627045890
@@ -41538,7 +41538,7 @@ GameObject:
   - component: {fileID: 839053257}
   m_Layer: 3
   m_Name: VidriosRotos (2)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47089,7 +47089,7 @@ RectTransform:
   m_GameObject: {fileID: 949347959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.66413, y: 0.66413, z: 0.66413}
+  m_LocalScale: {x: 0.28374386, y: 0.28374386, z: 0.28374386}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 997322288}
@@ -47097,7 +47097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: 41}
+  m_AnchoredPosition: {x: 1.2, y: 22.028}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &949347961
@@ -47438,7 +47438,7 @@ GameObject:
   - component: {fileID: 953852054}
   m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51184,7 +51184,7 @@ GameObject:
   - component: {fileID: 1012068934}
   m_Layer: 3
   m_Name: VidriosRotos (2)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52324,14 +52324,14 @@ RectTransform:
   m_GameObject: {fileID: 1031663744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1052572, y: 1.1052572, z: 1.1052572}
+  m_LocalScale: {x: 2.4731236, y: 2.4731236, z: 2.4731236}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 216150382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 263.6, y: -5.7}
+  m_AnchoredPosition: {x: -2, y: 124}
   m_SizeDelta: {x: 406.58, y: 87.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031663746
@@ -55996,7 +55996,7 @@ RectTransform:
   m_GameObject: {fileID: 1102426962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.66413, y: 0.66413, z: 0.66413}
+  m_LocalScale: {x: 0.2650078, y: 0.2650078, z: 0.2650078}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1837230644}
@@ -56004,7 +56004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: 41}
+  m_AnchoredPosition: {x: -21.7, y: 22}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102426964
@@ -57054,7 +57054,7 @@ GameObject:
   - component: {fileID: 1118229399}
   m_Layer: 3
   m_Name: VidriosRotos (1)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64872,7 +64872,7 @@ GameObject:
   - component: {fileID: 1304806762}
   m_Layer: 3
   m_Name: VidriosRotos (2)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69012,7 +69012,7 @@ GameObject:
   - component: {fileID: 1366650915}
   m_Layer: 3
   m_Name: VidriosRotos (2)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71007,7 +71007,7 @@ GameObject:
   - component: {fileID: 1415308128}
   m_Layer: 3
   m_Name: VidriosRotos (2)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78693,7 +78693,7 @@ GameObject:
   - component: {fileID: 1577272503}
   m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78973,7 +78973,7 @@ Transform:
   m_GameObject: {fileID: 1582060860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9, y: 1.4827, z: 64.71}
+  m_LocalPosition: {x: -2.86, y: 1.4827, z: 65.32}
   m_LocalScale: {x: 1, y: 1.501178, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -80288,7 +80288,7 @@ RectTransform:
   m_GameObject: {fileID: 1599107692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75359917, y: 0.14232625, z: 0.72860795}
+  m_LocalScale: {x: 0.6869961, y: 0.12974747, z: 0.6642136}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 436439522}
@@ -80296,7 +80296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -417}
+  m_AnchoredPosition: {x: 0, y: -155.24}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1599107694
@@ -84371,7 +84371,7 @@ RectTransform:
   m_GameObject: {fileID: 1664148043}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.66413, y: 0.66413, z: 0.66413}
+  m_LocalScale: {x: 0.2650078, y: 0.2650078, z: 0.2650078}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 243927970}
@@ -84379,7 +84379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: 41}
+  m_AnchoredPosition: {x: -21, y: 22.000004}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664148045
@@ -85512,7 +85512,7 @@ GameObject:
   - component: {fileID: 1695630474}
   m_Layer: 3
   m_Name: VidriosRotos (1)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98533,7 +98533,7 @@ GameObject:
   - component: {fileID: 1977656040}
   m_Layer: 3
   m_Name: VidriosRotos (1)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99474,7 +99474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -99601,7 +99601,7 @@ GameObject:
   - component: {fileID: 1993537196}
   m_Layer: 3
   m_Name: VidriosRotos (2)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100573,8 +100573,8 @@ RectTransform:
   m_GameObject: {fileID: 2012543963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1136776390}
   m_Father: {fileID: 1991938483}
@@ -102771,7 +102771,7 @@ GameObject:
   - component: {fileID: 2058419683}
   m_Layer: 3
   m_Name: VidriosRotos (1)
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104618,7 +104618,7 @@ GameObject:
   - component: {fileID: 2102144926}
   m_Layer: 3
   m_Name: VidriosRotos
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
