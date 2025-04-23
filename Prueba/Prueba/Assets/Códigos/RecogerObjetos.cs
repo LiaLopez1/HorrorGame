@@ -1,64 +1,69 @@
 using UnityEngine;
-using System;
+using TMPro;
+using System.Collections;
 
-public class RecogerObjetos: MonoBehaviour
+public class RecogerObjetos : MonoBehaviour
 {
     [Header("Configuración Visual")]
-    public GameObject indicadorInteraccion; // El icono de "E"
+    public GameObject indicadorInteraccion;
     public float raycastDistance = 3f;
 
+    [Header("Configuración Diálogo")]
+    [Tooltip("Mensajes que se mostrarán al recoger el objeto")]
+    [TextArea(3, 5)] public string[] mensajesDialogo;
+    [Tooltip("Tiempo que se muestra cada mensaje")]
+    public float duracionDialogo = 3f;
+    [Tooltip("Panel UI que contiene el texto del diálogo")]
+    public GameObject panelDialogo;
+    [Tooltip("Componente de texto donde se mostrarán los mensajes")]
+    public TMP_Text textoDialogo;
+
+    [Header("Configuración Misión")]
+    public bool esMisionPrincipal = false;
+    [TextArea(2, 3)] public string textoMision;
+    [Tooltip("Tiempo que se muestra la notificación de misión")]
+    public float duracionMision = 5f;
+
     [Header("Eventos")]
-    public Action OnItemCollectedAction;
+    public UnityEngine.Events.UnityEvent onRecoger;
 
     private Transform playerCamera;
     private bool isNear = false;
     private bool isCollected = false;
+    private bool mostrandoDialogo = false;
 
     void Start()
     {
         playerCamera = Camera.main.transform;
-        if (indicadorInteraccion != null) indicadorInteraccion.SetActive(false);
+        if (indicadorInteraccion != null)
+            indicadorInteraccion.SetActive(false);
+
+        if (panelDialogo != null)
+            panelDialogo.SetActive(false);
     }
 
     void Update()
     {
-        if (isCollected) return;
+        if (isCollected || mostrandoDialogo) return;
 
         CheckPlayerLook();
-        HandleInput();
+        if (isNear && Input.GetKeyDown(KeyCode.E))
+        {
+            RecogerObjeto();
+        }
     }
 
     private void CheckPlayerLook()
     {
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
-        {
-            if (hit.collider.gameObject == gameObject && !isNear)
-            {
-                isNear = true;
-                if (indicadorInteraccion != null)
-                    indicadorInteraccion.SetActive(true);
-            }
-            else if (isNear && hit.collider.gameObject != gameObject)
-            {
-                isNear = false;
-                if (indicadorInteraccion != null)
-                    indicadorInteraccion.SetActive(false);
-            }
-        }
-        else if (isNear)
-        {
-            isNear = false;
-            if (indicadorInteraccion != null)
-                indicadorInteraccion.SetActive(false);
-        }
-    }
+        bool mirandoAhora = Physics.Raycast(ray, out RaycastHit hit, raycastDistance) &&
+                          hit.collider.gameObject == gameObject;
 
-    private void HandleInput()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && isNear)
+        if (mirandoAhora != isNear)
         {
-            RecogerObjeto();
+            isNear = mirandoAhora;
+            if (indicadorInteraccion != null)
+                indicadorInteraccion.SetActive(isNear);
         }
     }
 
@@ -66,14 +71,71 @@ public class RecogerObjetos: MonoBehaviour
     {
         isCollected = true;
 
-        // Desactivar el indicador
         if (indicadorInteraccion != null)
             indicadorInteraccion.SetActive(false);
 
-        // Evento opcional para lógica externa
-        OnItemCollectedAction?.Invoke();
+        // Mostrar misión inmediatamente
+        if (!string.IsNullOrEmpty(textoMision))
+        {
+            if (esMisionPrincipal)
+            {
+                GameManager.Instance.ActualizarMisionPrincipal(textoMision);
+                StartCoroutine(MostrarMisionTemporal(GameManager.Instance.misionPrincipalText));
+            }
+            else
+            {
+                GameManager.Instance.ActualizarMisionSecundaria(textoMision);
+                StartCoroutine(MostrarMisionTemporal(GameManager.Instance.misionSecundariaText));
+            }
+        }
 
-        // Aquí puedes hacer efectos antes de destruir
-        Destroy(gameObject); // Destruye el objeto completamente
+        onRecoger.Invoke();
+
+        // Mostrar diálogos si hay mensajes configurados
+        if (mensajesDialogo != null && mensajesDialogo.Length > 0)
+        {
+            StartCoroutine(MostrarDialogos());
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator MostrarDialogos()
+    {
+        mostrandoDialogo = true;
+
+        if (panelDialogo != null)
+            panelDialogo.SetActive(true);
+
+        foreach (string mensaje in mensajesDialogo)
+        {
+            if (textoDialogo != null)
+                textoDialogo.text = mensaje;
+
+            yield return new WaitForSeconds(duracionDialogo);
+        }
+
+        if (panelDialogo != null)
+            panelDialogo.SetActive(false);
+
+        mostrandoDialogo = false;
+        Destroy(gameObject);
+    }
+
+    private IEnumerator MostrarMisionTemporal(TMP_Text textoMisionUI)
+    {
+        if (textoMisionUI != null)
+        {
+            textoMisionUI.gameObject.SetActive(true);
+            yield return new WaitForSeconds(duracionMision);
+
+            // Solo ocultar si no es misión principal (opcional)
+            if (!esMisionPrincipal)
+            {
+                textoMisionUI.gameObject.SetActive(false);
+            }
+        }
     }
 }

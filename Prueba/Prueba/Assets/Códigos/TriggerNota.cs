@@ -7,70 +7,52 @@ public class TriggerNota : MonoBehaviour
     [Header("Configuración Diálogo")]
     public DialogueData[] dialogos;
     public float dialogueDuration = 3f;
-    public float delayAfterClose = 0.5f;
 
     [Header("Referencias UI")]
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
-    public TMP_Text missionText;
 
     [Header("Configuración Progresión")]
-    public GameManager gameManager; // Referencia asignable desde el Inspector
+    public bool esMisionPrincipal = false;
     public GameManager.GameState nextState;
     public bool disableInsteadOfDestroy = false;
+    public GameManager gameManager; // Referencia manual opcional
 
     private LeerNotas noteReader;
     private bool isRunningDialogue = false;
 
     void Start()
     {
-        // 1. Obtener referencia al componente LeerNotas
+        // 1. Conexión con LeerNotas (totalmente restaurada)
         noteReader = GetComponent<LeerNotas>();
-
-        // 2. Conexión automática de eventos
         if (noteReader != null)
         {
             noteReader.OnNoteOpenedAction += OnNoteOpened;
             noteReader.OnNoteClosedAction += HandleNoteClosed;
         }
+        else
+        {
+            Debug.LogError("Componente LeerNotas no encontrado", this);
+        }
 
-        // 3. Buscar GameManager si no está asignado
+        // 2. Búsqueda segura de GameManager
         if (gameManager == null)
         {
             gameManager = FindObjectOfType<GameManager>();
             if (gameManager == null)
             {
-                Debug.LogError("No se encontró GameManager en la escena!");
+                Debug.LogError("GameManager no encontrado en la escena", this);
             }
         }
 
-        // 4. Asegurar que el panel de diálogo está oculto al inicio
+        // 3. Inicialización de UI
         if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(false);
         }
-    }
-
-    void OnDestroy()
-    {
-        // Limpieza de eventos para evitar memory leaks
-        if (noteReader != null)
+        else
         {
-            noteReader.OnNoteOpenedAction -= OnNoteOpened;
-            noteReader.OnNoteClosedAction -= HandleNoteClosed;
-        }
-    }
-
-    private void OnNoteOpened()
-    {
-        Debug.Log("Nota abierta: " + gameObject.name);
-    }
-
-    private void HandleNoteClosed()
-    {
-        if (!isRunningDialogue)
-        {
-            StartCoroutine(DialogueSequence());
+            Debug.LogWarning("Panel de diálogo no asignado", this);
         }
     }
 
@@ -78,59 +60,52 @@ public class TriggerNota : MonoBehaviour
     {
         isRunningDialogue = true;
 
-        // Esperar un frame para asegurar estabilidad
-        yield return null;
+        // Mostrar diálogos
+        if (dialoguePanel != null) dialoguePanel.SetActive(true);
 
-        // Mostrar panel de diálogo
-        if (dialoguePanel != null)
-        {
-            dialoguePanel.SetActive(true);
-        }
-
-        // Mostrar todos los diálogos
         foreach (var dialogo in dialogos)
         {
-            if (dialogueText != null)
-            {
-                dialogueText.text = dialogo.texto;
-            }
+            if (dialogueText != null) dialogueText.text = dialogo.texto;
 
-            if (dialogo.mostrarMision && missionText != null)
+            if (dialogo.mostrarMision)
             {
-                GameManager.Instance.UpdateMission(dialogo.textoMision);
+                if (GameManager.Instance != null)
+                {
+                    if (esMisionPrincipal)
+                        GameManager.Instance.ActualizarMisionPrincipal(dialogo.textoMision);
+                    else
+                        GameManager.Instance.ActualizarMisionSecundaria(dialogo.textoMision);
+                }
             }
 
             yield return new WaitForSeconds(dialogueDuration);
         }
 
-        // Ocultar panel
-        if (dialoguePanel != null)
-        {
-            dialoguePanel.SetActive(false);
-        }
+        // Finalización
+        if (dialoguePanel != null) dialoguePanel.SetActive(false);
 
-        // Cambiar estado del juego (con verificación de null)
         if (gameManager != null)
-        {
             gameManager.ChangeState(nextState);
-        }
-        else
-        {
-            Debug.LogWarning("GameManager no asignado - No se cambió el estado");
-        }
 
-        // Desactivar/Destruir la nota
         if (disableInsteadOfDestroy)
-        {
             gameObject.SetActive(false);
-        }
         else
-        {
             Destroy(gameObject);
-        }
 
         isRunningDialogue = false;
     }
+
+    void OnDestroy()
+    {
+        if (noteReader != null)
+        {
+            noteReader.OnNoteOpenedAction -= OnNoteOpened;
+            noteReader.OnNoteClosedAction -= HandleNoteClosed;
+        }
+    }
+
+    private void OnNoteOpened() => Debug.Log("Nota abierta: " + name);
+    private void HandleNoteClosed() { if (!isRunningDialogue) StartCoroutine(DialogueSequence()); }
 }
 
 [System.Serializable]

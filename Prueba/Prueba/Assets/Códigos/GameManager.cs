@@ -16,8 +16,9 @@ public class GameManager : MonoBehaviour
     public GameState currentState = GameState.Inicio;
     public int dialogueSequence = 0;
 
-    [Header("UI")]
-    public TMP_Text missionText;
+    [Header("UI Misiones")]
+    public TMP_Text misionPrincipalText;
+    public TMP_Text misionSecundariaText;
 
     private void Awake()
     {
@@ -36,31 +37,35 @@ public class GameManager : MonoBehaviour
     {
         currentState = newState;
         Debug.Log($"Estado cambiado a: {currentState}");
+    }
 
-        // Opcional: Registrar el cambio sin afectar misiones
-        switch (newState)
+    public void ActualizarMisionPrincipal(string texto)
+    {
+        if (misionPrincipalText != null)
         {
-            case GameState.NotaRecepcionLeida:
-                Debug.Log("El jugador leyó la nota de recepción");
-                break;
-
-            case GameState.NotaConsultorioLeida:
-                Debug.Log("El jugador leyó la nota de consultorio");
-                break;
+            misionPrincipalText.text = $"<color=yellow>PRINCIPAL:</color> {texto}";
+            misionPrincipalText.gameObject.SetActive(true);
         }
     }
+
+    public void ActualizarMisionSecundaria(string texto)
+    {
+        if (misionSecundariaText != null)
+        {
+            misionSecundariaText.text = $"<color=white>SECUNDARIA:</color> {texto}";
+            misionSecundariaText.gameObject.SetActive(true);
+        }
+    }
+
+    public void LimpiarMisionSecundaria()
+    {
+        if (misionSecundariaText != null)
+            misionSecundariaText.text = "";
+    }
+
     public void AdvanceDialogueSequence()
     {
         dialogueSequence++;
         Debug.Log("Secuencia de diálogo: " + dialogueSequence);
-    }
-
-    public void UpdateMission(string text)
-    {
-        if (missionText != null)
-        {
-            missionText.text = text;
-            missionText.gameObject.SetActive(true);
-        }
     }
 }
