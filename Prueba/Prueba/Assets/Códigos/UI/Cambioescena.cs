@@ -36,4 +36,8 @@ public class Cambioescena : MonoBehaviour
             yield return null;
         }
     }
-}
+
+    public void cambioesc(int num){
+        SceneManager.LoadScene(num);
+    }
+ }

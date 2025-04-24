@@ -1595,6 +1595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasSecundario: {fileID: 557071224}
+  panelManager: {fileID: 1456698649}
 --- !u!4 &584774799
 Transform:
   m_ObjectHideFlags: 0
@@ -3543,7 +3544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropdown: {fileID: 1721660872}
-  calidad: 0
+  panelConfiguracion: {fileID: 0}
 --- !u!114 &1098996351
 MonoBehaviour:
   m_ObjectHideFlags: 0

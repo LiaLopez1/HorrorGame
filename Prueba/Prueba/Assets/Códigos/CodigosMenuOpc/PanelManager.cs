@@ -2,57 +2,42 @@ using UnityEngine;
 
 public class PanelManager : MonoBehaviour
 {
-    // Paneles que se activar?n/desactivar?n
+    // Paneles que se activarán/desactivarán
     public GameObject settingsPanel;
     public GameObject pantallaPanel;
     public GameObject sonidoPanel;
     public GameObject controlesPanel;
     public GameObject cuentaPanel;
 
-    public static bool isSettingsActive = false;  // Bandera p?blica para saber si el panel de configuraci?n est? activo
+    public static bool isSettingsActive = false;
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         settingsPanel.SetActive(false);
-        DeactivateAllPanels(); // Aseg?rate de que todos los paneles est?n desactivados al inicio
+        DeactivateAllPanels();
     }
 
-    void Update()
+    // Método público para alternar la visibilidad del panel de configuración
+    public void ToggleSettingsPanel(bool show)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (show)
         {
-            ToggleSettingsPanel();
-        }
-    }
-
-    // Alternar la visibilidad del panel de configuraci?n
-    public void ToggleSettingsPanel()
-    {
-        if (settingsPanel.activeSelf)
-        {
-            settingsPanel.SetActive(false);
-            isSettingsActive = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            settingsPanel.SetActive(true);
+            DeactivateAllPanels();
+            pantallaPanel.SetActive(true);
+            isSettingsActive = true;
         }
         else
         {
-            settingsPanel.SetActive(true);
-            DeactivateAllPanels();  // Desactivar todos los paneles antes de activar el default
-            pantallaPanel.SetActive(true);  // Activar el panel por defecto
-            isSettingsActive = true;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            settingsPanel.SetActive(false);
+            isSettingsActive = false;
         }
     }
 
-    // M?todo para activar un panel basado en el nombre usando un switch
+    // Método para activar un panel basado en el nombre usando un switch
     public void ActivatePanel(string panelName)
     {
-        DeactivateAllPanels(); // Desactiva todos los paneles antes de activar uno
+        DeactivateAllPanels();
 
         switch (panelName)
         {
@@ -69,12 +54,12 @@ public class PanelManager : MonoBehaviour
                 cuentaPanel.SetActive(true);
                 break;
             default:
-                pantallaPanel.SetActive(true);  // Por defecto, activar pantalla si el nombre no coincide
+                pantallaPanel.SetActive(true);
                 break;
         }
     }
 
-    // M?todo para desactivar todos los paneles
+    // Método para desactivar todos los paneles
     private void DeactivateAllPanels()
     {
         pantallaPanel.SetActive(false);
