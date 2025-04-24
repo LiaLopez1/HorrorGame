@@ -1,32 +1,31 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections; // ¡Asegúrate de incluir esto para las corrutinas!
-using FMODUnity;
+using System.Collections; // Â¡AsegÃºrate de incluir esto para las corrutinas!
+using FMODUnity; // ðŸ”Š FMOD
 
-public class Puerta : MonoBehaviour
+public class PuertasVerdes : MonoBehaviour
 {
     [Header("Estado")]
     public bool isLocked = true;
     private bool isNear = false;
     private bool isOpen = false;
-    private Coroutine rotationCoroutine; // Controla la corrutina de rotación
+    private Coroutine rotationCoroutine; // Controla la corrutina de rotaciÃ³n
 
-    [Header("Configuración Visual")]
+    [Header("ConfiguraciÃ³n Visual")]
     public GameObject interactMessagePanel;
     public GameObject lockedMessagePanel;
     public float interactionDistance = 5f;
 
-    [Header("Diálogo Bloqueada")]
+    [Header("DiÃ¡logo Bloqueada")]
     public Text dialogueText;
     public string blockedMessage = "Necesitas la Llave Antigua para abrirme.";
 
-    [Header("Rotación Suave")]
-    public float rotationDuration = 0.5f; // Duración de la animación
+    [Header("RotaciÃ³n Suave")]
+    public float rotationDuration = 0.5f; // DuraciÃ³n de la animaciÃ³n
 
     [Header("FMOD")]
     [Tooltip("Sonido que se reproduce al abrir o cerrar la puerta")]
     public EventReference sonidoPuerta;
-
 
     private Camera playerCamera;
 
@@ -93,7 +92,7 @@ public class Puerta : MonoBehaviour
 
         if (rotationCoroutine != null)
         {
-            StopCoroutine(rotationCoroutine); // Detiene la animación si ya está en curso
+            StopCoroutine(rotationCoroutine); // Detiene la animaciÃ³n si ya estÃ¡ en curso
         }
 
         rotationCoroutine = StartCoroutine(RotateDoorSmoothly(isOpen ? 90f : -90f));
@@ -104,7 +103,7 @@ public class Puerta : MonoBehaviour
     {
         float elapsed = 0f;
         Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = startRotation * Quaternion.Euler(0, targetAngle, 0);
+        Quaternion endRotation = startRotation * Quaternion.Euler(0, 0, targetAngle);
 
         while (elapsed < rotationDuration)
         {
@@ -113,7 +112,7 @@ public class Puerta : MonoBehaviour
             yield return null; // Espera un frame
         }
 
-        transform.rotation = endRotation; // Asegura la rotación final exacta
+        transform.rotation = endRotation; // Asegura la rotaciÃ³n final exacta
     }
 
     private void ShowBlockedDialogue()

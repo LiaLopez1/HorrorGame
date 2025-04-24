@@ -21,7 +21,7 @@ public class DeathHandler : MonoBehaviour
         hasDied = true;
 
         // Reproducir sonido
-        FMODUnity.RuntimeManager.PlayOneShot(deathScreamEvent, playerPosition);
+        //FMODUnity.RuntimeManager.PlayOneShot(deathScreamEvent, playerPosition);
 
         // Iniciar transición
         StartCoroutine(DeathSequence());

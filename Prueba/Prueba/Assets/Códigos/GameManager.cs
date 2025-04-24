@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         if (misionPrincipalText != null)
         {
-            misionPrincipalText.text = $"<color=yellow>PRINCIPAL:</color> {texto}";
+            misionPrincipalText.text = $"{texto}";
             misionPrincipalText.gameObject.SetActive(true);
         }
     }
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         if (misionSecundariaText != null)
         {
-            misionSecundariaText.text = $"<color=white>SECUNDARIA:</color> {texto}";
+            misionSecundariaText.text = $"{texto}";
             misionSecundariaText.gameObject.SetActive(true);
         }
     }

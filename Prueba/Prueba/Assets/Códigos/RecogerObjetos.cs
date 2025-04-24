@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using FMODUnity; // Asegúrate de incluir esto
+using FMOD.Studio;
 
 public class RecogerObjetos : MonoBehaviour
 {
@@ -26,6 +28,10 @@ public class RecogerObjetos : MonoBehaviour
 
     [Header("Eventos")]
     public UnityEngine.Events.UnityEvent onRecoger;
+
+    [Header("FMOD")]
+    [Tooltip("Evento de sonido que se reproduce al recoger el objeto")]
+    public EventReference sonidoRecoger;
 
     private Transform playerCamera;
     private bool isNear = false;
@@ -74,6 +80,12 @@ public class RecogerObjetos : MonoBehaviour
         if (indicadorInteraccion != null)
             indicadorInteraccion.SetActive(false);
 
+        // Reproducir el sonido de recolección
+        if (sonidoRecoger.IsNull == false)
+        {
+            RuntimeManager.PlayOneShot(sonidoRecoger, transform.position);
+        }
+
         // Mostrar misión inmediatamente
         if (!string.IsNullOrEmpty(textoMision))
         {
@@ -91,15 +103,15 @@ public class RecogerObjetos : MonoBehaviour
 
         onRecoger.Invoke();
 
+        // Destruir inmediatamente el objeto recogido (visual y colisionable)
+        Destroy(gameObject);
+
         // Mostrar diálogos si hay mensajes configurados
         if (mensajesDialogo != null && mensajesDialogo.Length > 0)
         {
             StartCoroutine(MostrarDialogos());
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
     }
 
     private IEnumerator MostrarDialogos()
@@ -131,7 +143,6 @@ public class RecogerObjetos : MonoBehaviour
             textoMisionUI.gameObject.SetActive(true);
             yield return new WaitForSeconds(duracionMision);
 
-            // Solo ocultar si no es misión principal (opcional)
             if (!esMisionPrincipal)
             {
                 textoMisionUI.gameObject.SetActive(false);

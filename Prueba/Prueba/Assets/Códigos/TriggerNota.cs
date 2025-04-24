@@ -1,6 +1,9 @@
 using UnityEngine;
+using UnityEngine.Events; // Añade esto para usar UnityEvent
 using TMPro;
 using System.Collections;
+using FMODUnity;
+
 
 public class TriggerNota : MonoBehaviour
 {
@@ -16,14 +19,21 @@ public class TriggerNota : MonoBehaviour
     public bool esMisionPrincipal = false;
     public GameManager.GameState nextState;
     public bool disableInsteadOfDestroy = false;
-    public GameManager gameManager; // Referencia manual opcional
+    public GameManager gameManager;
+
+    [Header("Eventos al Recoger")]
+    public UnityEvent onNoteCollected; // Evento que se dispara al recoger la nota
 
     private LeerNotas noteReader;
     private bool isRunningDialogue = false;
 
+    [Header("FMOD")]
+    [Tooltip("Sonido que se reproduce al abrir la nota")]
+    public EventReference sonidoNota;
+
+
     void Start()
     {
-        // 1. Conexión con LeerNotas (totalmente restaurada)
         noteReader = GetComponent<LeerNotas>();
         if (noteReader != null)
         {
@@ -35,30 +45,23 @@ public class TriggerNota : MonoBehaviour
             Debug.LogError("Componente LeerNotas no encontrado", this);
         }
 
-        // 2. Búsqueda segura de GameManager
         if (gameManager == null)
         {
             gameManager = FindObjectOfType<GameManager>();
-            if (gameManager == null)
-            {
-                Debug.LogError("GameManager no encontrado en la escena", this);
-            }
         }
 
-        // 3. Inicialización de UI
         if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("Panel de diálogo no asignado", this);
         }
     }
 
     private IEnumerator DialogueSequence()
     {
         isRunningDialogue = true;
+
+        // Disparar evento al recoger la nota
+        onNoteCollected.Invoke(); // ¡Aquí se ejecutarán las acciones vinculadas en el Inspector!
 
         // Mostrar diálogos
         if (dialoguePanel != null) dialoguePanel.SetActive(true);
@@ -67,15 +70,12 @@ public class TriggerNota : MonoBehaviour
         {
             if (dialogueText != null) dialogueText.text = dialogo.texto;
 
-            if (dialogo.mostrarMision)
+            if (dialogo.mostrarMision && GameManager.Instance != null)
             {
-                if (GameManager.Instance != null)
-                {
-                    if (esMisionPrincipal)
-                        GameManager.Instance.ActualizarMisionPrincipal(dialogo.textoMision);
-                    else
-                        GameManager.Instance.ActualizarMisionSecundaria(dialogo.textoMision);
-                }
+                if (esMisionPrincipal)
+                    GameManager.Instance.ActualizarMisionPrincipal(dialogo.textoMision);
+                else
+                    GameManager.Instance.ActualizarMisionSecundaria(dialogo.textoMision);
             }
 
             yield return new WaitForSeconds(dialogueDuration);
@@ -104,7 +104,16 @@ public class TriggerNota : MonoBehaviour
         }
     }
 
-    private void OnNoteOpened() => Debug.Log("Nota abierta: " + name);
+    private void OnNoteOpened()
+    {
+        Debug.Log("Nota abierta: " + name);
+
+        if (!sonidoNota.IsNull)
+        {
+            RuntimeManager.PlayOneShot(sonidoNota, transform.position);
+        }
+    }
+
     private void HandleNoteClosed() { if (!isRunningDialogue) StartCoroutine(DialogueSequence()); }
 }
 

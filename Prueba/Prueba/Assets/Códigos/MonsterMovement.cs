@@ -38,7 +38,16 @@ public class MonsterMovement : MonoBehaviour
     private float currentSpeed;
     private float noiseDetectionTimer = 0f;
     private bool isNoiseAlertActive = false;
-    private MusicController musicController;
+    //private MusicController musicController;
+    public bool IsPlayerTriggeringExtendedSound =>
+    Vector3.Distance(transform.position, player.position) <= boostedDetectionRadius &&
+    MicrophoneCapture.currentDB >= noiseThreshold;
+
+    public bool IsPlayerInNormalRange => Vector3.Distance(transform.position, player.position) <= normalDetectionRadius;
+    private EventInstance extendedAreaInstance;
+
+    public bool IsExtendedZoneTriggered =>
+    Vector3.Distance(transform.position, player.position) <= boostedDetectionRadius && isNoiseAlertActive;
 
 
 
@@ -61,9 +70,12 @@ public class MonsterMovement : MonoBehaviour
         playerInExtendedArea = false; // Resetear área extendida
         playerInNormalArea = false;   // Resetear área normal
 
+
         currentSpeed = normalSpeed;
         SetRandomDirection();
-        musicController = FindObjectOfType<MusicController>();
+        //musicController = FindObjectOfType<MusicController>();
+
+
     }
 
 
@@ -130,19 +142,24 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
+
+
     bool ShouldFollowPlayer()
     {
-        // SIEMPRE usar radio normal al inicio (ignorar isNoiseAlertActive hasta que haya ruido real)
-        float currentRadius = normalDetectionRadius;
+        float distance = Vector3.Distance(transform.position, player.position);
 
-        // Solo usar radio extendido si isNoiseAlertActive ES VERDADERO Y hay ruido actual
-        if (isNoiseAlertActive && MicrophoneCapture.currentDB >= noiseThreshold)
-        {
-            currentRadius = boostedDetectionRadius;
-        }
+        // SIEMPRE seguir al jugador si está en el radio normal
+        if (distance <= normalDetectionRadius)
+            return true;
 
-        return Vector3.Distance(transform.position, player.position) <= currentRadius;
+        // En la zona extendida: solo seguir si está activo el estado de alerta
+        if (distance <= boostedDetectionRadius && isNoiseAlertActive)
+            return true;
+
+        // Si no cumple ninguna, no seguir
+        return false;
     }
+
 
     void FollowPlayer()
     {

@@ -9,39 +9,54 @@ public class MusicController : MonoBehaviour
     [SerializeField] private Transform _audioSourceTransform; // Cámara o jugador
     [SerializeField] private string stateParameter = "opciones"; // Parámetro labeled
 
+    private MonsterMovement[] monsters;
+
     private EventInstance musicInstance;
     private int currentState = 0;
     private int lastIntensity = -1;
 
-    private MonsterMovement monster;
 
     void Start()
     {
         musicInstance = RuntimeManager.CreateInstance("event:/Music/Music");
         Update3DAttributes();
-        SetMusicState(1); // Estado de juego por defecto
+        SetMusicState(1);
         musicInstance.start();
 
-        monster = FindObjectOfType<MonsterMovement>();
+        monsters = FindObjectsOfType<MonsterMovement>();
     }
+
 
     void Update()
     {
-        if (currentState != 1 || monster == null) return;
+        if (currentState != 1 || monsters == null) return;
 
         int targetIntensity = 0;
 
-        if (monster.playerInNormalArea)
-            targetIntensity = 2;
-        else if (monster.playerInExtendedArea)
-            targetIntensity = 1;
+        foreach (var m in monsters)
+        {
+            if (m.IsPlayerInNormalRange)
+            {
+                targetIntensity = 2;
+                break;
+            }
+            if (m.IsExtendedZoneTriggered)
+            {
+                targetIntensity = 1;
+            }
+
+        }
 
         if (targetIntensity != lastIntensity)
         {
             musicInstance.setParameterByName("distancia", targetIntensity);
             lastIntensity = targetIntensity;
         }
+
+
     }
+
+
 
     public void SetMusicState(int newState)
     {
