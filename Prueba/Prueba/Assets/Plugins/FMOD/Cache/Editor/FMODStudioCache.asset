@@ -74,7 +74,7 @@ MonoBehaviour:
   - {fileID: 904085558940435850}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -132,7 +132,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3884
+  Length: 6096
 --- !u!114 &-7031313200730255131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,11 +209,11 @@ MonoBehaviour:
   - {fileID: 904085558940435850}
   IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 5000
+  Length: 8512
 --- !u!114 &-5436109389955808392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,60 +241,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &-5349782904663737360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/AgarrarNotas
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/AgarrarNotas
-  Guid:
-    Data1: -1648935026
-    Data2: 1137004267
-    Data3: 1050572967
-    Data4: -1149304674
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &-5029770029984941842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ElectricidadActivada
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/ElectricidadActivada
-  Guid:
-    Data1: -21869479
-    Data2: 1272635657
-    Data3: -1008494173
-    Data4: -445012257
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5250
 --- !u!114 &-4858346413149897500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,33 +269,6 @@ MonoBehaviour:
   - Wood
   - CristalTile
   Exists: 1
---- !u!114 &-4667846353086833768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Breaker
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Breaker
-  Guid:
-    Data1: -175141396
-    Data2: 1293752299
-    Data3: 1488255418
-    Data4: 1782357163
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 530
 --- !u!114 &-4318818568777944190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,38 +291,11 @@ MonoBehaviour:
   - {fileID: 904085558940435850}
   IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 2760
---- !u!114 &-4221322874480571608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/TarjetaRecogida
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/TarjetaRecogida
-  Guid:
-    Data1: 855655590
-    Data2: 1096756916
-    Data3: 1038231691
-    Data4: 1854946993
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 520
 --- !u!114 &-3084046710393107530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,10 +338,10 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638810773178315727
+  lastModified: 638804973663618751
   FileSizes:
   - Name: 
-    Value: 2260
+    Value: 2022
   Exists: 1
 --- !u!114 &-1770093805052333945
 MonoBehaviour:
@@ -466,7 +358,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638810773209480118
+  lastModified: 638804973669733552
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -506,17 +398,12 @@ MonoBehaviour:
   - {fileID: -7031313200730255131}
   - {fileID: 7864109250277005832}
   - {fileID: 1985055635980391246}
-  - {fileID: 3229400924596007476}
-  - {fileID: -5029770029984941842}
-  - {fileID: -5349782904663737360}
-  - {fileID: -4221322874480571608}
-  - {fileID: -4667846353086833768}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 638810773210692131
+  cacheTime: 638804973670265107
   cacheVersion: 131623
 --- !u!114 &627399549230561756
 MonoBehaviour:
@@ -560,7 +447,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638810773178195450
+  lastModified: 638804973663543365
   FileSizes: []
   Exists: 1
 --- !u!114 &1511663206446921096
@@ -644,33 +531,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1260
---- !u!114 &3229400924596007476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/TarjetaActivada
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/TarjetaActivada
-  Guid:
-    Data1: -1159809017
-    Data2: 1097961812
-    Data3: 409323415
-    Data4: 1793928672
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3468
 --- !u!114 &3923293790799187879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +546,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638810773202990438
+  lastModified: 638804973665132466
   FileSizes: []
   Exists: 1
 --- !u!114 &4929467871285832569
@@ -816,7 +676,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638810773210692131
+  lastModified: 638804973670265107
   FileSizes: []
   Exists: 1
 --- !u!114 &8750832582631547531
@@ -858,7 +718,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638810773178280596
+  lastModified: 638804973663598622
   FileSizes: []
   Exists: 1
 --- !u!114 &8885897779503384648

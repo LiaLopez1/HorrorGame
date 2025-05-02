@@ -10,6 +10,9 @@ public class RecogerObjetos : MonoBehaviour
     public GameObject indicadorInteraccion;
     public float raycastDistance = 3f;
 
+    [Header("Brillo (Contorno)")]
+    public float distanciaBrillo = 6f;
+
     [Header("Configuración Diálogo")]
     [Tooltip("Mensajes que se mostrarán al recoger el objeto")]
     [TextArea(3, 5)] public string[] mensajesDialogo;
@@ -38,11 +41,20 @@ public class RecogerObjetos : MonoBehaviour
     private bool isCollected = false;
     private bool mostrandoDialogo = false;
 
+    private OutlineController outlineController;
+
     void Start()
     {
         playerCamera = Camera.main.transform;
+
+        // Buscar automáticamente el OutlineController
+        outlineController = GetComponent<OutlineController>();
+
         if (indicadorInteraccion != null)
             indicadorInteraccion.SetActive(false);
+
+        // Desactivar contorno al inicio
+        outlineController?.HideOutline();
 
         if (panelDialogo != null)
             panelDialogo.SetActive(false);
@@ -50,12 +62,32 @@ public class RecogerObjetos : MonoBehaviour
 
     void Update()
     {
+
         if (isCollected || mostrandoDialogo) return;
 
         CheckPlayerLook();
+
         if (isNear && Input.GetKeyDown(KeyCode.E))
         {
             RecogerObjeto();
+        }
+
+        UpdateBrillo();
+    }
+
+    private void UpdateBrillo()
+    {
+        if (isCollected || outlineController == null) return;
+
+        float distancia = Vector3.Distance(transform.position, playerCamera.position);
+
+        if (distancia <= distanciaBrillo)
+        {
+            outlineController.ShowOutline();
+        }
+        else
+        {
+            outlineController.HideOutline();
         }
     }
 
@@ -63,13 +95,20 @@ public class RecogerObjetos : MonoBehaviour
     {
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         bool mirandoAhora = Physics.Raycast(ray, out RaycastHit hit, raycastDistance) &&
-                          hit.collider.gameObject == gameObject;
+                            hit.collider.gameObject == gameObject;
 
         if (mirandoAhora != isNear)
         {
             isNear = mirandoAhora;
+
             if (indicadorInteraccion != null)
                 indicadorInteraccion.SetActive(isNear);
+
+            if (outlineController != null)
+            {
+                if (isNear) outlineController.ShowOutline();
+                else outlineController.HideOutline();
+            }
         }
     }
 
@@ -79,6 +118,8 @@ public class RecogerObjetos : MonoBehaviour
 
         if (indicadorInteraccion != null)
             indicadorInteraccion.SetActive(false);
+
+        outlineController?.HideOutline();
 
         // Reproducir el sonido de recolección
         if (sonidoRecoger.IsNull == false)
