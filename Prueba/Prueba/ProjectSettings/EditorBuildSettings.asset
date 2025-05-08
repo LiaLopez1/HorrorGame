@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameover.unity
     guid: 3b68e8a9ea2a24f1aa5a868857f528e8
+  - enabled: 1
+    path: Assets/Scenes/PruebaMic.unity
+    guid: 13cc2a1ff6953104388c737df55e3565
+  - enabled: 1
+    path: Assets/Scenes/Cinematica.unity
+    guid: b593b55269dd9354682a6276417d8059
   m_configObjects: {}

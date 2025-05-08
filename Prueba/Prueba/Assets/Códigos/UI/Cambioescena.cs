@@ -58,11 +58,13 @@ public class Cambioescena : MonoBehaviour
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
+
             if (slider != null)
                 slider.value = progress;
 
             yield return null;
         }
+
     }
 
     private IEnumerator FadeInLuz(Light luz, float intensidadFinal, float duracion)
