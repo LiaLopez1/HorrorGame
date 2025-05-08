@@ -1,49 +1,29 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
-using System.Collections;
 
-public class Calidad : MonoBehaviour
+public class LogicaCalidad : MonoBehaviour
 {
-    public TMP_Dropdown dropdown;
-    public RectTransform panelConfiguracion; // Cambiado a RectTransform
+    public TMP_Dropdown dropdownCalidad;
 
-    IEnumerator Start()
+    void Start()
     {
-        // Espera un frame para evitar conflictos de inicialización
-        yield return null;
-
-        if (panelConfiguracion != null)
-        {
-            panelConfiguracion.gameObject.SetActive(true);
-            panelConfiguracion.ForceUpdateRectTransforms();
-            panelConfiguracion.SetAsLastSibling();
-        }
-
-        // Configuración inicial del dropdown
-        ConfigurarDropdown();
+        int savedQuality = PlayerPrefs.GetInt("calidad", 2); // 2 es la calidad por defecto (Medium)
+        dropdownCalidad.value = savedQuality;
+        ApplyQuality(savedQuality);
+        
+        // Conectar el evento del Dropdown
+        dropdownCalidad.onValueChanged.AddListener(ChangeQuality);
     }
 
-    void ConfigurarDropdown()
+    public void ChangeQuality(int index)
     {
-        dropdown.onValueChanged.AddListener((valor) => {
-            StartCoroutine(ForzarVisibilidadPanel());
-            AplicarCalidad(valor);
-        });
+        PlayerPrefs.SetInt("calidad", index); // Guardamos la opción seleccionada
+        ApplyQuality(index);
     }
 
-    IEnumerator ForzarVisibilidadPanel()
+    private void ApplyQuality(int qualityIndex)
     {
-        yield return null; // Espera un frame
-        if (panelConfiguracion != null)
-        {
-            panelConfiguracion.gameObject.SetActive(true);
-            panelConfiguracion.SetAsLastSibling();
-        }
-    }
-
-    void AplicarCalidad(int nivel)
-    {
-        QualitySettings.SetQualityLevel(nivel == 0 ? 0 : QualitySettings.names.Length - 1);
-        PlayerPrefs.SetInt("numeroDeCalidad", nivel);
+        QualitySettings.SetQualityLevel(qualityIndex);
     }
 }

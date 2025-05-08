@@ -7,7 +7,7 @@ public class PanelManager : MonoBehaviour
     public GameObject pantallaPanel;
     public GameObject sonidoPanel;
     public GameObject controlesPanel;
-    public GameObject cuentaPanel;
+    public GameObject salirpanel;
 
     public static bool isSettingsActive = false;
 
@@ -15,6 +15,14 @@ public class PanelManager : MonoBehaviour
     {
         settingsPanel.SetActive(false);
         DeactivateAllPanels();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ToggleOpciones();
+        }
     }
 
     // Método público para alternar la visibilidad del panel de configuración
@@ -26,11 +34,13 @@ public class PanelManager : MonoBehaviour
             DeactivateAllPanels();
             pantallaPanel.SetActive(true);
             isSettingsActive = true;
+            Time.timeScale = 0f;
         }
         else
         {
             settingsPanel.SetActive(false);
             isSettingsActive = false;
+            Time.timeScale = 1f;
         }
     }
 
@@ -50,8 +60,8 @@ public class PanelManager : MonoBehaviour
             case "controles":
                 controlesPanel.SetActive(true);
                 break;
-            case "cuenta":
-                cuentaPanel.SetActive(true);
+            case "Salir":
+                salirpanel.SetActive(true);
                 break;
             default:
                 pantallaPanel.SetActive(true);
@@ -65,6 +75,25 @@ public class PanelManager : MonoBehaviour
         pantallaPanel.SetActive(false);
         sonidoPanel.SetActive(false);
         controlesPanel.SetActive(false);
-        cuentaPanel.SetActive(false);
+        salirpanel.SetActive(false);
     }
+
+    public void CerrarOpciones()
+    {
+        settingsPanel.SetActive(false);
+        isSettingsActive = false;
+        Time.timeScale = 0f;
+    }
+
+    private void ToggleOpciones()
+{
+    if (isSettingsActive)
+    {
+        CerrarOpciones();
+    }
+    else
+    {
+        ToggleSettingsPanel(true);
+    }
+}
 }

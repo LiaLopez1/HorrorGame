@@ -10,12 +10,12 @@ public class Volumen : MonoBehaviour
     public float sliderAmbienteValue;
     public float sliderEfectosValue;  // Valor del slider de efectos de sonido
 
-    // Imágenes para el volumen de ambiente
+    // Imï¿½genes para el volumen de ambiente
     public Image imagenMuteAmbiente;
     public Image imagenHighAmbiente;
     public Image imagenLowAmbiente;
 
-    // Imágenes para el volumen de efectos de sonido
+    // Imï¿½genes para el volumen de efectos de sonido
     public Image imagenMuteEfectos;
     public Image imagenHighEfectos;
     public Image imagenLowEfectos;
@@ -33,7 +33,7 @@ public class Volumen : MonoBehaviour
         // Asignar el volumen de ambiente
         AudioListener.volume = sliderAmbienteValue;
 
-        // Actualizar imágenes y volúmenes al inicio
+        // Actualizar imï¿½genes y volï¿½menes al inicio
         ActualizarVolumenAmbiente();
         ActualizarVolumenEfectos();
     }

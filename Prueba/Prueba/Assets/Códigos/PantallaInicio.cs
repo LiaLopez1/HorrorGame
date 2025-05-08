@@ -6,12 +6,12 @@ using TMPro;
 public class PantallaInicio : MonoBehaviour
 {
     [Header("Elementos UI")]
-    public Image panelImage; // Para controlar el fade in y out general
-    public TextMeshProUGUI tituloText;
-    public TextMeshProUGUI presionaEnterText;
+    public Image panelImage; // Fondo negro que hace fade
+    public Image tituloImage; // Imagen del tÃ­tulo
+    public TextMeshProUGUI presionaEnterText; // Texto "Presiona Enter"
 
     [Header("Botones que se desactivan al inicio")]
-    public GameObject[] botones; // Asigna aquí los 3 botones
+    public GameObject[] botones;
 
     [Header("Duraciones")]
     public float duracionFadeTitulo = 1.5f;
@@ -24,21 +24,15 @@ public class PantallaInicio : MonoBehaviour
 
     private void Start()
     {
-        // Asegúrate de que los botones estén desactivados
         foreach (var boton in botones)
         {
             boton.SetActive(false);
         }
 
-        // Empezar todo invisible
-        Color panelColor = panelImage.color;
-        panelColor.a = 1f;
-        panelImage.color = panelColor;
-
-        tituloText.alpha = 0f;
+        SetImageAlpha(panelImage, 1f);
+        SetImageAlpha(tituloImage, 0f);
         presionaEnterText.alpha = 0f;
 
-        // Iniciar secuencia de entrada
         StartCoroutine(SecuenciaEntrada());
     }
 
@@ -55,16 +49,14 @@ public class PantallaInicio : MonoBehaviour
 
     private IEnumerator SecuenciaEntrada()
     {
-        // Fade In del Título
-        yield return StartCoroutine(FadeText(tituloText, duracionFadeTitulo));
+        // Fade In del tÃ­tulo (imagen)
+        yield return StartCoroutine(FadeImage(tituloImage, duracionFadeTitulo));
 
-        // Espera el retraso
         yield return new WaitForSeconds(retrasoEntreTextos);
 
-        // Fade In del "Presiona Enter"
+        // Fade In del texto "Presiona Enter"
         yield return StartCoroutine(FadeText(presionaEnterText, duracionFadePresionaEnter));
 
-        // Ahora sí puede presionar Enter
         puedePresionarEnter = true;
     }
 
@@ -73,47 +65,47 @@ public class PantallaInicio : MonoBehaviour
         estaSaliendo = true;
         puedePresionarEnter = false;
 
-        // Guardamos valores iniciales
         float tiempo = 0f;
-
-        Color colorInicialPanel = panelImage.color;
-        float alphaInicialPanel = colorInicialPanel.a;
-
-        float alphaInicialTitulo = tituloText.alpha;
-        float alphaInicialPresiona = presionaEnterText.alpha;
+        float alphaInicialPanel = panelImage.color.a;
+        float alphaInicialTitulo = tituloImage.color.a;
+        float alphaInicialTexto = presionaEnterText.alpha;
 
         while (tiempo < duracionFadeOutPanel)
         {
             tiempo += Time.deltaTime;
             float t = tiempo / duracionFadeOutPanel;
 
-            // Fade del panel
-            float alphaPanel = Mathf.Lerp(alphaInicialPanel, 0f, t);
-            panelImage.color = new Color(colorInicialPanel.r, colorInicialPanel.g, colorInicialPanel.b, alphaPanel);
-
-            // Fade de los textos
-            tituloText.alpha = Mathf.Lerp(alphaInicialTitulo, 0f, t);
-            presionaEnterText.alpha = Mathf.Lerp(alphaInicialPresiona, 0f, t);
+            SetImageAlpha(panelImage, Mathf.Lerp(alphaInicialPanel, 0f, t));
+            SetImageAlpha(tituloImage, Mathf.Lerp(alphaInicialTitulo, 0f, t));
+            presionaEnterText.alpha = Mathf.Lerp(alphaInicialTexto, 0f, t);
 
             yield return null;
         }
 
-        // Asegurar que todo quede en 0 al final
-        panelImage.color = new Color(colorInicialPanel.r, colorInicialPanel.g, colorInicialPanel.b, 0f);
-        tituloText.alpha = 0f;
+        SetImageAlpha(panelImage, 0f);
+        SetImageAlpha(tituloImage, 0f);
         presionaEnterText.alpha = 0f;
 
-        // Activar los botones
         foreach (var boton in botones)
         {
             boton.SetActive(true);
         }
 
-        // Finalmente desactivar todo el objeto si quieres
         gameObject.SetActive(false);
     }
 
-
+    private IEnumerator FadeImage(Image img, float duracion)
+    {
+        float tiempo = 0f;
+        while (tiempo < duracion)
+        {
+            tiempo += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, tiempo / duracion);
+            SetImageAlpha(img, alpha);
+            yield return null;
+        }
+        SetImageAlpha(img, 1f);
+    }
 
     private IEnumerator FadeText(TextMeshProUGUI texto, float duracion)
     {
@@ -125,5 +117,12 @@ public class PantallaInicio : MonoBehaviour
             yield return null;
         }
         texto.alpha = 1f;
+    }
+
+    private void SetImageAlpha(Image img, float alpha)
+    {
+        Color color = img.color;
+        color.a = alpha;
+        img.color = color;
     }
 }

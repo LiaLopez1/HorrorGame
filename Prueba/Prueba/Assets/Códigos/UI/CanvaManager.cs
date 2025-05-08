@@ -2,10 +2,20 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
 {
-    public GameObject canvasSecundario; // Asigna el CanvasSecundario en el Inspector
-    public PanelManager panelManager;   // Asigna el PanelManager en el Inspector
+    public GameObject canvasSecundario;
+    public PanelManager panelManager;   
+    public Canvas gameCanvas; 
+    public Canvas menuCanvas; 
 
-    // Método para activar el CanvasSecundario
+    private CanvasGroup gameCanvasGroup; 
+
+    void Start()
+    {
+        gameCanvasGroup = gameCanvas.GetComponent<CanvasGroup>();
+        menuCanvas.sortingOrder = 2;  
+        gameCanvas.sortingOrder = 1;  
+    }
+
     public void MostrarCanvasSecundario()
     {
         if (canvasSecundario != null)
@@ -13,12 +23,14 @@ public class CanvasManager : MonoBehaviour
             canvasSecundario.SetActive(true);
             if (panelManager != null)
             {
-                panelManager.ToggleSettingsPanel(true);
+                panelManager.ToggleSettingsPanel(true); 
             }
+
+            Time.timeScale = 0f;
+            gameCanvasGroup.blocksRaycasts = false; 
         }
     }
 
-    // Método para ocultar el CanvasSecundario
     public void OcultarCanvasSecundario()
     {
         if (canvasSecundario != null)
@@ -26,8 +38,11 @@ public class CanvasManager : MonoBehaviour
             canvasSecundario.SetActive(false);
             if (panelManager != null)
             {
-                panelManager.ToggleSettingsPanel(false);
+                panelManager.ToggleSettingsPanel(false); 
             }
+
+            Time.timeScale = 1f;
+            gameCanvasGroup.blocksRaycasts = true;
         }
     }
 }
