@@ -13,6 +13,11 @@ public class PanelInicioManager : MonoBehaviour
     public GameObject panelErrorMicrofono;
     public GameObject panelPruebaSonido;
 
+    [Header("Pantalla de carga")]
+    public GameObject loadingScreen;
+    public Slider sliderCarga;
+    public string escenaDestino = "NombreDeLaEscenaReal"; // Cámbialo en el inspector
+
     [Header("Intro")]
     public TextMeshProUGUI textoNarrativo;
     public Button botonContinuar;
@@ -29,7 +34,6 @@ public class PanelInicioManager : MonoBehaviour
 
     private const float umbralDB = -40f;
     private const float smoothingSpeed = 5f;
-    private float currentSmoothedValue = 0f;
     private bool pruebaExitosa = false;
 
     // FMOD
@@ -221,8 +225,27 @@ public class PanelInicioManager : MonoBehaviour
             micSound.release();
         }
 
-        StartCoroutine(FadeOutYEmpezar());
+        StartCoroutine(CargarEscenaConPantalla());
     }
+
+    IEnumerator CargarEscenaConPantalla()
+    {
+        panelPruebaSonido.SetActive(false);
+        if (loadingScreen != null)
+            loadingScreen.SetActive(true);
+
+        AsyncOperation operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(escenaDestino);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            if (sliderCarga != null)
+                sliderCarga.value = progress;
+
+            yield return null;
+        }
+    }
+
 
     IEnumerator FadeInTexto(TextMeshProUGUI texto, float duracion)
     {
