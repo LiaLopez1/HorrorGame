@@ -12393,6 +12393,7 @@ MonoBehaviour:
   sonidoPanel: {fileID: 717792802}
   controlesPanel: {fileID: 2120676522}
   salirpanel: {fileID: 747955160}
+  canvasManager: {fileID: 1678279634}
 --- !u!4 &230809365
 Transform:
   m_ObjectHideFlags: 0
@@ -101531,6 +101532,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2139251804}
   - {fileID: 1678279633}
   - {fileID: 230809365}
   - {fileID: 717970741}
@@ -112832,7 +112834,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1678279634}
         m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
         m_MethodName: OcultarCanvasSecundario
         m_Mode: 1
@@ -114039,6 +114041,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 412390, guid: 381bdf9c7f27cce46b2699033a9b735a, type: 3}
   m_PrefabInstance: {fileID: 2138233971}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2139251803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2139251804}
+  - component: {fileID: 2139251805}
+  m_Layer: 0
+  m_Name: eventsFmod
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2139251804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139251803}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.434021, y: 1.3544312, z: 38.233997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1888772167}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2139251805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139251803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4303d6d87a3ae64ba92ce1437252052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <soundsui>k__BackingField:
+    Guid:
+      Data1: -1456007920
+      Data2: 1290561115
+      Data3: -1241985391
+      Data4: -912315134
+    Path: event:/ui/SFXUI
+  <musicui>k__BackingField:
+    Guid:
+      Data1: 219765724
+      Data2: 1236020133
+      Data3: -747854938
+      Data4: -1343608634
+    Path: event:/Music/Music
 --- !u!1001 &2141407371
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class PanelManager : MonoBehaviour
     public GameObject sonidoPanel;
     public GameObject controlesPanel;
     public GameObject salirpanel;
+    public CanvasManager canvasManager;
 
     public static bool isSettingsActive = false;
     private CanvasGroup settingsCanvasGroup;
@@ -36,6 +37,14 @@ public class PanelManager : MonoBehaviour
     // Método público para alternar la visibilidad del panel de configuración
     public void ToggleSettingsPanel(bool show)
     {
+        if (canvasManager != null)
+        {
+            if (show)
+                canvasManager.canvasSecundario.SetActive(true);
+            else
+                canvasManager.canvasSecundario.SetActive(false);
+        }
+
         if (show)
         {
             settingsPanel.SetActive(true);
@@ -45,6 +54,9 @@ public class PanelManager : MonoBehaviour
             pantallaPanel.SetActive(true);
             isSettingsActive = true;
             Time.timeScale = 0f;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else
         {
