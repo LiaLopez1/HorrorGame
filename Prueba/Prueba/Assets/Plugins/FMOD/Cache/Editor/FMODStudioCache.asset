@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8814833131893371640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ElectricidadActivada
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ElectricidadActivada
+  Guid:
+    Data1: -21869479
+    Data2: 1272635657
+    Data3: -1008494173
+    Data4: -445012257
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5250
 --- !u!114 &-8278097782256860585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +268,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-5140757860388321452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AgarrarNotas
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AgarrarNotas
+  Guid:
+    Data1: -1648935026
+    Data2: 1137004267
+    Data3: 1050572967
+    Data4: -1149304674
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-4858346413149897500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +350,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2760
---- !u!114 &-3413062060705206360
+--- !u!114 &-3782042076455117703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,50 +360,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/ui/Cinematica
+  m_Name: event:/SFX/TarjetaRecogida
   m_EditorClassIdentifier: 
-  Path: event:/ui/Cinematica
+  Path: event:/SFX/TarjetaRecogida
   Guid:
-    Data1: -1880105276
-    Data2: 1334067564
-    Data3: -257700467
-    Data4: -1243031346
-  Banks:
-  - {fileID: 8088564819861251677}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 29256
---- !u!114 &-3122589263272711017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ElectricidadActivada
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/ElectricidadActivada
-  Guid:
-    Data1: -21869479
-    Data2: 1272635657
-    Data3: -1008494173
-    Data4: -445012257
+    Data1: 855655590
+    Data2: 1096756916
+    Data3: 1038231691
+    Data4: 1854946993
   Banks:
   - {fileID: -1770093805052333945}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 5250
+  Length: 520
 --- !u!114 &-3084046710393107530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +419,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638822494813408323
+  lastModified: 638833678932623627
   FileSizes:
   - Name: 
     Value: 2314
@@ -412,7 +439,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638822494816591520
+  lastModified: 638833678941417415
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -452,18 +479,18 @@ MonoBehaviour:
   - {fileID: -7031313200730255131}
   - {fileID: 7864109250277005832}
   - {fileID: 1985055635980391246}
-  - {fileID: 967109945576132427}
-  - {fileID: -3122589263272711017}
-  - {fileID: 8993690168388059820}
-  - {fileID: 6373467355660428519}
-  - {fileID: 1300222365251533760}
-  - {fileID: -3413062060705206360}
+  - {fileID: 1524838184483343030}
+  - {fileID: -8814833131893371640}
+  - {fileID: -5140757860388321452}
+  - {fileID: -3782042076455117703}
+  - {fileID: 795855792285962496}
+  - {fileID: 6029280196542426017}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 638822494821417972
+  cacheTime: 638833678946663185
   cacheVersion: 131623
 --- !u!114 &627399549230561756
 MonoBehaviour:
@@ -492,52 +519,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2100
---- !u!114 &904085558940435850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: FmodHorrorGame/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 638822494813308305
-  FileSizes: []
-  Exists: 1
---- !u!114 &967109945576132427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/TarjetaActivada
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/TarjetaActivada
-  Guid:
-    Data1: -1159809017
-    Data2: 1097961812
-    Data3: 409323415
-    Data4: 1793928672
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3468
---- !u!114 &1300222365251533760
+--- !u!114 &795855792285962496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -564,6 +546,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 530
+--- !u!114 &904085558940435850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: FmodHorrorGame/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638833678932437632
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1511663206446921096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,6 +618,33 @@ MonoBehaviour:
   - hover
   - exit
   Exists: 1
+--- !u!114 &1524838184483343030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TarjetaActivada
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TarjetaActivada
+  Guid:
+    Data1: -1159809017
+    Data2: 1097961812
+    Data3: 409323415
+    Data4: 1793928672
+  Banks:
+  - {fileID: -1770093805052333945}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3468
 --- !u!114 &1985055635980391246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +687,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638822494814219144
+  lastModified: 638833678934890432
   FileSizes: []
   Exists: 1
 --- !u!114 &4929467871285832569
@@ -692,6 +719,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6029280196542426017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ui/Cinematica
+  m_EditorClassIdentifier: 
+  Path: event:/ui/Cinematica
+  Guid:
+    Data1: -1880105276
+    Data2: 1334067564
+    Data3: -257700467
+    Data4: -1243031346
+  Banks:
+  - {fileID: 8088564819861251677}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 29256
 --- !u!114 &6316694450697172424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,33 +773,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 750
---- !u!114 &6373467355660428519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/TarjetaRecogida
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/TarjetaRecogida
-  Guid:
-    Data1: 855655590
-    Data2: 1096756916
-    Data3: 1038231691
-    Data4: 1854946993
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 520
 --- !u!114 &6708084214338960799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,7 +844,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638822494821417972
+  lastModified: 638833678946663185
   FileSizes: []
   Exists: 1
 --- !u!114 &8750832582631547531
@@ -859,7 +886,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638822494813398319
+  lastModified: 638833678932608578
   FileSizes: []
   Exists: 1
 --- !u!114 &8885897779503384648
@@ -889,30 +916,3 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &8993690168388059820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/AgarrarNotas
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/AgarrarNotas
-  Guid:
-    Data1: -1648935026
-    Data2: 1137004267
-    Data3: 1050572967
-    Data4: -1149304674
-  Banks:
-  - {fileID: -1770093805052333945}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000

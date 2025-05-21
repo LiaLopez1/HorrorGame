@@ -1,32 +1,32 @@
-using UnityEngine;
+锘縰sing UnityEngine;
 using TMPro;
 using System.Collections;
-using FMODUnity; // Aseg鷕ate de incluir esto
+using FMODUnity; // Aseg煤rate de incluir esto
 using FMOD.Studio;
 
 public class RecogerObjetos : MonoBehaviour
 {
-    [Header("Configuraci髇 Visual")]
+    [Header("Configuraci贸n Visual")]
     public GameObject indicadorInteraccion;
     public float raycastDistance = 3f;
 
     [Header("Brillo (Contorno)")]
     public float distanciaBrillo = 6f;
 
-    [Header("Configuraci髇 Di醠ogo")]
-    [Tooltip("Mensajes que se mostrar醤 al recoger el objeto")]
+    [Header("Configuraci贸n Di谩logo")]
+    [Tooltip("Mensajes que se mostrar谩n al recoger el objeto")]
     [TextArea(3, 5)] public string[] mensajesDialogo;
     [Tooltip("Tiempo que se muestra cada mensaje")]
     public float duracionDialogo = 3f;
-    [Tooltip("Panel UI que contiene el texto del di醠ogo")]
+    [Tooltip("Panel UI que contiene el texto del di谩logo")]
     public GameObject panelDialogo;
-    [Tooltip("Componente de texto donde se mostrar醤 los mensajes")]
+    [Tooltip("Componente de texto donde se mostrar谩n los mensajes")]
     public TMP_Text textoDialogo;
 
-    [Header("Configuraci髇 Misi髇")]
+    [Header("Configuraci贸n Misi贸n")]
     public bool esMisionPrincipal = false;
     [TextArea(2, 3)] public string textoMision;
-    [Tooltip("Tiempo que se muestra la notificaci髇 de misi髇")]
+    [Tooltip("Tiempo que se muestra la notificaci贸n de misi贸n")]
     public float duracionMision = 5f;
 
     [Header("Eventos")]
@@ -47,7 +47,7 @@ public class RecogerObjetos : MonoBehaviour
     {
         playerCamera = Camera.main.transform;
 
-        // Buscar autom醫icamente el OutlineController
+        // Buscar autom谩ticamente el OutlineController
         outlineController = GetComponent<OutlineController>();
 
         if (indicadorInteraccion != null)
@@ -121,13 +121,13 @@ public class RecogerObjetos : MonoBehaviour
 
         outlineController?.HideOutline();
 
-        // Reproducir el sonido de recolecci髇
+        // Reproducir el sonido de recolecci贸n
         if (sonidoRecoger.IsNull == false)
         {
             RuntimeManager.PlayOneShot(sonidoRecoger, transform.position);
         }
 
-        // Mostrar misi髇 inmediatamente
+        // Mostrar misi贸n inmediatamente
         if (!string.IsNullOrEmpty(textoMision))
         {
             if (esMisionPrincipal)
@@ -147,7 +147,7 @@ public class RecogerObjetos : MonoBehaviour
         // Destruir inmediatamente el objeto recogido (visual y colisionable)
         Destroy(gameObject);
 
-        // Mostrar di醠ogos si hay mensajes configurados
+        // Mostrar di谩logos si hay mensajes configurados
         if (mensajesDialogo != null && mensajesDialogo.Length > 0)
         {
             StartCoroutine(MostrarDialogos());
