@@ -1,110 +1,74 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
+using FMOD.Studio;
 
-public class Volumen : MonoBehaviour
+public class VolumenFMOD : MonoBehaviour
 {
     public Slider sliderAmbiente;
-    public Slider sliderEfectos;  // Nuevo slider para el volumen de efectos de sonido
-    public float sliderAmbienteValue;
-    public float sliderEfectosValue;  // Valor del slider de efectos de sonido
+    public Slider sliderMaster;
 
-    // Im�genes para el volumen de ambiente
     public Image imagenMuteAmbiente;
-    public Image imagenHighAmbiente;
     public Image imagenLowAmbiente;
+    public Image imagenHighAmbiente;
 
-    // Im�genes para el volumen de efectos de sonido
-    public Image imagenMuteEfectos;
-    public Image imagenHighEfectos;
-    public Image imagenLowEfectos;
+    public Image imagenMuteMaster;
+    public Image imagenLowMaster;
+    public Image imagenHighMaster;
+
+    private VCA vcaAmbiente;
+    private VCA vcaefectos;
 
     void Start()
     {
-        // Cargar el volumen del ambiente y los efectos de sonido desde PlayerPrefs
-        sliderAmbienteValue = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
-        sliderEfectosValue = PlayerPrefs.GetFloat("volumenEfectos", 0.5f);
+        float volumenAmbiente = PlayerPrefs.GetFloat("volumenAmbiente", 1f);
+        float volumenEfectos = PlayerPrefs.GetFloat("volumenEfectos", 0.5f);
 
-        // Asignar valores a los sliders
-        sliderAmbiente.value = sliderAmbienteValue;
-        sliderEfectos.value = sliderEfectosValue;
+        sliderAmbiente.value = volumenAmbiente;
+        sliderMaster.value = volumenEfectos;
 
-        // Asignar el volumen de ambiente
-        AudioListener.volume = sliderAmbienteValue;
+        // Obtener las rutas de los VCA
+        vcaAmbiente = RuntimeManager.GetVCA("vca:/AmbienteVCA");
+        vcaefectos = RuntimeManager.GetVCA("vca:/EfectosVCA");
 
-        // Actualizar im�genes y vol�menes al inicio
-        ActualizarVolumenAmbiente();
-        ActualizarVolumenEfectos();
+        // Aplicar valores iniciales
+        vcaAmbiente.setVolume(volumenAmbiente);
+        vcaefectos.setVolume(volumenEfectos);
+
+        ActualizarImagenAmbiente(volumenAmbiente);
+        ActualizarImagenMaster(volumenEfectos);
+
+        // Añadir listeners
+        sliderAmbiente.onValueChanged.AddListener(CambiarVolumenAmbiente);
+        sliderMaster.onValueChanged.AddListener(CambiarVolumenMaster);
     }
 
     public void CambiarVolumenAmbiente(float valor)
     {
-        sliderAmbienteValue = sliderAmbiente.value;
-        PlayerPrefs.SetFloat("volumenAudio", sliderAmbienteValue);
-        AudioListener.volume = sliderAmbienteValue;
-        ActualizarVolumenAmbiente();
+        //Debug.Log("CambiarVolumenAmbiente a " + valor);
+        vcaAmbiente.setVolume(valor);
+        PlayerPrefs.SetFloat("volumenAmbiente", valor);
+        ActualizarImagenAmbiente(valor);
     }
 
-    public void CambiarVolumenEfectos(float valor)
+    public void CambiarVolumenMaster(float valor)
     {
-        sliderEfectosValue = sliderEfectos.value;
-        PlayerPrefs.SetFloat("volumenEfectos", sliderEfectosValue);
-
-        // Encontrar todos los objetos con un AudioSource de efectos y actualizar su volumen
-        AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
-        foreach (AudioSource audioSource in allAudioSources)
-        {
-            if (audioSource.gameObject.CompareTag("Efectos"))  // Solo actualizamos los AudioSources de efectos
-            {
-                audioSource.volume = sliderEfectosValue;
-            }
-        }
-
-        ActualizarVolumenEfectos();
+        vcaefectos.setVolume(valor);
+        PlayerPrefs.SetFloat("volumenEfectos", valor);
+        ActualizarImagenMaster(valor);
     }
 
-    public void ActualizarVolumenAmbiente()
+    private void ActualizarImagenAmbiente(float valor)
     {
-        if (sliderAmbienteValue == 0)
-        {
-            imagenMuteAmbiente.enabled = true;
-            imagenLowAmbiente.enabled = false;
-            imagenHighAmbiente.enabled = false;
-        }
-        else if (sliderAmbienteValue > 0 && sliderAmbienteValue < 0.7)
-        {
-            imagenMuteAmbiente.enabled = false;
-            imagenLowAmbiente.enabled = true;
-            imagenHighAmbiente.enabled = false;
-        }
-        else
-        {
-            imagenMuteAmbiente.enabled = false;
-            imagenLowAmbiente.enabled = false;
-            imagenHighAmbiente.enabled = true;
-        }
+        imagenMuteAmbiente.enabled = valor == 0;
+        imagenLowAmbiente.enabled = valor > 0 && valor < 0.7f;
+        imagenHighAmbiente.enabled = valor >= 0.7f;
     }
 
-    public void ActualizarVolumenEfectos()
+    private void ActualizarImagenMaster(float valor)
     {
-        if (sliderEfectosValue == 0)
-        {
-            imagenMuteEfectos.enabled = true;
-            imagenLowEfectos.enabled = false;
-            imagenHighEfectos.enabled = false;
-        }
-        else if (sliderEfectosValue > 0 && sliderEfectosValue < 0.7)
-        {
-            imagenMuteEfectos.enabled = false;
-            imagenLowEfectos.enabled = true;
-            imagenHighEfectos.enabled = false;
-        }
-        else
-        {
-            imagenMuteEfectos.enabled = false;
-            imagenLowEfectos.enabled = false;
-            imagenHighEfectos.enabled = true;
-        }
+        imagenMuteMaster.enabled = valor == 0;
+        imagenLowMaster.enabled = valor > 0 && valor < 0.7f;
+        imagenHighMaster.enabled = valor >= 0.7f;
     }
 }

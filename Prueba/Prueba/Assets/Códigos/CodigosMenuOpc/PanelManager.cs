@@ -10,9 +10,17 @@ public class PanelManager : MonoBehaviour
     public GameObject salirpanel;
 
     public static bool isSettingsActive = false;
+    private CanvasGroup settingsCanvasGroup;
 
     void Start()
     {
+        // Asegurar que tenemos un CanvasGroup en el panel de settings
+        settingsCanvasGroup = settingsPanel.GetComponent<CanvasGroup>();
+        if (settingsCanvasGroup == null)
+        {
+            settingsCanvasGroup = settingsPanel.AddComponent<CanvasGroup>();
+        }
+
         settingsPanel.SetActive(false);
         DeactivateAllPanels();
     }
@@ -31,6 +39,8 @@ public class PanelManager : MonoBehaviour
         if (show)
         {
             settingsPanel.SetActive(true);
+            settingsCanvasGroup.interactable = true;
+            settingsCanvasGroup.blocksRaycasts = true;
             DeactivateAllPanels();
             pantallaPanel.SetActive(true);
             isSettingsActive = true;
@@ -38,18 +48,20 @@ public class PanelManager : MonoBehaviour
         }
         else
         {
+            settingsCanvasGroup.interactable = false;
+            settingsCanvasGroup.blocksRaycasts = false;
             settingsPanel.SetActive(false);
             isSettingsActive = false;
             Time.timeScale = 1f;
         }
     }
 
-    // Método para activar un panel basado en el nombre usando un switch
+    // Método para activar un panel basado en el nombre
     public void ActivatePanel(string panelName)
     {
         DeactivateAllPanels();
 
-        switch (panelName)
+        switch (panelName.ToLower()) // Hacer la comparación case-insensitive
         {
             case "pantalla":
                 pantallaPanel.SetActive(true);
@@ -60,10 +72,11 @@ public class PanelManager : MonoBehaviour
             case "controles":
                 controlesPanel.SetActive(true);
                 break;
-            case "Salir":
+            case "salir":
                 salirpanel.SetActive(true);
                 break;
             default:
+                Debug.LogWarning($"Panel no reconocido: {panelName}");
                 pantallaPanel.SetActive(true);
                 break;
         }
@@ -80,20 +93,11 @@ public class PanelManager : MonoBehaviour
 
     public void CerrarOpciones()
     {
-        settingsPanel.SetActive(false);
-        isSettingsActive = false;
-        Time.timeScale = 0f;
+        ToggleSettingsPanel(false);
     }
 
     private void ToggleOpciones()
-{
-    if (isSettingsActive)
     {
-        CerrarOpciones();
+        ToggleSettingsPanel(!isSettingsActive);
     }
-    else
-    {
-        ToggleSettingsPanel(true);
-    }
-}
 }

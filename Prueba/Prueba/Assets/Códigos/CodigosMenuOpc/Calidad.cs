@@ -5,25 +5,55 @@ using TMPro;
 public class LogicaCalidad : MonoBehaviour
 {
     public TMP_Dropdown dropdownCalidad;
-
+    
     void Start()
     {
-        int savedQuality = PlayerPrefs.GetInt("calidad", 2); // 2 es la calidad por defecto (Medium)
+        int maxQualityLevel = QualitySettings.names.Length - 1;
+        
+
+        int savedQuality = PlayerPrefs.GetInt("calidad", maxQualityLevel);
+        
+        savedQuality = Mathf.Clamp(savedQuality, 0, maxQualityLevel);
+        
         dropdownCalidad.value = savedQuality;
         ApplyQuality(savedQuality);
-        
-        // Conectar el evento del Dropdown
+
         dropdownCalidad.onValueChanged.AddListener(ChangeQuality);
     }
 
     public void ChangeQuality(int index)
     {
-        PlayerPrefs.SetInt("calidad", index); // Guardamos la opción seleccionada
-        ApplyQuality(index);
+        // Validar que el índice esté dentro del rango
+        if (index >= 0 && index < QualitySettings.names.Length)
+        {
+            PlayerPrefs.SetInt("calidad", index);
+            ApplyQuality(index);
+        }
+        else
+        {
+            Debug.LogWarning("Índice de calidad no válido: " + index);
+        }
     }
 
     private void ApplyQuality(int qualityIndex)
     {
-        QualitySettings.SetQualityLevel(qualityIndex);
+        QualitySettings.SetQualityLevel(qualityIndex, true);
+        
+        if (qualityIndex == 0) 
+        {
+            // Alta calidad
+            QualitySettings.pixelLightCount = 4;
+            QualitySettings.shadows = ShadowQuality.All;
+            QualitySettings.shadowResolution = ShadowResolution.High;
+            QualitySettings.shadowDistance = 150;
+        }
+        else 
+        {
+            // Baja calidad
+            QualitySettings.pixelLightCount = 1;
+            QualitySettings.shadows = ShadowQuality.HardOnly;
+            QualitySettings.shadowResolution = ShadowResolution.Low;
+            QualitySettings.shadowDistance = 50;
+        }
     }
 }

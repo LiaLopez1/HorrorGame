@@ -11,7 +11,14 @@ public class CanvasManager : MonoBehaviour
 
     void Start()
     {
+        // Obtener el CanvasGroup del GameObject que contiene el Canvas
         gameCanvasGroup = gameCanvas.GetComponent<CanvasGroup>();
+        if (gameCanvasGroup == null)
+        {
+            // Añadir el CanvasGroup al GameObject que contiene el Canvas
+            gameCanvasGroup = gameCanvas.gameObject.AddComponent<CanvasGroup>();
+        }
+
         menuCanvas.sortingOrder = 2;  
         gameCanvas.sortingOrder = 1;  
     }
@@ -27,7 +34,13 @@ public class CanvasManager : MonoBehaviour
             }
 
             Time.timeScale = 0f;
-            gameCanvasGroup.blocksRaycasts = false; 
+            
+            // Deshabilitar interacción con el canvas del juego
+            if (gameCanvasGroup != null)
+            {
+                gameCanvasGroup.interactable = false;
+                gameCanvasGroup.blocksRaycasts = false;
+            }
         }
     }
 
@@ -42,7 +55,13 @@ public class CanvasManager : MonoBehaviour
             }
 
             Time.timeScale = 1f;
-            gameCanvasGroup.blocksRaycasts = true;
+            
+            // Habilitar interacción con el canvas del juego
+            if (gameCanvasGroup != null)
+            {
+                gameCanvasGroup.interactable = true;
+                gameCanvasGroup.blocksRaycasts = true;
+            }
         }
     }
 }
