@@ -135,10 +135,7 @@ public class RecogerObjetos : MonoBehaviour
         // 3️⃣ Mostrar misión (si existe)
         if (!string.IsNullOrEmpty(textoMision))
         {
-            if (esMisionPrincipal)
-                StartCoroutine(MostrarMisionTemporal(GameManager.Instance.misionPrincipalText));
-            else
-                StartCoroutine(MostrarMisionTemporal(GameManager.Instance.misionSecundariaText));
+            GameManager.Instance.ActualizarMision(textoMision, esMisionPrincipal, duracionMision);
         }
 
         onRecoger.Invoke();

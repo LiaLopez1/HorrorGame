@@ -1,5 +1,5 @@
-using UnityEngine;
-using UnityEngine.Events; // AÒade esto para usar UnityEvent
+Ôªøusing UnityEngine;
+using UnityEngine.Events; // A√±ade esto para usar UnityEvent
 using TMPro;
 using System.Collections;
 using FMODUnity;
@@ -7,7 +7,7 @@ using FMODUnity;
 
 public class TriggerNota : MonoBehaviour
 {
-    [Header("ConfiguraciÛn Di·logo")]
+    [Header("Configuraci√≥n Di√°logo")]
     public DialogueData[] dialogos;
     public float dialogueDuration = 3f;
 
@@ -15,7 +15,7 @@ public class TriggerNota : MonoBehaviour
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
 
-    [Header("ConfiguraciÛn ProgresiÛn")]
+    [Header("Configuraci√≥n Progresi√≥n")]
     public bool esMisionPrincipal = false;
     public GameManager.GameState nextState;
     public bool disableInsteadOfDestroy = false;
@@ -60,33 +60,38 @@ public class TriggerNota : MonoBehaviour
     {
         isRunningDialogue = true;
 
-        // Disparar evento al recoger la nota
-        onNoteCollected.Invoke(); // °AquÌ se ejecutar·n las acciones vinculadas en el Inspector!
+        // 1. Mostrar el panel de di√°logo
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(true);
 
-        // Mostrar di·logos
-        if (dialoguePanel != null) dialoguePanel.SetActive(true);
-
+        // 2. Mostrar cada mensaje con su duraci√≥n exacta
         foreach (var dialogo in dialogos)
         {
-            if (dialogueText != null) dialogueText.text = dialogo.texto;
+            if (dialogueText != null)
+                dialogueText.text = dialogo.texto;
 
+            // Mostrar misi√≥n si es necesario (sin auto-ocultar)
             if (dialogo.mostrarMision && GameManager.Instance != null)
             {
-                if (esMisionPrincipal)
-                    GameManager.Instance.ActualizarMisionPrincipal(dialogo.textoMision);
-                else
-                    GameManager.Instance.ActualizarMisionSecundaria(dialogo.textoMision);
+                GameManager.Instance.ActualizarMision(
+                    dialogo.textoMision,
+                    esMisionPrincipal
+                );
             }
 
+            // Espera EXACTA del tiempo configurado
             yield return new WaitForSeconds(dialogueDuration);
         }
 
-        // FinalizaciÛn
-        if (dialoguePanel != null) dialoguePanel.SetActive(false);
+        // 3. Ocultar el panel al terminar TODOS los di√°logos
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
 
+        // 4. Cambiar estado del juego si es necesario
         if (gameManager != null)
             gameManager.ChangeState(nextState);
 
+        // 5. Desactivar/destruir el objeto
         if (disableInsteadOfDestroy)
             gameObject.SetActive(false);
         else

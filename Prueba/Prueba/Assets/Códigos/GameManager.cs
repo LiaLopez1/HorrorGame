@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
-
+using System.Collections;
+using FMODUnity; // Asegúrate de incluir esto
+using FMOD.Studio;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -39,14 +41,31 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Estado cambiado a: {currentState}");
     }
 
-    public void ActualizarMisionPrincipal(string texto)
+    public void ActualizarMision(string texto, bool esPrincipal, float duracion = 0f)
     {
-        if (misionPrincipalText != null)
+        TMP_Text textoMision = esPrincipal ? misionPrincipalText : misionSecundariaText;
+
+        if (textoMision != null)
         {
-            misionPrincipalText.text = $"{texto}";
-            misionPrincipalText.gameObject.SetActive(true);
+            textoMision.text = texto;
+            textoMision.gameObject.SetActive(true);
+
+            // Solo ocultar si es misión secundaria Y se especificó duración > 0
+            if (!esPrincipal && duracion > 0)
+            {
+                StartCoroutine(OcultarMisionTemporal(textoMision, duracion));
+            }
         }
     }
+    private IEnumerator OcultarMisionTemporal(TMP_Text textoUI, float duracion)
+    {
+        yield return new WaitForSeconds(duracion);
+        if (textoUI != null)
+        {
+            textoUI.gameObject.SetActive(false);
+        }
+    }
+
 
     public void ActualizarMisionSecundaria(string texto)
     {
