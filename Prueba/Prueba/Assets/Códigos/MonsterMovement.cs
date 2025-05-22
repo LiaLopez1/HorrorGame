@@ -49,7 +49,7 @@ public class MonsterMovement : MonoBehaviour
     public bool IsExtendedZoneTriggered =>
     Vector3.Distance(transform.position, player.position) <= boostedDetectionRadius && isNoiseAlertActive;
 
-
+    private Animator animator;
 
     void Start()
     {
@@ -75,7 +75,8 @@ public class MonsterMovement : MonoBehaviour
         SetRandomDirection();
         //musicController = FindObjectOfType<MusicController>();
 
-
+        animator = GetComponent<Animator>();
+        
     }
 
 
@@ -121,7 +122,7 @@ public class MonsterMovement : MonoBehaviour
 
             Debug.Log("¡Estás muerto!");
         }
-
+        ActualizarAnimaciones();
     }
 
     void HandleNoiseDetection()
@@ -228,4 +229,13 @@ public class MonsterMovement : MonoBehaviour
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, deathRadius);
     }
+
+    void ActualizarAnimaciones()
+    {
+        // Si está siguiendo al jugador, se activa "Run"
+        bool persiguiendo = ShouldFollowPlayer();
+        animator.SetBool("Persiguiendo", persiguiendo);
+
+    }
+
 }
