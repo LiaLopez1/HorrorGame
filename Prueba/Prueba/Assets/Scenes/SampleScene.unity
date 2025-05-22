@@ -3014,14 +3014,14 @@ RectTransform:
   m_GameObject: {fileID: 58198795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7585413, y: 1.7585413, z: 1.7585413}
+  m_LocalScale: {x: 1.0590814, y: 1.0590814, z: 1.0590814}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 655455670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 253, y: -9.034376}
+  m_AnchoredPosition: {x: 174.5, y: -9.034376}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58198797
@@ -13132,7 +13132,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18884daf5cc1e0c41ad810abbf6653db, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7854902183086069624, guid: 18884daf5cc1e0c41ad810abbf6653db, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13846,7 +13846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 297.2, y: 141.2}
+  m_AnchoredPosition: {x: 20.7, y: 150.7}
   m_SizeDelta: {x: -602.567, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252119333
@@ -13862,7 +13862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.8352941}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25807,14 +25807,14 @@ RectTransform:
   m_GameObject: {fileID: 489927385}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7585413, y: 1.7585413, z: 1.7585413}
+  m_LocalScale: {x: 1.2767011, y: 1.2767011, z: 1.2767011}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1294373793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: -9.034376}
+  m_AnchoredPosition: {x: -23.7, y: -9.034376}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &489927387
@@ -26910,7 +26910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.5, y: 45}
+  m_AnchoredPosition: {x: -16, y: 45}
   m_SizeDelta: {x: 261.38, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &508339293
@@ -26960,8 +26960,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 37.6
+  m_fontSizeBase: 37.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -35204,7 +35204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.31, y: 22.291}
+  m_AnchoredPosition: {x: 59.6, y: 22.291}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653120649
@@ -35272,7 +35272,7 @@ RectTransform:
   m_GameObject: {fileID: 655455669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.2650078, y: 0.2650078, z: 0.2650078}
+  m_LocalScale: {x: 0.42476034, y: 0.42476034, z: 0.42476034}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 58198796}
@@ -35280,7 +35280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21, y: 22.000004}
+  m_AnchoredPosition: {x: -29.4, y: 23.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655455671
@@ -35401,14 +35401,14 @@ RectTransform:
   m_GameObject: {fileID: 657764084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7585413, y: 1.7585413, z: 1.7585413}
+  m_LocalScale: {x: 1.0917491, y: 1.0917491, z: 1.0917491}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1584828962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 253, y: -9.034376}
+  m_AnchoredPosition: {x: 170.7, y: -6.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &657764086
@@ -35437,7 +35437,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18884daf5cc1e0c41ad810abbf6653db, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7854902183086069624, guid: 18884daf5cc1e0c41ad810abbf6653db, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -35500,7 +35500,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -30.101273, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &657764087
@@ -40294,7 +40294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9614ec935cac34e82c2956431816e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 0
+  isLocked: 1
   interactMessagePanel: {fileID: 1664148043}
   lockedMessagePanel: {fileID: 949347959}
   interactionDistance: 5
@@ -44609,7 +44609,7 @@ Transform:
   m_GameObject: {fileID: 827209957}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.8589993, y: 0.0008006096, z: -7.1030006}
+  m_LocalPosition: {x: 3.8589993, y: 0, z: -7.1030006}
   m_LocalScale: {x: 1.4509999, y: 1.451, z: 1.4509999}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44634,7 +44634,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -44706,7 +44706,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 5.340744, y: 2.7692742, z: 0.07585918}
   m_Center: {x: 0.0000076293945, y: -0.00000059604645, z: 0.03792673}
@@ -45288,7 +45288,7 @@ RectTransform:
   m_GameObject: {fileID: 838608696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.45932457, y: 0.45932457, z: 0.45932457}
+  m_LocalScale: {x: 0.40654358, y: 0.40654358, z: 0.40654358}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1434433248}
@@ -45296,7 +45296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.31, y: 22.291}
+  m_AnchoredPosition: {x: 50.5, y: -3.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &838608698
@@ -48797,7 +48797,7 @@ RectTransform:
   m_GameObject: {fileID: 894575586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.45932457, y: 0.45932457, z: 0.45932457}
+  m_LocalScale: {x: 0.4105994, y: 0.4105994, z: 0.4105994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 161014047}
@@ -48805,7 +48805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.31, y: 22.291}
+  m_AnchoredPosition: {x: 50.8, y: -3.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &894575588
@@ -49429,6 +49429,89 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020422969, y: 0.020452173, z: 0.06532599}
   m_Center: {x: 0, y: 0.000014599882, z: 0.000056576}
+--- !u!1 &907079865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907079866}
+  - component: {fileID: 907079869}
+  - component: {fileID: 907079868}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &907079866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907079865}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.0000000013170891, z: 0.0000000013170889, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.96464, y: 1.0202998, z: 1.0362164}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3745622626727744375}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &907079868
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907079865}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1a144768f35617740805a1b1b350fd43, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &907079869
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907079865}
+  m_Mesh: {fileID: -5495902117074765545, guid: b0abf650107620f40a21a0f9dd85a7b3, type: 3}
 --- !u!1 &907300522
 GameObject:
   m_ObjectHideFlags: 0
@@ -50826,12 +50909,13 @@ MonoBehaviour:
   indicadorInteraccion: {fileID: 627045888}
   raycastDistance: 3
   distanciaBrillo: 6
-  mensajesDialogo: []
-  duracionDialogo: 3
-  panelDialogo: {fileID: 0}
-  textoDialogo: {fileID: 0}
+  mensajesDialogo:
+  - Llave de la puerta principal recogida
+  duracionDialogo: 5
+  panelDialogo: {fileID: 252119331}
+  textoDialogo: {fileID: 508339293}
   esMisionPrincipal: 0
-  textoMision: 
+  textoMision: 'Sal del hospital   '
   duracionMision: 5
   onRecoger:
     m_PersistentCalls:
@@ -54027,7 +54111,7 @@ MonoBehaviour:
   onRecoger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5334037118812988906}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DesbloquearObj, Assembly-CSharp
         m_MethodName: Desbloquear
         m_Mode: 1
@@ -55493,7 +55577,6 @@ GameObject:
   - component: {fileID: 1013021506}
   - component: {fileID: 1013021505}
   - component: {fileID: 1013021504}
-  - component: {fileID: 1013021503}
   m_Layer: 0
   m_Name: LectorTarjetas (1)
   m_TagString: Untagged
@@ -55501,27 +55584,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1013021503
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013021502}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.1354977, y: 0.50155497, z: 0.77173054}
-  m_Center: {x: -0.07125461, y: -0.011265526, z: 0.33208334}
 --- !u!23 &1013021504
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57953,12 +58015,12 @@ MonoBehaviour:
   raycastDistance: 3
   distanciaBrillo: 6
   mensajesDialogo:
-  - "lave del ba\xF1o recogido"
-  duracionDialogo: 3
+  - "llave del ba\xF1o recogido"
+  duracionDialogo: 5
   panelDialogo: {fileID: 252119331}
   textoDialogo: {fileID: 508339293}
-  esMisionPrincipal: 0
-  textoMision: "revisar el ba\xF1o\n"
+  esMisionPrincipal: 1
+  textoMision: 'Encuentra la llave del Consultorio '
   duracionMision: 5
   onRecoger:
     m_PersistentCalls:
@@ -69375,7 +69437,7 @@ RectTransform:
   m_GameObject: {fileID: 1294373792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.2650078, y: 0.2650078, z: 0.2650078}
+  m_LocalScale: {x: 0.4183246, y: 0.4183246, z: 0.4183246}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 489927386}
@@ -69383,7 +69445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.6, y: 22.000004}
+  m_AnchoredPosition: {x: 41.4, y: -3.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294373794
@@ -79349,14 +79411,12 @@ MonoBehaviour:
   raycastDistance: 3
   distanciaBrillo: 8
   mensajesDialogo:
-  - 'Con esto podria abri la puerta que estaba bloqueada, tal vez ahi este la llave
-
-'
-  duracionDialogo: 4
+  - Palanca recogida
+  duracionDialogo: 5
   panelDialogo: {fileID: 1599107692}
   textoDialogo: {fileID: 436439523}
   esMisionPrincipal: 0
-  textoMision: 
+  textoMision: Abre la puerta bloqueada
   duracionMision: 5
   onRecoger:
     m_PersistentCalls:
@@ -84685,7 +84745,7 @@ MonoBehaviour:
   isLocked: 1
   interactMessagePanel: {fileID: 1664148043}
   lockedMessagePanel: {fileID: 949347959}
-  interactionDistance: 5
+  interactionDistance: 3
   dialogueText: {fileID: 0}
   blockedMessage: Necesitas la Llave Antigua para abrirme.
   rotationDuration: 2.6
@@ -85903,7 +85963,7 @@ RectTransform:
   m_GameObject: {fileID: 1584828961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.2650078, y: 0.2650078, z: 0.2650078}
+  m_LocalScale: {x: 0.43016997, y: 0.43016997, z: 0.43016997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 657764085}
@@ -85911,7 +85971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21, y: 22.000004}
+  m_AnchoredPosition: {x: -29.5, y: 23.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1584828963
@@ -85934,7 +85994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46f67dba88ec2f9408579e0e7e843b45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 211483d0f0156204697860982af1e6bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -87226,7 +87286,9 @@ MonoBehaviour:
   panelDialogo: {fileID: 0}
   textoDialogo: {fileID: 0}
   esMisionPrincipal: 0
-  textoMision: "Invetiga el ba\xF1o\n"
+  textoMision: 'Encuentra la llave de la salida principal
+
+'
   duracionMision: 5
   onRecoger:
     m_PersistentCalls:
@@ -89441,7 +89503,7 @@ RectTransform:
   m_GameObject: {fileID: 1638082775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00002670288}
-  m_LocalScale: {x: 0.45932457, y: 0.45932457, z: 0.45932457}
+  m_LocalScale: {x: 0.41465986, y: 0.41465986, z: 0.41465986}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1443150001}
@@ -89449,7 +89511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.31, y: 22.291}
+  m_AnchoredPosition: {x: 51.487, y: -3.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638082777
@@ -94692,7 +94754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9614ec935cac34e82c2956431816e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   interactMessagePanel: {fileID: 1664148043}
   lockedMessagePanel: {fileID: 949347959}
   interactionDistance: 5
@@ -96137,7 +96199,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18884daf5cc1e0c41ad810abbf6653db, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7854902183086069624, guid: 18884daf5cc1e0c41ad810abbf6653db, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -98180,7 +98242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4c3f38935958447bfb1a031d4f56fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineObject: {fileID: 0}
+  outlineObject: {fileID: 907079865}
 --- !u!114 &1812693497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98193,8 +98255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4768a749234f759478c0f3f826a0b22b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicadorInteraccion: {fileID: 627045888}
-  raycastDistance: 3
+  indicadorInteraccion: {fileID: 0}
+  raycastDistance: 1
   distanciaBrillo: 6
   mensajesDialogo: []
   duracionDialogo: 3
@@ -98232,8 +98294,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.3497863, y: 3.7299726, z: 5.175769}
-  m_Center: {x: 0.25220573, y: 1.364986, z: -0.49030823}
+  m_Size: {x: 3.3497865, y: 2.1268682, z: 2.0900674}
+  m_Center: {x: 0.25220573, y: 0.5634334, z: -0.11432676}
 --- !u!1 &1812868298
 GameObject:
   m_ObjectHideFlags: 0
@@ -99168,7 +99230,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18884daf5cc1e0c41ad810abbf6653db, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7854902183086069624, guid: 18884daf5cc1e0c41ad810abbf6653db, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -114779,7 +114841,6 @@ GameObject:
   - component: {fileID: 3745622626727744375}
   - component: {fileID: 5334037118812988905}
   - component: {fileID: 4539702728913647926}
-  - component: {fileID: 5334037118812988906}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -114799,6 +114860,7 @@ GameObject:
   - component: {fileID: 1812693496}
   - component: {fileID: 1812693497}
   - component: {fileID: 1812693498}
+  - component: {fileID: 919132147569693353}
   m_Layer: 0
   m_Name: Candado
   m_TagString: Untagged
@@ -114806,6 +114868,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132147569693353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147569693352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b78a0e7a3e56d548a01c927fab0d97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estaBloqueado: 1
+  desaparecerAlDesbloquear: 1
+  distanciaInteraccion: 3
+  panelBloqueado: {fileID: 1638082775}
+  panelDesbloqueado: {fileID: 1294373792}
+  textoDialogo: {fileID: 0}
+  mensajeBloqueado: "Este objeto est\xE1 bloqueado."
+  tiempoOcultarDialogo: 3
+  sonidoDesbloqueo:
+    Guid:
+      Data1: 1499970229
+      Data2: 1241202534
+      Data3: -1967282297
+      Data4: 445869390
+    Path: event:/SFX/AbrirPuerta
+  onDesbloqueado:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1443797435}
+        m_TargetAssemblyTypeName: Puerta, Assembly-CSharp
+        m_MethodName: UnlockDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &919132147833216564
 GameObject:
   m_ObjectHideFlags: 0
@@ -115757,7 +115861,8 @@ Transform:
   m_LocalPosition: {x: 0.43067354, y: 0, z: 0}
   m_LocalScale: {x: 30.041874, y: 89.01829, z: 67.2715}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 907079866}
   m_Father: {fileID: 543450652097431570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3808149055522538973
@@ -116440,7 +116545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c29fd9be0c6d24f982c534002daa8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   interactMessagePanel: {fileID: 1664148043}
   lockedMessagePanel: {fileID: 838608696}
   interactionDistance: 5
@@ -116495,48 +116600,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832149485781491101}
   m_Mesh: {fileID: -5495902117074765545, guid: b0abf650107620f40a21a0f9dd85a7b3, type: 3}
---- !u!114 &5334037118812988906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832149485781491101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b78a0e7a3e56d548a01c927fab0d97f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  estaBloqueado: 1
-  desaparecerAlDesbloquear: 1
-  distanciaInteraccion: 3
-  panelBloqueado: {fileID: 1638082775}
-  panelDesbloqueado: {fileID: 1294373792}
-  textoDialogo: {fileID: 0}
-  mensajeBloqueado: "Este objeto est\xE1 bloqueado."
-  tiempoOcultarDialogo: 3
-  sonidoDesbloqueo:
-    Guid:
-      Data1: 1499970229
-      Data2: 1241202534
-      Data3: -1967282297
-      Data4: 445869390
-    Path: event:/SFX/AbrirPuerta
-  onDesbloqueado:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1443797435}
-        m_TargetAssemblyTypeName: Puerta, Assembly-CSharp
-        m_MethodName: UnlockDoor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!23 &5854984023148155290
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -117004,6 +117067,7 @@ GameObject:
   - component: {fileID: 1587545475264195547}
   - component: {fileID: 8164078560109765951}
   - component: {fileID: 8164078560109765952}
+  - component: {fileID: 8164078560109765953}
   m_Layer: 0
   m_Name: LectorTarjetas
   m_TagString: Untagged
@@ -117066,6 +117130,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineObject: {fileID: 1013021502}
+--- !u!65 &8164078560109765953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164078560109765950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7215268, y: 0.744823, z: 0.73557633}
+  m_Center: {x: 0.085544705, y: 0.11036849, z: 0.25729358}
 --- !u!23 &8442510506724774022
 MeshRenderer:
   m_ObjectHideFlags: 0

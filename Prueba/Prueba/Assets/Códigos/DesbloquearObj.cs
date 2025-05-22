@@ -3,7 +3,6 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using FMODUnity;
 
-
 public class DesbloquearObj : MonoBehaviour
 {
     [Header("Estado del objeto")]
@@ -30,6 +29,7 @@ public class DesbloquearObj : MonoBehaviour
 
     private bool jugadorCerca = false;
     private Transform camaraJugador;
+    private bool estaMirandoObjeto = false;
 
     void Start()
     {
@@ -43,8 +43,9 @@ public class DesbloquearObj : MonoBehaviour
     void Update()
     {
         RevisarDistanciaJugador();
+        VerificarRaycast();
 
-        if (jugadorCerca && Input.GetKeyDown(KeyCode.E))
+        if (jugadorCerca && estaMirandoObjeto && Input.GetKeyDown(KeyCode.E))
         {
             if (estaBloqueado)
             {
@@ -59,6 +60,26 @@ public class DesbloquearObj : MonoBehaviour
         }
     }
 
+    void VerificarRaycast()
+    {
+        estaMirandoObjeto = false;
+
+        if (!jugadorCerca) return;
+
+        Ray ray = new Ray(camaraJugador.position, camaraJugador.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, distanciaInteraccion))
+        {
+            if (hit.collider.gameObject == gameObject)
+            {
+                estaMirandoObjeto = true;
+            }
+        }
+
+        ActualizarPaneles();
+    }
+
     void RevisarDistanciaJugador()
     {
         float distancia = Vector3.Distance(camaraJugador.position, transform.position);
@@ -67,13 +88,14 @@ public class DesbloquearObj : MonoBehaviour
         if (cerca != jugadorCerca)
         {
             jugadorCerca = cerca;
+            if (!jugadorCerca) estaMirandoObjeto = false;
             ActualizarPaneles();
         }
     }
 
     void ActualizarPaneles()
     {
-        if (jugadorCerca)
+        if (jugadorCerca && estaMirandoObjeto)
         {
             if (estaBloqueado)
             {
@@ -93,6 +115,7 @@ public class DesbloquearObj : MonoBehaviour
         }
     }
 
+    // Resto de los métodos permanecen igual...
     public void Desbloquear()
     {
         estaBloqueado = false;

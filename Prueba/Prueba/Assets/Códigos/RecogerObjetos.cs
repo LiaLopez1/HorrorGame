@@ -116,43 +116,38 @@ public class RecogerObjetos : MonoBehaviour
     {
         isCollected = true;
 
+        // 1️⃣ Ocultar el objeto visualmente (sin desactivarlo aún)
+        foreach (var renderer in GetComponentsInChildren<Renderer>())
+            renderer.enabled = false;
+
+        foreach (var collider in GetComponentsInChildren<Collider>())
+            collider.enabled = false;
+
         if (indicadorInteraccion != null)
             indicadorInteraccion.SetActive(false);
 
         outlineController?.HideOutline();
 
-        // Reproducir el sonido de recolección
-        if (sonidoRecoger.IsNull == false)
-        {
+        // 2️⃣ Reproducir sonido
+        if (!sonidoRecoger.IsNull)
             RuntimeManager.PlayOneShot(sonidoRecoger, transform.position);
-        }
 
-        // Mostrar misión inmediatamente
+        // 3️⃣ Mostrar misión (si existe)
         if (!string.IsNullOrEmpty(textoMision))
         {
             if (esMisionPrincipal)
-            {
-                GameManager.Instance.ActualizarMisionPrincipal(textoMision);
                 StartCoroutine(MostrarMisionTemporal(GameManager.Instance.misionPrincipalText));
-            }
             else
-            {
-                GameManager.Instance.ActualizarMisionSecundaria(textoMision);
                 StartCoroutine(MostrarMisionTemporal(GameManager.Instance.misionSecundariaText));
-            }
         }
 
         onRecoger.Invoke();
 
-        // Destruir inmediatamente el objeto recogido (visual y colisionable)
-        Destroy(gameObject);
-
-        // Mostrar diálogos si hay mensajes configurados
+        // 4️⃣ Mostrar diálogos (si existen)
         if (mensajesDialogo != null && mensajesDialogo.Length > 0)
-        {
             StartCoroutine(MostrarDialogos());
-        }
-
+        else
+            Destroy(gameObject); // Si no hay diálogos, destruir inmediatamente
     }
 
     private IEnumerator MostrarDialogos()
@@ -174,6 +169,8 @@ public class RecogerObjetos : MonoBehaviour
             panelDialogo.SetActive(false);
 
         mostrandoDialogo = false;
+
+        // 5️⃣ Ahora sí destruir el objeto (después de los diálogos)
         Destroy(gameObject);
     }
 
