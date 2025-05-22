@@ -42,10 +42,14 @@ public class LogicaCalidad : MonoBehaviour
         if (qualityIndex == 0) 
         {
             // Alta calidad
-            QualitySettings.pixelLightCount = 4;
+            QualitySettings.pixelLightCount = 8;
             QualitySettings.shadows = ShadowQuality.All;
-            QualitySettings.shadowResolution = ShadowResolution.High;
-            QualitySettings.shadowDistance = 150;
+            QualitySettings.shadowResolution = ShadowResolution.VeryHigh;
+            QualitySettings.shadowDistance = 200f;
+            QualitySettings.shadowCascades = 4;
+
+            QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
+            QualitySettings.realtimeReflectionProbes = true; 
         }
         else 
         {

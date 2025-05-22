@@ -65,6 +65,9 @@ public class PanelManager : MonoBehaviour
             settingsPanel.SetActive(false);
             isSettingsActive = false;
             Time.timeScale = 1f;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
         }
     }
 
