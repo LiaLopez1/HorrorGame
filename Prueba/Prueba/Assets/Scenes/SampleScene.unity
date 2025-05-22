@@ -67685,6 +67685,7 @@ MonoBehaviour:
   indicadorInteraccion: {fileID: 1102426962}
   rawImagenNota: {fileID: 1133720754}
   raycastDistance: 5
+  objetoFisico: {fileID: 0}
   isViewingNote: 0
 --- !u!65 &1241876459
 BoxCollider:
@@ -73019,6 +73020,7 @@ MonoBehaviour:
   indicadorInteraccion: {fileID: 1102426962}
   rawImagenNota: {fileID: 1569733151}
   raycastDistance: 3
+  objetoFisico: {fileID: 0}
   isViewingNote: 0
 --- !u!65 &1341381581
 BoxCollider:
@@ -73667,7 +73669,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.8335565, y: 18.757175, z: 2.7577667}
   m_Center: {x: -0.10429348, y: 8.878587, z: 0.17851302}
@@ -73729,13 +73731,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347855850}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.90786946, z: -0, w: 0.4192529}
-  m_LocalPosition: {x: 2.343985, y: 1.722, z: 48.01916}
-  m_LocalScale: {x: 0.54032046, y: 0.019674024, z: 0.4389727}
+  m_LocalRotation: {x: -0, y: -0.9996908, z: -0, w: 0.024867507}
+  m_LocalPosition: {x: -0.30811247, y: 1.0069907, z: -0.22635616}
+  m_LocalScale: {x: 0.5403204, y: 0.019674024, z: 0.43897274}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1511008344}
-  m_Father: {fileID: 1854225824}
+  m_Father: {fileID: 1927442648}
   m_LocalEulerAnglesHint: {x: 0, y: -130.425, z: 0}
 --- !u!114 &1347855856
 MonoBehaviour:
@@ -73744,7 +73746,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347855850}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f94b950fc8098c408dcc293e762f539, type: 3}
   m_Name: 
@@ -73754,6 +73756,7 @@ MonoBehaviour:
   indicadorInteraccion: {fileID: 1102426962}
   rawImagenNota: {fileID: 1136776388}
   raycastDistance: 3
+  objetoFisico: {fileID: 0}
   isViewingNote: 0
 --- !u!114 &1347855857
 MonoBehaviour:
@@ -73762,7 +73765,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347855850}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9309c78d27ce36e46835410021f28ca9, type: 3}
   m_Name: 
@@ -73772,12 +73775,12 @@ MonoBehaviour:
       por aqu\xED."
     mostrarMision: 1
     textoMision: Encuentra el consultorio del Doctor
-  dialogueDuration: 0
+  dialogueDuration: 5
   dialoguePanel: {fileID: 1599107692}
   dialogueText: {fileID: 436439523}
   esMisionPrincipal: 1
   nextState: 1
-  disableInsteadOfDestroy: 0
+  disableInsteadOfDestroy: 1
   gameManager: {fileID: 2037270199}
   onNoteCollected:
     m_PersistentCalls:
@@ -100122,7 +100125,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1347855854}
+  - {fileID: 1927442648}
   - {fileID: 1341381578}
   - {fileID: 1241876456}
   m_Father: {fileID: 1480851508}
@@ -103509,6 +103512,151 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925316776}
   m_Mesh: {fileID: 4300000, guid: 40b8fd596870e5e4cb4ccb145b409d1e, type: 3}
+--- !u!1 &1927442647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927442648}
+  - component: {fileID: 1927442652}
+  - component: {fileID: 1927442651}
+  - component: {fileID: 1927442650}
+  - component: {fileID: 1927442649}
+  m_Layer: 0
+  m_Name: Nota1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1927442648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927442647}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.3965468, z: -0, w: 0.9180145}
+  m_LocalPosition: {x: 2.72, y: 0.7150094, z: 47.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1347855854}
+  m_Father: {fileID: 1854225824}
+  m_LocalEulerAnglesHint: {x: 0, y: 46.725, z: 0}
+--- !u!114 &1927442649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927442647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9309c78d27ce36e46835410021f28ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+  - texto: "Aaaah, entonces la llave que busco debe estar en alg\xFAn consultorio
+      por aqu\xED."
+    mostrarMision: 1
+    textoMision: Encuentra el consultorio del Doctor
+  dialogueDuration: 5
+  dialoguePanel: {fileID: 1599107692}
+  dialogueText: {fileID: 436439523}
+  esMisionPrincipal: 1
+  nextState: 1
+  disableInsteadOfDestroy: 1
+  gameManager: {fileID: 2037270199}
+  onNoteCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4890740890872972359}
+        m_TargetAssemblyTypeName: PuertasVerdes, Assembly-CSharp
+        m_MethodName: UnlockDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  sonidoNota:
+    Guid:
+      Data1: -1648935026
+      Data2: 1137004267
+      Data3: 1050572967
+      Data4: -1149304674
+    Path: event:/SFX/AgarrarNotas
+--- !u!114 &1927442650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927442647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f94b950fc8098c408dcc293e762f539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exclamacion3D: {fileID: 1511008341}
+  rangoActivacion: 10
+  indicadorInteraccion: {fileID: 1102426962}
+  rawImagenNota: {fileID: 1136776388}
+  raycastDistance: 3
+  objetoFisico: {fileID: 1347855850}
+  isViewingNote: 0
+--- !u!65 &1927442651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927442647}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0783209, y: 0.33945584, z: 1.2243134}
+  m_Center: {x: -0.2392787, y: 1.2710837, z: -0.4566678}
+--- !u!136 &1927442652
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927442647}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1928287484
 GameObject:
   m_ObjectHideFlags: 0

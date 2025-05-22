@@ -15,6 +15,9 @@ public class LeerNotas : MonoBehaviour
     public RawImage rawImagenNota;
     public float raycastDistance = 3f;
 
+    [Header("Referencias físicas")]
+    public GameObject objetoFisico; // ← lo asignas en el inspector al modelo de la nota
+
     [Header("Eventos")]
     public Action OnNoteOpenedAction;
     public Action OnNoteClosedAction;
@@ -121,7 +124,9 @@ public class LeerNotas : MonoBehaviour
             OnNoteClosedAction?.Invoke();
 
             // 👉 Desactiva el GameObject completo de la nota
-            gameObject.SetActive(false);
+            if (objetoFisico != null)
+                objetoFisico.SetActive(false);
+
         }
     }
 }
