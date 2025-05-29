@@ -38,7 +38,7 @@ public class RecogerObjetos : MonoBehaviour
 
     private Transform playerCamera;
     private bool isNear = false;
-    private bool isCollected = false;
+    public bool isCollected = false;
     private bool mostrandoDialogo = false;
 
     private OutlineController outlineController;
@@ -144,7 +144,7 @@ public class RecogerObjetos : MonoBehaviour
         if (mensajesDialogo != null && mensajesDialogo.Length > 0)
             StartCoroutine(MostrarDialogos());
         else
-            Destroy(gameObject); // Si no hay diálogos, destruir inmediatamente
+            gameObject.SetActive(false); // Si no hay diálogos, destruir inmediatamente
     }
 
     private IEnumerator MostrarDialogos()
@@ -168,7 +168,7 @@ public class RecogerObjetos : MonoBehaviour
         mostrandoDialogo = false;
 
         // 5️⃣ Ahora sí destruir el objeto (después de los diálogos)
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private IEnumerator MostrarMisionTemporal(TMP_Text textoMisionUI)

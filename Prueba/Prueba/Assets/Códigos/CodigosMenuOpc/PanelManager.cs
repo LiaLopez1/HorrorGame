@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PanelManager : MonoBehaviour
 {
@@ -7,15 +8,14 @@ public class PanelManager : MonoBehaviour
     public GameObject pantallaPanel;
     public GameObject sonidoPanel;
     public GameObject controlesPanel;
-    public GameObject salirpanel;
     public CanvasManager canvasManager;
+    public string escenaDondeOcultarMouse = "SampleScene";
 
     public static bool isSettingsActive = false;
     private CanvasGroup settingsCanvasGroup;
 
     void Start()
     {
-        // Asegurar que tenemos un CanvasGroup en el panel de settings
         settingsCanvasGroup = settingsPanel.GetComponent<CanvasGroup>();
         if (settingsCanvasGroup == null)
         {
@@ -24,6 +24,7 @@ public class PanelManager : MonoBehaviour
 
         settingsPanel.SetActive(false);
         DeactivateAllPanels();
+        ConfigurarCursorInicial();
     }
 
     private void Update()
@@ -34,15 +35,25 @@ public class PanelManager : MonoBehaviour
         }
     }
 
-    // Método público para alternar la visibilidad del panel de configuración
+    private void ConfigurarCursorInicial()
+    {
+        string nombreEscenaActual = SceneManager.GetActiveScene().name;
+        bool debeOcultarMouse = DebeOcultarMouse(nombreEscenaActual);
+
+        Cursor.lockState = debeOcultarMouse ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !debeOcultarMouse;
+    }
+
+    private bool DebeOcultarMouse(string nombreEscena)
+    {
+        return nombreEscena == escenaDondeOcultarMouse;
+    }
+
     public void ToggleSettingsPanel(bool show)
     {
         if (canvasManager != null)
         {
-            if (show)
-                canvasManager.canvasSecundario.SetActive(true);
-            else
-                canvasManager.canvasSecundario.SetActive(false);
+            canvasManager.canvasSecundario.SetActive(show);
         }
 
         if (show)
@@ -55,6 +66,7 @@ public class PanelManager : MonoBehaviour
             isSettingsActive = true;
             Time.timeScale = 0f;
 
+            // Siempre mostrar cursor cuando el menú está abierto
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -66,12 +78,15 @@ public class PanelManager : MonoBehaviour
             isSettingsActive = false;
             Time.timeScale = 1f;
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = false;
+            // Configurar cursor según la escena actual
+            string nombreEscenaActual = SceneManager.GetActiveScene().name;
+            bool debeOcultarMouse = DebeOcultarMouse(nombreEscenaActual);
+
+            Cursor.lockState = debeOcultarMouse ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.visible = !debeOcultarMouse;
         }
     }
 
-    // Método para activar un panel basado en el nombre
     public void ActivatePanel(string panelName)
     {
         DeactivateAllPanels();
@@ -87,9 +102,6 @@ public class PanelManager : MonoBehaviour
             case "controles":
                 controlesPanel.SetActive(true);
                 break;
-            case "salir":
-                salirpanel.SetActive(true);
-                break;
             default:
                 Debug.LogWarning($"Panel no reconocido: {panelName}");
                 pantallaPanel.SetActive(true);
@@ -97,13 +109,12 @@ public class PanelManager : MonoBehaviour
         }
     }
 
-    // Método para desactivar todos los paneles
     private void DeactivateAllPanels()
     {
         pantallaPanel.SetActive(false);
         sonidoPanel.SetActive(false);
         controlesPanel.SetActive(false);
-        salirpanel.SetActive(false);
+        //salirpanel.SetActive(false);
     }
 
     public void CerrarOpciones()
