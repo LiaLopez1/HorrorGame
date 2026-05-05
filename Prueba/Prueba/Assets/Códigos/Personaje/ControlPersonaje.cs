@@ -105,8 +105,8 @@ public class PruebaControlador : MonoBehaviour
         }
 
         Vector3 velocity = moveDirection * speed;
-        velocity.y = rb.velocity.y;
-        rb.velocity = velocity;
+        velocity.y = rb.linearVelocity.y;
+        rb.linearVelocity = velocity;
     }
 
     void Look()
@@ -200,10 +200,10 @@ public class PruebaControlador : MonoBehaviour
         
         // ARREGLO CRÍTICO: Verifica solo la velocidad horizontal (x, z) cuando estamos agachados
         // Esto evita que la velocidad vertical afecte a la detección de movimiento
-        float horizontalVelocity = new Vector2(rb.velocity.x, rb.velocity.z).magnitude;
+        float horizontalVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.z).magnitude;
         
         // Usa la velocidad horizontal para verificaciones de movimiento cuando estamos agachados
-        float velocityToCheck = agachado ? horizontalVelocity : rb.velocity.magnitude;
+        float velocityToCheck = agachado ? horizontalVelocity : rb.linearVelocity.magnitude;
         
         // Reproducimos pasos si nos estamos moviendo Y estamos en el suelo O estamos agachados y moviéndonos
         // Esto permite que los sonidos de pasos se reproduzcan incluso cuando la detección de suelo falla al agacharse
@@ -246,8 +246,8 @@ public class PruebaControlador : MonoBehaviour
         float movementBoost = 0f;
 
         // Usa velocidad horizontal para verificar el movimiento cuando estamos agachados
-        float horizontalVelocity = new Vector2(rb.velocity.x, rb.velocity.z).magnitude;
-        float velocityToCheck = agachado ? horizontalVelocity : rb.velocity.magnitude;
+        float horizontalVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.z).magnitude;
+        float velocityToCheck = agachado ? horizontalVelocity : rb.linearVelocity.magnitude;
         float currentThreshold = agachado ? crouchVelocityThreshold : 0.1f;
         
         // Solo aplica el aumento de dB si realmente nos estamos moviendo
