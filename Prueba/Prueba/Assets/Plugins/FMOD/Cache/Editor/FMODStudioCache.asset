@@ -419,7 +419,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639088609161907789
+  lastModified: 638840705383748173
   FileSizes:
   - Name: 
     Value: 2490
@@ -439,7 +439,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639088609168147979
+  lastModified: 638840705386177500
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -490,7 +490,7 @@ MonoBehaviour:
   - {fileID: 8876955751881493886}
   StringsBanks:
   - {fileID: -1933421176836164638}
-  cacheTime: 639088609168844213
+  cacheTime: 638840705386685658
   cacheVersion: 131623
 --- !u!114 &627399549230561756
 MonoBehaviour:
@@ -561,7 +561,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639088609161767451
+  lastModified: 638840705383638148
   FileSizes: []
   Exists: 1
 --- !u!114 &1511663206446921096
@@ -687,7 +687,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639088609163663198
+  lastModified: 638840705384486592
   FileSizes: []
   Exists: 1
 --- !u!114 &4929467871285832569
@@ -844,7 +844,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639088609168844213
+  lastModified: 638840705386685658
   FileSizes: []
   Exists: 1
 --- !u!114 &8750832582631547531
@@ -886,7 +886,7 @@ MonoBehaviour:
   Path: FmodHorrorGame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639088609161892739
+  lastModified: 638840705383738172
   FileSizes: []
   Exists: 1
 --- !u!114 &8885897779503384648
