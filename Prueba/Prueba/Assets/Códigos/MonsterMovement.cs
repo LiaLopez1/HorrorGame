@@ -27,7 +27,7 @@ public class MonsterMovement : MonoBehaviour
     [SerializeField] private EventReference deathScreamEvent;
 
     private NavMeshAgent agent;
-    private Animator animator;
+    //private Animator animator;
     private int currentPatrolIndex = 0;
 
     private float noiseDetectionTimer = 0f;
@@ -48,7 +48,7 @@ public class MonsterMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
 
         agent.speed = normalSpeed;
         GoToNextPatrolPoint();
@@ -145,7 +145,7 @@ public class MonsterMovement : MonoBehaviour
     void ActualizarAnimaciones()
     {
         bool persiguiendo = ShouldFollowPlayer();
-        animator.SetBool("Persiguiendo", persiguiendo);
+        //animator.SetBool("Persiguiendo", persiguiendo);
     }
 
     void OnDrawGizmosSelected()
