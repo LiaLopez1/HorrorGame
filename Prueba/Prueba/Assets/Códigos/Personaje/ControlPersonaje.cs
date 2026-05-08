@@ -1,6 +1,7 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using UnityEngine.UI;
 
 public class PruebaControlador : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class PruebaControlador : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject deathCanvas;
 
+    [Header("Mouse Sensitivity UI")]
+    [SerializeField] private Slider mouseSensitivitySlider;
+
     // Componentes privados
     private Rigidbody rb;
     private CapsuleCollider capsuleCollider;
@@ -48,6 +52,15 @@ public class PruebaControlador : MonoBehaviour
 
     void Start()
     {
+        mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", mouseSensitivity);
+
+        if (mouseSensitivitySlider != null)
+        {
+            mouseSensitivitySlider.value = mouseSensitivity;
+            mouseSensitivitySlider.onValueChanged.AddListener(ChangeMouseSensitivity);
+        }
+
+
         rb = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -89,6 +102,8 @@ public class PruebaControlador : MonoBehaviour
         UpdateDBBoost(); // Actualiza los dB adicionales
     }
 
+
+
     // --- Sistema de Movimiento ---
     void Move()
     {
@@ -111,8 +126,8 @@ public class PruebaControlador : MonoBehaviour
 
     void Look()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity ;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity ;
 
         transform.Rotate(Vector3.up * mouseX);
         rotationX -= mouseY;
@@ -288,6 +303,13 @@ public class PruebaControlador : MonoBehaviour
         
         // Usa una distancia de rayo más corta cuando estamos agachados para evitar fallar la detección del suelo
         return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
+    }
+
+    public void ChangeMouseSensitivity(float newSensitivity)
+    {
+        mouseSensitivity = newSensitivity;
+        PlayerPrefs.SetFloat("MouseSensitivity", mouseSensitivity);
+        PlayerPrefs.Save();
     }
 
     /* Función de visualización de depuración - desactivada en la versión final

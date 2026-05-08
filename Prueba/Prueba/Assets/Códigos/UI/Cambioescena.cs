@@ -28,6 +28,8 @@ public class Cambioescena : MonoBehaviour
 
     public void LoadLevel(int sceneIndex)
     {
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
         StartCoroutine(RetrasarCarga(sceneIndex));
     }
 
@@ -82,9 +84,15 @@ public class Cambioescena : MonoBehaviour
         luz.intensity = intensidadFinal; // Asegurarse de que llegue al valor final exacto
     }
 
+    
+
+
+
 
     public void cambioesc(int num)
     {
-        SceneManager.LoadScene(num);
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        SceneManager.LoadScene(num, LoadSceneMode.Single);
     }
 }
